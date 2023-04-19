@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../views/HomePage.vue';
-import IpAddress from '../views/IpAddress.vue'; // ここに新しいコンポーネントをインポート
+import IpAddress from '../views/IpAddress.vue'; 
+import TextHash from '../views/TextHash.vue';
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/ip-address',
     name: 'ip-address',
     component: IpAddress, // ここで新しいコンポーネントを指定
+  },
+  {
+    path: '/text-hash',
+    name: 'text-hash',
+    component: TextHash,
   },
   // 他のルートをここに追加
 ];

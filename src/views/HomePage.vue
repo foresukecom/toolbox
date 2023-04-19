@@ -23,9 +23,9 @@ export default {
           route: 'ip-address',
         },
         {
-          title: 'Feature 2',
+          title: 'Text Hash',
           image: 'https://via.placeholder.com/200',
-          route: 'feature-2',
+          route: 'text-hash',
         },
       ],
     };
