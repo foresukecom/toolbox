@@ -19,8 +19,16 @@ export default {
         { text: 'ホーム', href: '/' },
       ];
 
-      if (route.path !== '/') {
-        items.push({ text: '現在のページ' });
+      const pages = [
+        { path: '/ip-address', text: 'IPアドレス' },
+        { path: '/text-hash', text: 'テキストハッシュ' },
+        { path: '/video-to-gif', text: 'ビデオからGIFへ' },
+      ];
+
+      const currentPage = pages.find(page => page.path === route.path);
+
+      if (currentPage) {
+        items.push({ text: currentPage.text, href: currentPage.path });
       }
 
       return items;
