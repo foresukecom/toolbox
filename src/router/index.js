@@ -3,6 +3,7 @@ import HomePage from '../views/HomePage.vue';
 import IpAddress from '../views/IpAddress.vue'; 
 import TextHash from '../views/TextHash.vue';
 import VideoToGif from '../views/VideoToGif.vue';
+import JsonFormatter from '../views/JsonFormatter.vue';
 
 const routes = [
   {
@@ -24,7 +25,12 @@ const routes = [
     path: '/video-to-gif',
     name: 'video-to-gif',
     component: VideoToGif
-  }
+  },
+  {
+    path: "/json-formatter",
+    name: "json-formatter",
+    component: JsonFormatter,
+  },
 ];
 
 const router = createRouter({

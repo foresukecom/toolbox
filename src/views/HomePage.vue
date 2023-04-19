@@ -32,6 +32,11 @@ export default {
           image: 'https://via.placeholder.com/200',
           route: 'video-to-gif',
         },
+       {
+          title: 'json整形',
+          image: 'https://via.placeholder.com/200',
+          route: 'json-formatter',
+        },
       ],
     };
   },
