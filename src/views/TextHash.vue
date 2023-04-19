@@ -1,46 +1,58 @@
 <template>
   <v-container>
-    <v-text-field v-model="inputText" label="テキスト入力" single-line></v-text-field>
-    <v-btn @click="hashText">ハッシュ化</v-btn>
-    <div v-if="hashedText">
-      ハッシュ: {{ hashedText }}
-      <v-btn @click="copyHashToClipboard">コピー</v-btn>
-    </div>
+    <v-row>
+      <v-col cols="12" md="6">
+        <v-textarea
+          v-model="textToHash"
+          label="Enter your text"
+          auto-grow
+        ></v-textarea>
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-textarea
+          v-model="hashedText"
+          label="Hashed text"
+          auto-grow
+          readonly
+        ></v-textarea>
+      </v-col>
+    </v-row>
+    <v-btn @click="copyToClipboard" color="primary">Copy to clipboard</v-btn>
   </v-container>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { SHA256 } from 'crypto-js';
 
 export default {
-  name: 'TextHash',
   setup() {
-    const inputText = ref('');
+    const textToHash = ref('');
     const hashedText = ref('');
 
-    async function hashText() {
-      // ここでテキストをハッシュ化する処理を実行
-      const encoder = new TextEncoder();
-      const data = encoder.encode(inputText.value);
-      const digest = await crypto.subtle.digest('SHA-256', data);
-      const array = Array.from(new Uint8Array(digest));
-      hashedText.value = array.map((b) => b.toString(16).padStart(2, '0')).join('');
-    }
+    // textToHash が変更されたときに実行される関数
+    const onTextToHashChange = () => {
+      hashedText.value = SHA256(textToHash.value).toString();
+    };
 
-    async function copyHashToClipboard() {
-      try {
-        await navigator.clipboard.writeText(hashedText.value);
-        alert('ハッシュがクリップボードにコピーされました。');
-      } catch (err) {
-        alert('クリップボードへのコピーに失敗しました。');
-      }
-    }
+    // textToHash の変更を監視
+    watch(textToHash, onTextToHashChange);
+
+    const copyToClipboard = () => {
+      const textarea = document.createElement('textarea');
+      textarea.textContent = hashedText.value;
+      textarea.style.position = 'absolute';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+    };
 
     return {
-      inputText,
+      textToHash,
       hashedText,
-      hashText,
-      copyHashToClipboard,
+      copyToClipboard,
     };
   },
 };
