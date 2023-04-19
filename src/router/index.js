@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../views/HomePage.vue';
 import IpAddress from '../views/IpAddress.vue'; 
 import TextHash from '../views/TextHash.vue';
+import VideoToGif from '../views/VideoToGif.vue';
 
 const routes = [
   {
@@ -19,7 +20,11 @@ const routes = [
     name: 'text-hash',
     component: TextHash,
   },
-  // 他のルートをここに追加
+  {
+    path: '/video-to-gif',
+    name: 'video-to-gif',
+    component: VideoToGif
+  }
 ];
 
 const router = createRouter({

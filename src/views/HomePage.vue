@@ -27,6 +27,11 @@ export default {
           image: 'https://via.placeholder.com/200',
           route: 'text-hash',
         },
+        {
+          title: 'Gif 変換',
+          image: 'https://via.placeholder.com/200',
+          route: 'video-to-gif',
+        },
       ],
     };
   },
