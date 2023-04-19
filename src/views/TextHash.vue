@@ -2,7 +2,10 @@
   <v-container>
     <v-text-field v-model="inputText" label="テキスト入力" single-line></v-text-field>
     <v-btn @click="hashText">ハッシュ化</v-btn>
-    <div v-if="hashedText">ハッシュ: {{ hashedText }}</div>
+    <div v-if="hashedText">
+      ハッシュ: {{ hashedText }}
+      <v-btn @click="copyHashToClipboard">コピー</v-btn>
+    </div>
   </v-container>
 </template>
 
@@ -24,10 +27,20 @@ export default {
       hashedText.value = array.map((b) => b.toString(16).padStart(2, '0')).join('');
     }
 
+    async function copyHashToClipboard() {
+      try {
+        await navigator.clipboard.writeText(hashedText.value);
+        alert('ハッシュがクリップボードにコピーされました。');
+      } catch (err) {
+        alert('クリップボードへのコピーに失敗しました。');
+      }
+    }
+
     return {
       inputText,
       hashedText,
       hashText,
+      copyHashToClipboard,
     };
   },
 };
