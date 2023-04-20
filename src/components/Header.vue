@@ -20,7 +20,7 @@ export default {
       ];
 
       const pages = [
-        { path: '/ip-address', text: 'IPアドレス' },
+        { path: '/client-info', text: 'クライアント情報' },
         { path: '/text-hash', text: 'テキストハッシュ' },
         { path: '/video-to-gif', text: 'ビデオからGIFへ' },
         { path: '/json-formatter', text: 'JSON整形' },

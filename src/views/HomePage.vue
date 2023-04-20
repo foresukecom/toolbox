@@ -18,9 +18,9 @@ export default {
     return {
       tiles: [
         {
-          title: 'IP Address',
+          title: 'Client Info',
           image: 'https://via.placeholder.com/200',
-          route: 'ip-address',
+          route: 'client-info',
         },
         {
           title: 'Text Hash',

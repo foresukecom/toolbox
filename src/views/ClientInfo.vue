@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>IP Address</h1>
+    <h1>Client Info</h1>
     <p>Your IP address is: {{ ipAddress }}</p>
     <h2>User Agent Information</h2>
     <p>User Agent: {{ userAgent }}</p>

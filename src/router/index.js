@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../views/HomePage.vue';
-import IpAddress from '../views/IpAddress.vue'; 
+import ClientInfo from '../views/ClientInfo.vue'; 
 import TextHash from '../views/TextHash.vue';
 import VideoToGif from '../views/VideoToGif.vue';
 import JsonFormatter from '../views/JsonFormatter.vue';
@@ -12,9 +12,9 @@ const routes = [
     component: HomePage,
   },
   {
-    path: '/ip-address',
-    name: 'ip-address',
-    component: IpAddress, // ここで新しいコンポーネントを指定
+    path: '/client-info',
+    name: 'client-info',
+    component: ClientInfo, // ここで新しいコンポーネントを指定
   },
   {
     path: '/text-hash',
