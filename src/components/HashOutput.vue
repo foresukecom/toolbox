@@ -8,6 +8,9 @@
       @click:append="copyToClipboard"
     ></v-textarea>
   </div>
+  <v-snackbar v-model="snackbarVisible" :timeout="1000" color="success">
+   コピーしました
+  </v-snackbar>
 </template>
 <!-- TODO 色、高さを変更する -->
 
@@ -27,6 +30,7 @@ export default {
     return {
       copyIcon: 'mdi-content-copy',
       currentHash: this.hash,
+      snackbarVisible: false,
     };
   },
   watch: {
@@ -46,6 +50,7 @@ export default {
           console.error('Failed to copy hash:', error);
         },
       );
+      this.snackbarVisible = true; // スナックバーを表示する
     },
   },
 };
