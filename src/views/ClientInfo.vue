@@ -12,6 +12,13 @@
     <p>Browser: {{ browser }}</p>
     <p>Operating System: {{ os }}</p>
 
+    <h2>IP Information</h2>
+    <p>Provider: {{ provider }}</p>
+    <p>Region: {{ region }}</p>
+    <p>City: {{ city }}</p>
+    <p>Country: {{ country }}</p>
+    <p>Zip: {{ zip }}</p>
+
   </div>
 </template>
 
@@ -25,7 +32,12 @@ export default {
       screenWidth: 0,
       screenHeight: 0,
       viewportWidth: 0,
-      viewportHeight: 0
+      viewportHeight: 0,
+      provider: '',
+      region: '',
+      city: '',
+      country: '',
+      zip: '',
     };
   },
   methods: {
@@ -62,7 +74,21 @@ export default {
         os = 'iOS';
       }
       return { browser, os };
-    }
+    },
+    async fetchIPDetails(ipAddress) {
+      try {
+        const response = await fetch(`http://ip-api.com/json/${ipAddress}`);
+        const data = await response.json();
+        if (data.status === "success") {
+          return data;
+        } else {
+          throw new Error("Failed to fetch IP details");
+        }
+      } catch (error) {
+        console.error("Error fetching IP details:", error);
+        return null;
+      }
+    },
   },
   async mounted() {
     this.userAgent = navigator.userAgent;
@@ -80,6 +106,14 @@ export default {
       this.ipAddress = data.ip;
     } catch (error) {
       console.error('Error fetching IP address:', error);
+    }
+    const ipDetails = await this.fetchIPDetails(this.ipAddress);
+    if (ipDetails) {
+      this.provider = ipDetails.isp;
+      this.region = ipDetails.regionName;
+      this.city = ipDetails.city;
+      this.country = ipDetails.country;
+      this.zip = ipDetails.zip;
     }
   },
 };
