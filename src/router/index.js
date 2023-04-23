@@ -4,6 +4,7 @@ import ClientInfo from '../views/ClientInfo.vue';
 import TextHash from '../views/TextHash.vue';
 import VideoToGif from '../views/VideoToGif.vue';
 import JsonFormatter from '../views/JsonFormatter.vue';
+import TextCaseConverter from '../views/TextCaseConverter.vue';
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/json-formatter",
     name: "json-formatter",
     component: JsonFormatter,
+  },
+    {
+    path: "/text-case-converter",
+    name: "text-case-converter",
+    component: TextCaseConverter,
   },
 ];
 

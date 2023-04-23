@@ -24,6 +24,7 @@ export default {
         { path: '/text-hash', text: 'テキストハッシュ' },
         { path: '/video-to-gif', text: 'ビデオからGIFへ' },
         { path: '/json-formatter', text: 'JSON整形' },
+        { path: '/text-case-converter', text: 'テキストケース変換' },
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
