@@ -42,6 +42,11 @@ export default {
           image: 'https://via.placeholder.com/200',
           route: 'text-case-converter',
         },
+       {
+          title: '祝日タイマー',
+          image: 'https://via.placeholder.com/200',
+          route: 'countdown-to-holidays',
+        },
       ],
     };
   },

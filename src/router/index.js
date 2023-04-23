@@ -5,6 +5,7 @@ import TextHash from '../views/TextHash.vue';
 import VideoToGif from '../views/VideoToGif.vue';
 import JsonFormatter from '../views/JsonFormatter.vue';
 import TextCaseConverter from '../views/TextCaseConverter.vue';
+import CountdownToHolidays from '../views/CountdownToHolidays.vue';
 
 const routes = [
   {
@@ -32,10 +33,15 @@ const routes = [
     name: "json-formatter",
     component: JsonFormatter,
   },
-    {
+  {
     path: "/text-case-converter",
     name: "text-case-converter",
     component: TextCaseConverter,
+  },
+  {
+    path: "/countdown-to-holidays",
+    name: "countdown-to-holidays",
+    component: CountdownToHolidays,
   },
 ];
 
