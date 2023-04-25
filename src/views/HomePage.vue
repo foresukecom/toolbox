@@ -1,0 +1,59 @@
+<template>
+  <v-container>
+    <v-row>
+      <v-col cols="12" sm="6" md="4" lg="3" v-for="(tile, index) in tiles" :key="index">
+        <v-card @click="goTo(tile.route)" class="d-flex flex-column">
+          <v-img :src="tile.image" height="200px" />
+          <v-card-title class="text-center">{{ tile.title }}</v-card-title>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+export default {
+  name: 'HomePage',
+  data() {
+    return {
+      tiles: [
+        {
+          title: 'Client Info',
+          image: 'https://via.placeholder.com/200',
+          route: 'client-info',
+        },
+        {
+          title: 'Text Hash',
+          image: 'https://via.placeholder.com/200',
+          route: 'text-hash',
+        },
+        {
+          title: 'Gif 変換',
+          image: 'https://via.placeholder.com/200',
+          route: 'video-to-gif',
+        },
+        {
+          title: 'json整形',
+          image: 'https://via.placeholder.com/200',
+          route: 'json-formatter',
+        },
+        {
+          title: 'テキストケース変換',
+          image: 'https://via.placeholder.com/200',
+          route: 'text-case-converter',
+        },
+       {
+          title: '祝日タイマー',
+          image: 'https://via.placeholder.com/200',
+          route: 'countdown-to-holidays',
+        },
+      ],
+    };
+  },
+  methods: {
+    goTo(route) {
+      this.$router.push({ name: route });
+    },
+  },
+};
+</script>

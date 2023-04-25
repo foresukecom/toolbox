@@ -1,10 +1,15 @@
-// Styles
-import '@mdi/font/css/materialdesignicons.css'
-import 'vuetify/styles'
+import '@mdi/font/css/materialdesignicons.css'; // 追加
+import { createVuetify } from 'vuetify';
+import { mdi } from '@mdi/js'; // この行を変更
 
-// Vuetify
-import { createVuetify } from 'vuetify'
-
-export default createVuetify(
-  // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
-)
+export default createVuetify({
+  icons: {
+    defaultSet: 'mdi',
+    aliases: {
+      mdi: 'mdi',
+    },
+    sets: {
+      mdi, // この行を変更
+    },
+  },
+});
