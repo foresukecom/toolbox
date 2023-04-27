@@ -38,6 +38,11 @@ export default {
           route: 'json-formatter',
         },
         {
+          title: 'xml整形',
+          image: 'https://via.placeholder.com/200',
+          route: 'xml-formatter',
+        },
+        {
           title: 'テキストケース変換',
           image: 'https://via.placeholder.com/200',
           route: 'text-case-converter',

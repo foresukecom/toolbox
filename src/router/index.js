@@ -4,6 +4,7 @@ import ClientInfo from '../views/ClientInfo.vue';
 import TextHash from '../views/TextHash.vue';
 import VideoToGif from '../views/VideoToGif.vue';
 import JsonFormatter from '../views/JsonFormatter.vue';
+import XmlFormatter from '../views/XmlFormatter.vue';
 import TextCaseConverter from '../views/TextCaseConverter.vue';
 import CountdownToHolidays from '../views/CountdownToHolidays.vue';
 
@@ -32,6 +33,11 @@ const routes = [
     path: "/json-formatter",
     name: "json-formatter",
     component: JsonFormatter,
+  },
+  {
+    path: "/xml-formatter",
+    name: "xml-formatter",
+    component: XmlFormatter,
   },
   {
     path: "/text-case-converter",
