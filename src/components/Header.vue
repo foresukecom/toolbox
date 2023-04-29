@@ -27,6 +27,7 @@ export default {
         { path: '/xml-formatter', text: 'XML整形' },
         { path: '/text-case-converter', text: 'テキストケース変換' },
         { path: '/countdown-to-holidays', text: '祝日タイマー' },
+        { path: '/world-timezone', text: '世界時計' },
       ];
 
       const currentPage = pages.find(page => page.path === route.path);

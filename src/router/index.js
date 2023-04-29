@@ -7,6 +7,7 @@ import JsonFormatter from '../views/JsonFormatter.vue';
 import XmlFormatter from '../views/XmlFormatter.vue';
 import TextCaseConverter from '../views/TextCaseConverter.vue';
 import CountdownToHolidays from '../views/CountdownToHolidays.vue';
+import WorldTimezone from '../views/WorldTimezone.vue';
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     path: "/countdown-to-holidays",
     name: "countdown-to-holidays",
     component: CountdownToHolidays,
+  },
+  {
+    path: "/world-timezone",
+    name: "world-timezone",
+    component: WorldTimezone,
   },
 ];
 
