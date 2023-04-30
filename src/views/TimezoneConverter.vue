@@ -10,7 +10,7 @@
       <label for="inputTimezone">Input Timezone:</label>
       <select id="inputTimezone" v-model="selectedInputTimezone">
         <option v-for="timezone in commonTimezones" :key="timezone" :value="timezone">
-          {{ timezone }}
+          {{ timezone }} (UTC{{ formatOffset(timezone) }})
         </option>
       </select>
     </div>
@@ -18,7 +18,7 @@
       <label for="outputTimezone">Output Timezone:</label>
       <select id="outputTimezone" v-model="selectedOutputTimezone">
         <option v-for="timezone in commonTimezones" :key="timezone" :value="timezone">
-          {{ timezone }}
+          {{ timezone }} (UTC{{ formatOffset(timezone) }})
         </option>
       </select>
     </div>
@@ -77,6 +77,12 @@ export default {
     setCurrentTime() {
       const now = moment().tz(this.selectedInputTimezone);
       this.inputDateTime = now.format("YYYY-MM-DDTHH:mm");
+    },
+    formatOffset(timezone) {
+      const offset = moment.tz(timezone).utcOffset();
+      const hours = offset / 60;
+      const sign = hours >= 0 ? "+" : "-";
+      return `${sign}${Math.abs(hours)}:00`;
     },
   },
   mounted() {
