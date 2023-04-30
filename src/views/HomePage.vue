@@ -62,6 +62,11 @@ export default {
           image: 'https://via.placeholder.com/200',
           route: 'timezone-converter',
         },
+        {
+          title: '和暦',
+          image: 'https://via.placeholder.com/200',
+          route: 'japanese-era',
+        },
       ],
     };
   },

@@ -9,6 +9,7 @@ import TextCaseConverter from '../views/TextCaseConverter.vue';
 import CountdownToHolidays from '../views/CountdownToHolidays.vue';
 import WorldTimezone from '../views/WorldTimezone.vue';
 import TimezoneConverter from '../views/TimezoneConverter.vue';
+import JapaneseEra from '../views/JapaneseEra.vue';
 
 const routes = [
   {
@@ -60,6 +61,11 @@ const routes = [
     path: "/timezone-converter",
     name: "timezone-converter",
     component: TimezoneConverter,
+  },
+  {
+    path: "/japanese-era",
+    name: "japanese-era",
+    component: JapaneseEra,
   },
 ];
 
