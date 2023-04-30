@@ -8,6 +8,7 @@ import XmlFormatter from '../views/XmlFormatter.vue';
 import TextCaseConverter from '../views/TextCaseConverter.vue';
 import CountdownToHolidays from '../views/CountdownToHolidays.vue';
 import WorldTimezone from '../views/WorldTimezone.vue';
+import TimezoneConverter from '../views/TimezoneConverter.vue';
 
 const routes = [
   {
@@ -18,7 +19,7 @@ const routes = [
   {
     path: '/client-info',
     name: 'client-info',
-    component: ClientInfo, // ここで新しいコンポーネントを指定
+    component: ClientInfo,
   },
   {
     path: '/text-hash',
@@ -54,6 +55,11 @@ const routes = [
     path: "/world-timezone",
     name: "world-timezone",
     component: WorldTimezone,
+  },
+  {
+    path: "/timezone-converter",
+    name: "timezone-converter",
+    component: TimezoneConverter,
   },
 ];
 

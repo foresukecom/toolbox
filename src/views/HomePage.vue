@@ -57,6 +57,11 @@ export default {
           image: 'https://via.placeholder.com/200',
           route: 'world-timezone',
         },
+        {
+          title: 'タイムゾーン変換',
+          image: 'https://via.placeholder.com/200',
+          route: 'timezone-converter',
+        },
       ],
     };
   },
