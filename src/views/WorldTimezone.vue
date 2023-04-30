@@ -7,6 +7,7 @@
           <th>Time Zone</th>
           <th>Current Time</th>
           <th>Offset</th>
+          <th>サマータイム</th>
         </tr>
       </thead>
       <tbody>
@@ -14,6 +15,9 @@
           <td>{{ zone.name }}</td>
           <td>{{ zone.time }}</td>
           <td>{{ zone.offset }}</td>
+          <td>
+            <span v-if="zone.isDST" class="mdi mdi-weather-sunny" style="color: #FFA500;"></span>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -54,10 +58,12 @@ export default {
         const time = currentTime.clone().tz(zone);
         const offset = time.utcOffset();
         const formattedOffset = (offset >= 0 ? "+" : "-") + moment.duration(Math.abs(offset), "minutes").format("hh:mm");
+        const isDST = time.isDST();
         return {
           name: zone,
           time: time.format("YYYY-MM-DD HH:mm:ss"),
           offset: `UTC${formattedOffset}`,
+          isDST,
         };
       });
     },
@@ -90,4 +96,9 @@ th {
 .highlight {
   background-color: #cce5ff;
 }
+
+.sun-icon {
+  color: #FFA500;
+}
+
 </style>
