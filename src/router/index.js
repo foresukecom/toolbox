@@ -10,6 +10,7 @@ import CountdownToHolidays from '../views/CountdownToHolidays.vue';
 import WorldTimezone from '../views/WorldTimezone.vue';
 import TimezoneConverter from '../views/TimezoneConverter.vue';
 import JapaneseEra from '../views/JapaneseEra.vue';
+import TimeIssues from '../views/TimeIssues.vue';
 
 const routes = [
   {
@@ -66,6 +67,11 @@ const routes = [
     path: "/japanese-era",
     name: "japanese-era",
     component: JapaneseEra,
+  },
+  {
+    path: "/time-issues",
+    name: "time-issues",
+    component: TimeIssues,
   },
 ];
 

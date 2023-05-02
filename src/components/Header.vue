@@ -29,7 +29,8 @@ export default {
         { path: '/countdown-to-holidays', text: '祝日タイマー' },
         { path: '/world-timezone', text: '世界時計' },
         { path: '/timezone-converter', text: 'タイムゾーン変換'},
-        { path: '/japanese-era', text: '和暦'}
+        { path: '/japanese-era', text: '和暦'},
+        { path: '/time-issues', text: 'コンピュータ時刻問題'}
       ];
 
       const currentPage = pages.find(page => page.path === route.path);

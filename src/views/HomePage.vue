@@ -67,6 +67,11 @@ export default {
           image: 'https://via.placeholder.com/200',
           route: 'japanese-era',
         },
+        {
+          title: 'コンピュータ時刻問題',
+          image: 'https://via.placeholder.com/200',
+          route: 'time-issues',
+        },
       ],
     };
   },
