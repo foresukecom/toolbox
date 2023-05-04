@@ -1,8 +1,14 @@
 <template>
-  <v-app-bar app>
-    <v-spacer></v-spacer>
-    <v-breadcrumbs :items="breadcrumbItems"></v-breadcrumbs>
-  </v-app-bar>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <ol class="breadcrumb mb-0">
+        <li v-for="(item, index) in breadcrumbItems" :key="index" class="breadcrumb-item" :class="{active: index === breadcrumbItems.length - 1}">
+          <router-link v-if="index !== breadcrumbItems.length - 1" :to="item.href">{{ item.text }}</router-link>
+          <span v-else>{{ item.text }}</span>
+        </li>
+      </ol>
+    </div>
+  </nav>
 </template>
 
 <script>
