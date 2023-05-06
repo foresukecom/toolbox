@@ -3,9 +3,15 @@ const axios = require("axios");
 exports.handler = async function(event, context) {
   const { ip } = event.queryStringParameters;
 
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+
   if (!ip) {
     return {
       statusCode: 400,
+      headers,
       body: JSON.stringify({ error: "IP address is required." }),
     };
   }
@@ -18,6 +24,7 @@ exports.handler = async function(event, context) {
 
     return {
       statusCode: 200,
+      headers,
       body: JSON.stringify({
         ip: data.ip,
         city: data.city,
@@ -33,6 +40,7 @@ exports.handler = async function(event, context) {
 
     return {
       statusCode: 500,
+      headers,
       body: JSON.stringify({ error: "Failed to fetch IP information." }),
     };
   }
