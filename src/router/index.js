@@ -4,8 +4,13 @@ import ClientInfo from '../views/ClientInfo.vue';
 import TextHash from '../views/TextHash.vue';
 import VideoToGif from '../views/VideoToGif.vue';
 import JsonFormatter from '../views/JsonFormatter.vue';
+import XmlFormatter from '../views/XmlFormatter.vue';
 import TextCaseConverter from '../views/TextCaseConverter.vue';
 import CountdownToHolidays from '../views/CountdownToHolidays.vue';
+import WorldTimezone from '../views/WorldTimezone.vue';
+import TimezoneConverter from '../views/TimezoneConverter.vue';
+import JapaneseEra from '../views/JapaneseEra.vue';
+import TimeIssues from '../views/TimeIssues.vue';
 
 const routes = [
   {
@@ -16,7 +21,7 @@ const routes = [
   {
     path: '/client-info',
     name: 'client-info',
-    component: ClientInfo, // ここで新しいコンポーネントを指定
+    component: ClientInfo,
   },
   {
     path: '/text-hash',
@@ -34,6 +39,11 @@ const routes = [
     component: JsonFormatter,
   },
   {
+    path: "/xml-formatter",
+    name: "xml-formatter",
+    component: XmlFormatter,
+  },
+  {
     path: "/text-case-converter",
     name: "text-case-converter",
     component: TextCaseConverter,
@@ -42,6 +52,26 @@ const routes = [
     path: "/countdown-to-holidays",
     name: "countdown-to-holidays",
     component: CountdownToHolidays,
+  },
+  {
+    path: "/world-timezone",
+    name: "world-timezone",
+    component: WorldTimezone,
+  },
+  {
+    path: "/timezone-converter",
+    name: "timezone-converter",
+    component: TimezoneConverter,
+  },
+  {
+    path: "/japanese-era",
+    name: "japanese-era",
+    component: JapaneseEra,
+  },
+  {
+    path: "/time-issues",
+    name: "time-issues",
+    component: TimeIssues,
   },
 ];
 
