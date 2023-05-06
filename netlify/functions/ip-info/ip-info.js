@@ -32,6 +32,7 @@ exports.handler = async function(event, context) {
         country: data.country,
         postal: data.postal,
         location: data.loc,
+        timezone: data.timezone,
         org: data.org,
       }),
     };
