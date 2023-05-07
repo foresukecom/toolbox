@@ -1,44 +1,63 @@
 <template>
   <div>
-    <h1>Client Info</h1>
-    <p>Your IP address is: {{ ipAddress }}</p>
-    <h2>User Agent Information</h2>
-    <p>User Agent: {{ userAgent }}</p>
-    <p>Language: {{ language }}</p>
-    <h2>Screen Information</h2>
-    <p>Screen Resolution: {{ screenWidth }} x {{ screenHeight }}</p>
-    <p>Viewport Size: {{ viewportWidth }} x {{ viewportHeight }}</p>
+    <h2>ネットワーク情報</h2>
+    <v-container>
+      <v-row>
+        <InfoCard :title="'IPアドレス'" :text="ipAddress" />
+        <InfoCard :title="'ISP'" :text="isp" />
+      </v-row>
+    </v-container>
 
-    <p>Browser: {{ browser }}</p>
-    <p>Operating System: {{ os }}</p>
+    <h2>ブラウザ情報</h2>
+    <v-container>
+      <v-row>
+        <InfoCard :title="'OS'" :text="os" />
+        <InfoCard :title="'ブラウザ'" :text="browser" />
+        <InfoCard :title="'ユーザーエージェント'" :text="userAgent" />
+        <InfoCard :title="'言語設定'" :text="language" />
+      </v-row>
+    </v-container>
 
-    <h2>IP Information</h2>
-    <p v-if="city">
-      国: {{ country }}<br>
-      都道府県: {{ region }}<br>
-      市町村: {{ city }}<br>
-      ISP: {{ provider }}<br>
-      Timezone: {{ timezone }}
-    </p>
-    <p v-else>
-      IP information is not available.
-    </p>
+    <h2>画面情報</h2>
+    <v-container>
+      <v-row>
+        <InfoCard :title="'画面サイズ'" :text="displaySize" />
+        <InfoCard :title="'ウインドウサイズ(内側)'" :text="innerWindowSize" />
+        <InfoCard :title="'ウインドウサイズ(外側)'" :text="outerWindowSize" />
+      </v-row>
+    </v-container>
 
+    <h2>地域情報</h2>
+    <v-container>
+      <v-row>
+        <InfoCard :title="'国'" :text="country" />
+        <InfoCard :title="'都道府県'" :text="region" />
+        <InfoCard :title="'市町村'" :text="city" />
+        <InfoCard :title="'タイムゾーン'" :text="timezone" />
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
+import InfoCard from '@/components/InfoCard.vue';
 export default {
+  components: {
+    InfoCard,
+  },
   data() {
     return {
       ipAddress: '',
       userAgent: navigator.userAgent,
       language: '',
+      displaySize: '',
+      outerWindowSize: '',
+      innerWindowSize: '',
       screenWidth: 0,
       screenHeight: 0,
       viewportWidth: 0,
       viewportHeight: 0,
-      provider: '',
+      isp: '',
       region: '',
       city: '',
       country: '',
@@ -97,10 +116,9 @@ export default {
   async mounted() {
     this.userAgent = navigator.userAgent;
     this.language = navigator.language;
-    this.screenWidth = window.screen.width;
-    this.screenHeight = window.screen.height;
-    this.viewportWidth = window.innerWidth;
-    this.viewportHeight = window.innerHeight;
+    this.displaySize = `${window.screen.width} x ${window.screen.height}`;
+    this.outerWindowSize = `${window.outerWidth} x ${window.outerHeight}`;
+    this.innerWindowSize = `${window.innerWidth} x ${window.innerHeight}`;
     const { browser, os } = this.parseUserAgent();
     this.browser = browser;
     this.os = os;
@@ -117,7 +135,7 @@ export default {
       this.region = ipDetails.region;
       this.city = ipDetails.city;
       this.timezone = ipDetails.timezone;
-      this.provider = ipDetails.org;
+      this.isp = ipDetails.org;
     }
   },
 };
