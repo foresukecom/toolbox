@@ -13,11 +13,16 @@
     <p>Operating System: {{ os }}</p>
 
     <h2>IP Information</h2>
-    <p>Provider: {{ provider }}</p>
-    <p>Region: {{ region }}</p>
-    <p>City: {{ city }}</p>
-    <p>Country: {{ country }}</p>
-    <p>Zip: {{ zip }}</p>
+    <p v-if="city">
+      国: {{ country }}<br>
+      都道府県: {{ region }}<br>
+      市町村: {{ city }}<br>
+      ISP: {{ provider }}<br>
+      Timezone: {{ timezone }}
+    </p>
+    <p v-else>
+      IP information is not available.
+    </p>
 
   </div>
 </template>
@@ -37,7 +42,7 @@ export default {
       region: '',
       city: '',
       country: '',
-      zip: '',
+      timezone: '',
     };
   },
   methods: {
@@ -76,14 +81,13 @@ export default {
       return { browser, os };
     },
     async fetchIPDetails(ipAddress) {
+      const baseURL = process.env.VUE_APP_NETLIFY_FUNCTION_DOMAIN;
+      const apiEndpoint = "/.netlify/functions/ip-info";
+
       try {
-        const response = await fetch(`http://ip-api.com/json/${ipAddress}`);
-        const data = await response.json();
-        if (data.status === "success") {
-          return data;
-        } else {
-          throw new Error("Failed to fetch IP details");
-        }
+        const response = await fetch(`${baseURL}${apiEndpoint}?ip=${ipAddress}`);
+        const ipInfo = await response.json();
+        return ipInfo;
       } catch (error) {
         console.error("Error fetching IP details:", error);
         return null;
@@ -109,11 +113,11 @@ export default {
     }
     const ipDetails = await this.fetchIPDetails(this.ipAddress);
     if (ipDetails) {
-      this.provider = ipDetails.isp;
-      this.region = ipDetails.regionName;
-      this.city = ipDetails.city;
       this.country = ipDetails.country;
-      this.zip = ipDetails.zip;
+      this.region = ipDetails.region;
+      this.city = ipDetails.city;
+      this.timezone = ipDetails.timezone;
+      this.provider = ipDetails.org;
     }
   },
 };
