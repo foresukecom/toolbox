@@ -20,7 +20,8 @@ export default {
   data() {
     return {
       now: new Date(),
-      timerId: null
+      timerId: null,
+      currentTimeOfSecond: 0
     };
   },
   created() {
@@ -30,6 +31,7 @@ export default {
   },
   beforeUnmount() {
     clearInterval(this.timerId);
+    cancelAnimationFrame(this.updateSecondProgress);
   },
   computed: {
     currentTimeOfYear() {
@@ -69,12 +71,20 @@ export default {
     totalTimeOfMinute() {
       return 60 * 1000; // 1分は60秒
     },
-    currentTimeOfSecond() {
-      return this.now.getMilliseconds();
-    },
     totalTimeOfSecond() {
       return 1000; // 1秒は1000ミリ秒
     },
+  },
+  mounted() {
+    this.updateSecondProgress();
+  },
+
+  methods: {
+    updateSecondProgress() {
+      const now = new Date();
+      this.currentTimeOfSecond = now.getMilliseconds();
+      requestAnimationFrame(this.updateSecondProgress);
+    }
   }
 };
 </script>
