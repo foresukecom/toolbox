@@ -1,5 +1,7 @@
 <template>
   <div>
+    <div class="current-time">{{ formattedNow }}</div>
+
     <TimeProgress unit="Second" :currentTime="currentTimeOfSecond" :totalTime="totalTimeOfSecond" />
     <TimeProgress unit="Minute" :currentTime="currentTimeOfMinute" :totalTime="totalTimeOfMinute" />
     <TimeProgress unit="Hour" :currentTime="currentTimeOfHour" :totalTime="totalTimeOfHour" />
@@ -74,11 +76,13 @@ export default {
     totalTimeOfSecond() {
       return 1000; // 1秒は1000ミリ秒
     },
+    formattedNow() {
+      return this.now.toLocaleString();
+    }
   },
   mounted() {
     this.updateSecondProgress();
   },
-
   methods: {
     updateSecondProgress() {
       const now = new Date();
@@ -88,3 +92,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.current-time {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-align: center;
+}
+</style>
