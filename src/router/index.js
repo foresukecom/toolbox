@@ -11,6 +11,7 @@ import WorldTimezone from '../views/WorldTimezone.vue';
 import TimezoneConverter from '../views/TimezoneConverter.vue';
 import JapaneseEra from '../views/JapaneseEra.vue';
 import TimeIssues from '../views/TimeIssues.vue';
+import TimeProgress from '../views/AllTimeProgress.vue';
 
 const routes = [
   {
@@ -73,6 +74,11 @@ const routes = [
     name: "time-issues",
     component: TimeIssues,
   },
+  {
+    path: "/time-progress",
+    name: "time-progress",
+    component: TimeProgress,
+  }
 ];
 
 const router = createRouter({

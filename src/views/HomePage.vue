@@ -71,7 +71,6 @@ export default {
         {
           name: '日付ツール',
           tiles: [
-
             {
               title: '祝日タイマー',
               image: 'https://via.placeholder.com/200',
@@ -96,6 +95,11 @@ export default {
               title: 'コンピュータ時刻問題',
               image: 'https://via.placeholder.com/200',
               route: 'time-issues',
+            },
+            {
+              title: '時間進捗バー',
+              image: 'https://via.placeholder.com/200',
+              route: 'time-progress',
             },
           ],
         },
