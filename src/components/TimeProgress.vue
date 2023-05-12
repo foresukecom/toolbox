@@ -1,13 +1,17 @@
 <template>
   <div>
-    <h2>{{ unit }}</h2>
-    <div class="progress">
-      <div class="progress-bar" :style="{width: progressPercentage + '%'}">
-        {{ progressPercentage.toFixed(2) }}%
+    <div class="progress-container">
+      <div class="progress-value">{{ currentVal }}{{ unit }}</div>
+      <div class="progress">
+        <div class="progress-bar" :style="{ width: progressPercentage + '%' }">
+          {{ progressPercentage.toFixed(2) }}%
+        </div>
       </div>
+      <div class="progress-value">{{ nextVal }}{{ unit }}</div>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -24,24 +28,47 @@ export default {
     totalTime: {
       type: Number,
       required: true
-    }
+    },
+    currentVal: {
+      type: Number,
+      required: true
+    },
+    nextVal: {
+      type: Number,
+      required: true
+    },
   },
   computed: {
     progressPercentage() {
       return (this.currentTime / this.totalTime) * 100;
-    }
+    },
   }
 }
 </script>
 
 <style scoped>
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.progress-value {
+  width: 100px;
+  text-align: center;
+  font-size: large;
+}
+
 .progress {
-  width: 100%;
+  flex-grow: 1;
+  margin: 0 10px;
   background-color: #f5f5f5;
 }
 
 .progress-bar {
-  height: 20px;
+  height: 45px;
   background-color: #007bff;
 }
 </style>

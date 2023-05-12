@@ -1,13 +1,18 @@
 <template>
   <div>
     <div class="current-time">{{ formattedNow }}</div>
-
-    <TimeProgress unit="Second" :currentTime="currentTimeOfSecond" :totalTime="totalTimeOfSecond" />
-    <TimeProgress unit="Minute" :currentTime="currentTimeOfMinute" :totalTime="totalTimeOfMinute" />
-    <TimeProgress unit="Hour" :currentTime="currentTimeOfHour" :totalTime="totalTimeOfHour" />
-    <TimeProgress unit="Day" :currentTime="currentTimeOfDay" :totalTime="totalTimeOfDay" />
-    <TimeProgress unit="Month" :currentTime="currentTimeOfMonth" :totalTime="totalTimeOfMonth" />
-    <TimeProgress unit="Year" :currentTime="currentTimeOfYear" :totalTime="totalTimeOfYear" />
+    <TimeProgress unit="年" :currentTime="currentTimeOfYear" :totalTime="totalTimeOfYear" :currentVal="currentYear"
+      :nextVal="nextYear" />
+      <TimeProgress unit="月" :currentTime="currentTimeOfMonth" :totalTime="totalTimeOfMonth" :currentVal="currentMonth"
+      :nextVal="nextMonth" />
+      <TimeProgress unit="日" :currentTime="currentTimeOfDay" :totalTime="totalTimeOfDay" :currentVal="currentDay"
+      :nextVal="nextDay" />
+      <TimeProgress unit="時" :currentTime="currentTimeOfHour" :totalTime="totalTimeOfHour" :currentVal="currentHour"
+      :nextVal="nextHour" />
+      <TimeProgress unit="分" :currentTime="currentTimeOfMinute" :totalTime="totalTimeOfMinute"
+      :currentVal="currentMinute" :nextVal="nextMinute" />
+    <TimeProgress unit="秒" :currentTime="currentTimeOfSecond" :totalTime="totalTimeOfSecond"
+      :currentVal="currentSecond" :nextVal="nextSecond" />
   </div>
 </template>
 
@@ -78,7 +83,45 @@ export default {
     },
     formattedNow() {
       return this.now.toLocaleString();
+    },
+
+    currentYear() {
+      return this.now.getFullYear();
+    },
+    nextYear() {
+      return this.now.getFullYear() + 1;
+    },
+    currentMonth() {
+      return this.now.getMonth() + 1;
+    },
+    nextMonth() {
+      return this.now.getMonth() === 11 ? 1 : this.now.getMonth() + 2;
+    },
+    currentDay() {
+      return this.now.getDate();
+    },
+    nextDay() {
+      return this.now.getDate() === new Date(this.now.getFullYear(), this.now.getMonth() + 1, 0).getDate() ? 1 : this.now.getDate() + 1;
+    },
+    currentHour() {
+      return this.now.getHours();
+    },
+    nextHour() {
+      return this.now.getHours() === 23 ? 0 : this.now.getHours() + 1;
+    },
+    currentMinute() {
+      return this.now.getMinutes();
+    },
+    nextMinute() {
+      return this.now.getMinutes() === 59 ? 0 : this.now.getMinutes() + 1;
+    },
+    currentSecond() {
+      return this.now.getSeconds();
+    },
+    nextSecond() {
+      return this.now.getSeconds() === 59 ? 0 : this.now.getSeconds() + 1;
     }
+
   },
   mounted() {
     this.updateSecondProgress();
@@ -99,5 +142,4 @@ export default {
   font-weight: bold;
   margin-bottom: 1em;
   text-align: center;
-}
-</style>
+}</style>
