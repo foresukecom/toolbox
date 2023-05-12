@@ -3,9 +3,7 @@
     <div class="progress-container">
       <div class="progress-value">{{ currentVal }}{{ unit }}</div>
       <div class="progress">
-        <div class="progress-bar" :style="{ width: progressPercentage + '%' }">
-          {{ progressPercentage.toFixed(2) }}%
-        </div>
+        <div class="progress-bar" :style="{ width: progressPercentage + '%' }"  />
       </div>
       <div class="progress-value">{{ nextVal }}{{ unit }}</div>
     </div>
@@ -50,15 +48,15 @@ export default {
 .progress-container {
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 75%;
   height: 50px;
   margin: 0 auto;
 }
 
 .progress-value {
   width: 100px;
-  text-align: center;
-  font-size: large;
+  text-align: right; 
+  font-size: 25px; 
 }
 
 .progress {
@@ -68,7 +66,7 @@ export default {
 }
 
 .progress-bar {
-  height: 45px;
+  height: 60px;
   background-color: #007bff;
 }
 </style>

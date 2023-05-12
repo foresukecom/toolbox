@@ -84,7 +84,6 @@ export default {
     formattedNow() {
       return this.now.toLocaleString();
     },
-
     currentYear() {
       return this.now.getFullYear();
     },
@@ -121,7 +120,6 @@ export default {
     nextSecond() {
       return this.now.getSeconds() === 59 ? 0 : this.now.getSeconds() + 1;
     }
-
   },
   mounted() {
     this.updateSecondProgress();
@@ -138,7 +136,7 @@ export default {
 
 <style scoped>
 .current-time {
-  font-size: 1.2em;
+  font-size: 40px;
   font-weight: bold;
   margin-bottom: 1em;
   text-align: center;
