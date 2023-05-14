@@ -12,6 +12,7 @@ import TimezoneConverter from '../views/TimezoneConverter.vue';
 import JapaneseEra from '../views/JapaneseEra.vue';
 import TimeIssues from '../views/TimeIssues.vue';
 import TimeProgress from '../views/AllTimeProgress.vue';
+import EscapeSequenceInterpreter from '../views/EscapeSequenceInterpreter.vue';
 
 const routes = [
   {
@@ -78,6 +79,11 @@ const routes = [
     path: "/time-progress",
     name: "time-progress",
     component: TimeProgress,
+  },
+  {
+    path: "/escape-sequence-interpreter",
+    name: "escape-sequence-interpreter",
+    component: EscapeSequenceInterpreter,
   }
 ];
 

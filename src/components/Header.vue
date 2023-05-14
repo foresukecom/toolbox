@@ -38,7 +38,8 @@ export default {
         { path: '/timezone-converter', text: 'タイムゾーン変換' },
         { path: '/japanese-era', text: '和暦' },
         { path: '/time-issues', text: 'コンピュータ時刻問題' },
-        { path: '/time-progress', text: '時間進捗バー' }
+        { path: '/time-progress', text: '時間進捗バー' },
+        { path: '/escape-sequence-interpreter', text: '制御文字展開' }
       ];
 
       const currentPage = pages.find(page => page.path === route.path);

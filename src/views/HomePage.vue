@@ -51,6 +51,11 @@ export default {
               route: 'xml-formatter',
             },
             {
+              title: '制御文字展開',
+              image: 'https://via.placeholder.com/200',
+              route: 'escape-sequence-interpreter',
+            },
+            {
               title: 'テキストケース変換',
               image: 'https://via.placeholder.com/200',
               route: 'text-case-converter',
