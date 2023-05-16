@@ -60,6 +60,11 @@ export default {
               image: 'https://via.placeholder.com/200',
               route: 'text-case-converter',
             },
+            {
+              title: '正規表現テスター',
+              image: 'https://via.placeholder.com/200',
+              route: 'regex-tester',
+            },
           ],
         },
         {

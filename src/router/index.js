@@ -13,6 +13,7 @@ import JapaneseEra from '../views/JapaneseEra.vue';
 import TimeIssues from '../views/TimeIssues.vue';
 import TimeProgress from '../views/AllTimeProgress.vue';
 import EscapeSequenceInterpreter from '../views/EscapeSequenceInterpreter.vue';
+import RegexTester from '../views/RegexTester.vue';
 
 const routes = [
   {
@@ -84,6 +85,11 @@ const routes = [
     path: "/escape-sequence-interpreter",
     name: "escape-sequence-interpreter",
     component: EscapeSequenceInterpreter,
+  },
+  {
+    path: "/regex-tester",
+    name: "regex-tester",
+    component: RegexTester,
   }
 ];
 
