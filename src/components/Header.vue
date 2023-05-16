@@ -39,7 +39,8 @@ export default {
         { path: '/japanese-era', text: '和暦' },
         { path: '/time-issues', text: 'コンピュータ時刻問題' },
         { path: '/time-progress', text: '時間進捗バー' },
-        { path: '/escape-sequence-interpreter', text: '制御文字展開' }
+        { path: '/escape-sequence-interpreter', text: '制御文字展開' },
+        { path: '/regex-tester', text: '正規表現テスター' }
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
