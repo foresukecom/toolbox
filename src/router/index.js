@@ -14,6 +14,7 @@ import TimeIssues from '../views/TimeIssues.vue';
 import TimeProgress from '../views/AllTimeProgress.vue';
 import EscapeSequenceInterpreter from '../views/EscapeSequenceInterpreter.vue';
 import RegexTester from '../views/RegexTester.vue';
+import TemplateBasedRandomGenerator from '../views/TemplateBasedRandomGenerator.vue'
 
 const routes = [
   {
@@ -90,7 +91,12 @@ const routes = [
     path: "/regex-tester",
     name: "regex-tester",
     component: RegexTester,
-  }
+  },
+  {
+    path: "/template-base-random-generator",
+    name: "template-base-random-generator",
+    component: TemplateBasedRandomGenerator,
+  },
 ];
 
 const router = createRouter({
