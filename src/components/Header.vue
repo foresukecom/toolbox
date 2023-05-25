@@ -40,7 +40,9 @@ export default {
         { path: '/time-issues', text: 'コンピュータ時刻問題' },
         { path: '/time-progress', text: '時間進捗バー' },
         { path: '/escape-sequence-interpreter', text: '制御文字展開' },
-        { path: '/regex-tester', text: '正規表現テスター' }
+        { path: '/regex-tester', text: '正規表現テスター' },
+        { path: '/template-base-random-generator', text: 'ランダム文字列生成' },
+        { path: '/uuid-generator', text: 'UUID生成' }
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
