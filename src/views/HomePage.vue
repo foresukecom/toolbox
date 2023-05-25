@@ -70,6 +70,11 @@ export default {
               image: 'https://via.placeholder.com/200',
               route: 'template-base-random-generator',
             },
+            {
+              title: 'UUID生成',
+              image: 'https://via.placeholder.com/200',
+              route: 'uuid-generator',
+            },
           ],
         },
         {

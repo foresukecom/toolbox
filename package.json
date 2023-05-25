@@ -23,6 +23,7 @@
     "moment-duration-format": "^2.3.2",
     "moment-timezone": "^0.5.43",
     "roboto-fontface": "*",
+    "uuid": "^9.0.0",
     "vue": "^3.2.13",
     "vue-leaflet": "^0.1.0",
     "vue-router": "^4.1.6",
