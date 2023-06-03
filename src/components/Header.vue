@@ -23,7 +23,7 @@ export default {
 
     const breadcrumbItems = computed(() => {
       const items = [
-        { text: 'ホーム', href: '/' },
+        { text: '🏠 ホーム', href: '/' },
       ];
 
       const pages = [
