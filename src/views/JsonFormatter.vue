@@ -9,17 +9,13 @@
       :error-messages="errorMessages"
       :success-messages="!hasError && formattedJson ? 'Valid JSON' : ''"
     ></v-textarea>
-    <pre v-if="formattedJson" class="formatted-json" v-html="highlightedJson"></pre>
-    <v-btn @click="copyToClipboard">Copy to clipboard</v-btn>
-    <v-snackbar v-model="snackbarVisible" right bottom :timeout="1000">
-      Formatted JSON copied to clipboard!
-    </v-snackbar>
+    <FormattedDisplay :formattedText="formattedJson" highlightLanguage="json" />
   </div>
 </template>
 
 <script>
-import hljs from "highlight.js";
 import "highlight.js/styles/monokai.css";
+import FormattedDisplay from "@/components/FormattedDisplay.vue";
 
 export default {
   data() {
@@ -28,16 +24,10 @@ export default {
       formattedJson: "",
       errorMessages: "",
       hasError: false,
-      snackbarVisible: false,
     };
   },
-  computed: {
-    highlightedJson() {
-      if (this.hasError) {
-        return hljs.highlightAuto(this.formattedJson, ["json"]).value;
-      }
-      return hljs.highlight("json", this.formattedJson).value;
-    },
+  components: {
+    FormattedDisplay,
   },
   methods: {
     formatJson() {
@@ -50,18 +40,6 @@ export default {
         this.formattedJson = error.message;
         this.hasError = true;
         this.errorMessages = "Invalid JSON";
-      }
-    },
-    async copyToClipboard() {
-      if (!navigator.clipboard) {
-        alert("Your browser does not support clipboard API.");
-        return;
-      }
-      try {
-        await navigator.clipboard.writeText(this.formattedJson);
-        this.snackbarVisible = true;
-      } catch (error) {
-        alert("Failed to copy formatted JSON to clipboard.");
       }
     },
   },
