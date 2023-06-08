@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 # Install necessary packages
-RUN apt-get update && apt-get install -y curl git vim zsh sudo locales
+RUN apt-get update && apt-get install -y curl git vim zsh sudo locales tree
 
 # Set locale to Japanese
 RUN locale-gen ja_JP.UTF-8
