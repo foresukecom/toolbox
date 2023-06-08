@@ -1,21 +1,25 @@
 <template>
-  <div class="hash-output">
-    <v-textarea
-      :label="label"
-      readonly
-      v-model="currentHash"
-      :append-icon="copyIcon"
-      @click:append="copyToClipboard"
-    ></v-textarea>
+  <div class="hash-output mb-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <label class="text-gray-700 text-sm font-bold mb-2 mr-2" :for="label">
+          {{ label }}
+        </label>
+      <CopyButton :textToCopy="currentHash" />
+      </div>  
+    </div>
+    <textarea
+      class="shadow appearance-none border rounded p-3 w-2/3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      :id="label" readonly v-model="currentHash"></textarea>
   </div>
-  <v-snackbar v-model="snackbarVisible" :timeout="1000" color="success">
-   コピーしました
-  </v-snackbar>
 </template>
-<!-- TODO 色、高さを変更する -->
 
 <script>
+import CopyButton from './CopyButton.vue';
 export default {
+  components: {
+    CopyButton,
+  },
   props: {
     label: {
       type: String,
@@ -28,29 +32,12 @@ export default {
   },
   data() {
     return {
-      copyIcon: 'mdi-content-copy',
       currentHash: this.hash,
-      snackbarVisible: false,
     };
   },
   watch: {
     hash(newHash) {
       this.currentHash = newHash;
-    },
-  },
-  methods: {
-    copyToClipboard() {
-      navigator.clipboard.writeText(this.currentHash).then(
-        () => {
-          // Successful copy
-          console.log('Hash copied to clipboard');
-        },
-        (error) => {
-          // Failed copy
-          console.error('Failed to copy hash:', error);
-        },
-      );
-      this.snackbarVisible = true; // スナックバーを表示する
     },
   },
 };

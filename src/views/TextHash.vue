@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <v-textarea label="Input Text" v-model="inputText" @input="updateHash"></v-textarea>
+  <div class="flex flex-col space-y-4">
+    <textarea
+      class="resize border rounded-md p-3 w-2/3"
+      v-model="inputText"
+      @input="updateHash"
+      placeholder="Input Text"
+    ></textarea>
     <hash-output label="MD5" :hash="md5Hash"></hash-output>
     <hash-output label="SHA-1" :hash="sha1Hash"></hash-output>
     <hash-output label="SHA-256" :hash="sha256Hash"></hash-output>

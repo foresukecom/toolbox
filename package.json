@@ -23,11 +23,12 @@
     "moment-duration-format": "^2.3.2",
     "moment-timezone": "^0.5.43",
     "roboto-fontface": "*",
+    "tailwindcss": "^3.3.2",
     "uuid": "^9.0.0",
     "vue": "^3.2.13",
     "vue-leaflet": "^0.1.0",
     "vue-router": "^4.1.6",
-    "vuetify": "^3.0.0-beta.0",
+    "vuetify": "^3.3.3",
     "webfontloader": "^1.0.0",
     "xml-formatter": "^3.3.2"
   },
