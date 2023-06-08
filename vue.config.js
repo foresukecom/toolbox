@@ -30,4 +30,17 @@ module.exports = defineConfig({
       'Cross-Origin-Opener-Policy': 'same-origin',
     },
   },
+
+  css: {
+    loaderOptions: {
+      postcss: {
+        postcssOptions: {
+          plugins: [
+            require('tailwindcss'),
+            require('autoprefixer'),
+          ],
+        },
+      },
+    },
+  },
 });
