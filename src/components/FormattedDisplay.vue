@@ -1,52 +1,27 @@
 <template>
   <div class="formatted-display">
-    <div class="text-area-container">
-      <pre class="formatted-text" v-html="highlightedText"></pre>
-      <v-btn
-        icon
-        small
-        class="copy-button"
-        @click="copyToClipboard"
-      >
-        <v-icon>mdi-content-copy</v-icon>
-      </v-btn>
+    <div class="text-area-container relative">
+      <pre class="formatted-text prose prose-sm max-w-none" v-html="highlightedText"></pre>
+      <CopyButton class="copy-button absolute top-2 right-2" :textToCopy="formattedText" />
     </div>
-    <v-snackbar v-model="snackbarVisible" right bottom :timeout="1000">
-      Formatted text copied to clipboard!
-    </v-snackbar>
   </div>
 </template>
 
 <script>
 import hljs from "highlight.js";
+import CopyButton from './CopyButton.vue';
 
 export default {
-  props: ["formattedText", "highlightLanguage"],
-  data() {
-    return {
-      snackbarVisible: false,
-    };
+  components: {
+    CopyButton,
   },
+  props: ["formattedText", "highlightLanguage"],
   computed: {
     highlightedText() {
       if (!this.formattedText) {
         return "";
       }
       return hljs.highlight(this.highlightLanguage, this.formattedText).value;
-    },
-  },
-  methods: {
-    async copyToClipboard() {
-      if (!navigator.clipboard) {
-        alert("Your browser does not support clipboard API.");
-        return;
-      }
-      try {
-        await navigator.clipboard.writeText(this.formattedText);
-        this.snackbarVisible = true;
-      } catch (error) {
-        alert("Failed to copy formatted text to clipboard.");
-      }
     },
   },
 };
@@ -68,11 +43,5 @@ export default {
   color: #f8f8f2;
   padding: 16px;
   border-radius: 4px;
-}
-
-.copy-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
 }
 </style>
