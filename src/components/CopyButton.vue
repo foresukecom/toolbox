@@ -2,10 +2,10 @@
   <div>
     <button :class="buttonClass" type="button" @click="copyToClipboard">
       <div v-if="!copied">
-        <i class="material-icons">content_copy</i>
+        <i class="material-icons text-sm">content_copy</i>
       </div>
       <div v-else>
-        <i class="material-icons">check</i>
+        <i class="material-icons text-sm">check</i>
       </div>
     </button>
   </div>
@@ -27,8 +27,8 @@ export default {
   computed: {
     buttonClass() {
       return this.copied
-        ? 'bg-green-500 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline'
-        : 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline';
+        ? 'bg-green-500 text-white font-bold py-0.5 px-1 rounded focus:outline-none focus:shadow-outline'
+        : 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-0.5 px-1 rounded focus:outline-none focus:shadow-outline';
     },
   },
   methods: {
