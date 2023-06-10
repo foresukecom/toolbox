@@ -21,20 +21,8 @@ export default {
   },
   methods: {
     interpretEscapeSequences() {
-      // Parse input as JSON
-      let json;
-      try {
-        json = JSON.parse(this.input);
-      } catch (e) {
-        this.error = "Invalid JSON";
-        return;
-      }
-
-      // Convert JSON back to string, without escape sequences
-      const jsonString = JSON.stringify(json, null, 2);
-
       // Replace escape sequences with their actual characters
-      this.output = jsonString
+      this.output = this.input
         .replace(/\\n/g, '\n')
         .replace(/\\t/g, '\t')
         .replace(/\\r/g, '\r')
