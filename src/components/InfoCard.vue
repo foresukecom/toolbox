@@ -4,7 +4,7 @@
       <div class="flex justify-between items-center mb-4">
         <div class="flex items-center">
           <h2 class="text-lg font-semibold mr-2">{{ title }}</h2>
-          <CopyButton :textToCopy="text" />
+          <CopyButton v-if="showCopyButton" :textToCopy="text" />
         </div>
       </div>
       <p class="text-gray-700">{{ text }}</p>
@@ -27,6 +27,10 @@ export default {
     text: {
       type: String,
       required: true,
+    },
+    showCopyButton: {
+      type: Boolean,
+      default: true,
     },
   },
 };
