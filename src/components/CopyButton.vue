@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button :class="buttonClass" type="button" @click="copyToClipboard">
+    <button v-if="textToCopy" :class="buttonClass" type="button" @click="copyToClipboard">
       <div v-if="!copied">
         <i class="material-icons text-sm">content_copy</i>
       </div>
