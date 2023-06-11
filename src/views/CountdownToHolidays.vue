@@ -1,25 +1,21 @@
 <template>
-  <div class="countdown-container">
-    <h1>祝日までのカウントダウン</h1>
-    <div class="timeline">
-      <div
-        v-for="(holiday, index) in upcomingHolidays"
-        :key="index"
-        class="timeline-item"
-      >
-        <div class="holiday-label">{{ holiday.name }}</div>
-        <div class="holiday-date">{{ holiday.date }}</div>
-        <div class="countdown-timer">{{ countdown(holiday.date) }}</div>
-      </div>
+  <div class="countdown-container mx-auto max-w-2xl">
+    <h1 class="text-center text-2xl font-bold mb-6">祝日までのカウントダウン</h1>
+    <div class="grid grid-cols-1 gap-4">
+      <InfoCard v-for="(holiday, index) in upcomingHolidays" :showCopyButton=false :key="index" :title="`${holiday.name} (${holiday.date})`"
+        :text="countdown(holiday.date)" />
     </div>
   </div>
 </template>
 
-
 <script>
 import axios from 'axios';
+import InfoCard from '../components/InfoCard.vue';
 
 export default {
+  components: {
+    InfoCard,
+  },
   data() {
     return {
       holidays: [],
@@ -81,39 +77,6 @@ export default {
 
 <style scoped>
 .countdown-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-}
-
-.timeline-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.holiday-label {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.holiday-date {
-  font-size: 16px;
-  margin-left: 10px;
-}
-
-.countdown-timer {
-  font-size: 14px;
-  margin-left: 10px;
+  padding: 1rem;
 }
 </style>

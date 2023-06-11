@@ -1,18 +1,55 @@
 <template>
-  <div>
-    <h1>Text Converter</h1>
-    <v-textarea label="Input Text" v-model="inputText" @input="convertText"></v-textarea>
-    <v-textarea label="Snake Case" readonly v-model="snakeCase"></v-textarea>
-    <v-textarea label="Kebab Case" readonly v-model="kebabCase"></v-textarea>
-    <v-textarea label="Camel Case" readonly v-model="camelCase"></v-textarea>
-    <v-textarea label="Uppercase" readonly v-model="upperCase"></v-textarea>
-    <v-textarea label="Lowercase" readonly v-model="lowerCase"></v-textarea>
-    <v-textarea label="Inverted Case" readonly v-model="invertedCase"></v-textarea>
+  <div class="container mx-auto px-4">
+    <h1 class="text-2xl mb-4">Text Converter</h1>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="col-span-2">
+        <label for="inputText" class="block text-sm font-medium text-gray-700">Input Text</label>
+        <textarea id="inputText" v-model="inputText" @input="convertText" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="snakeCase" class="block text-sm font-medium text-gray-700">Snake Case</label>
+        <textarea id="snakeCase" readonly v-model="snakeCase" class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="snakeCase" class="absolute top-2 right-2" />
+      </div>
+      <div class="col-span-2 relative">
+        <label for="kebabCase" class="block text-sm font-medium text-gray-700">Kebab Case</label>
+        <textarea id="kebabCase" readonly v-model="kebabCase" class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="kebabCase" class="absolute top-2 right-2" />
+      </div>
+      <div class="col-span-2 relative">
+        <label for="camelCase" class="block text-sm font-medium text-gray-700">Camel Case</label>
+        <textarea id="camelCase" readonly v-model="camelCase" class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="camelCase" class="absolute top-2 right-2" />
+      </div>
+      <div class="col-span-2 relative">
+        <label for="upperCase" class="block text-sm font-medium text-gray-700">Uppercase</label>
+        <textarea id="upperCase" readonly v-model="upperCase" class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="upperCase" class="absolute top-2 right-2" />
+      </div>
+      <div class="col-span-2 relative">
+        <label for="lowerCase" class="block text-sm font-medium text-gray-700">Lowercase</label>
+        <textarea id="lowerCase" readonly v-model="lowerCase" class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="lowerCase" class="absolute top-2 right-2" />
+      </div>
+      <div class="col-span-2 relative">
+        <label for="invertedCase" class="block text-sm font-medium text-gray-700">Inverted Case</label>
+        <textarea id="invertedCase" readonly v-model="invertedCase" class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="invertedCase" class="absolute top-2 right-2" />
+      </div>
+    </div>
   </div>
 </template>
 
+
+
 <script>
+import CopyButton from '@/components/CopyButton.vue';
 export default {
+  components: {
+    CopyButton,
+  },
   data() {
     return {
       inputText: '',
@@ -48,3 +85,4 @@ export default {
   }
 };
 </script>
+

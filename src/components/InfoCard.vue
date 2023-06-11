@@ -1,31 +1,23 @@
 <template>
-  <v-col cols="12" sm="6" md="4" lg="3">
-    <v-card>
-      <v-card-title class="d-flex subtitle-1">{{ title }}
-        <v-spacer></v-spacer>
-        <v-btn @click="copyToClipboard(text)">
-          <v-icon v-bind="attrs" v-on="on" small class="mr-2" @click="copyToClipboard(text)">
-            mdi-content-copy
-          </v-icon>
-        </v-btn>
-      </v-card-title>
-      <v-card-text class="headline">{{ text }}</v-card-text>
-      <v-snackbar v-model="snackbar" :timeout="1000" color="success">
-        {{ snackbarText }}
-      </v-snackbar>
-    </v-card>
-  </v-col>
+  <div class="w-full sm:w-2/3 md:w-1/3 lg:w-2/3 p-4">
+    <div class="bg-white rounded shadow-md border border-gray-200 p-6">
+      <div class="flex justify-between items-center mb-4">
+        <div class="flex items-center">
+          <h2 class="text-lg font-semibold mr-2">{{ title }}</h2>
+          <CopyButton v-if="showCopyButton" :textToCopy="text" />
+        </div>
+      </div>
+      <p class="text-gray-700">{{ text }}</p>
+    </div>
+  </div>
 </template>
 
-
 <script>
+import CopyButton from './CopyButton.vue';
+
 export default {
-  data() {
-    return {
-      snackbar: false,
-      snackbarText: '',
-      snackbarColor: 'success',
-    };
+  components: {
+    CopyButton,
   },
   props: {
     title: {
@@ -36,20 +28,13 @@ export default {
       type: String,
       required: true,
     },
-  },
-  methods: {
-    async copyToClipboard(text) {
-      try {
-        await navigator.clipboard.writeText(text);
-        this.snackbarText = 'Copied to clipboard!';
-        this.snackbarColor = 'success';
-      } catch (error) {
-        console.error('Error copying to clipboard:', error);
-        this.snackbarText = 'Failed to copy to clipboard.';
-        this.snackbarColor = 'error';
-      }
-      this.snackbar = true;
+    showCopyButton: {
+      type: Boolean,
+      default: true,
     },
   },
 };
 </script>
+
+<style scoped>
+</style>
