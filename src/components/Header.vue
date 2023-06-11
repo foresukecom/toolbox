@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-4">
+  <div class="container bg-slate-300 mx-auto px-4">
     <nav class="flex items-center py-2">
       <ol class="flex mb-0 space-x-4">
         <li v-for="(item, index) in breadcrumbItems" :key="index"
