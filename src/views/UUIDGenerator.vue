@@ -1,53 +1,31 @@
 <template>
-  <div>
-    <h1>UUID Generator</h1>
-    <v-btn @click="generateUUID">Generate UUID</v-btn>
-
-    <v-row>
-      <v-col cols="8">
-        <v-text-field :value="uuid" readonly></v-text-field>
-      </v-col>
-
-      <v-col cols="4">
-        <v-btn @click="copyToClipboard">Copy to Clipboard</v-btn>
-      </v-col>
-    </v-row>
-
-    <v-snackbar v-model="snackbar" :timeout="1000" :color="snackbarColor">
-      {{ snackbarText }}
-    </v-snackbar>
+  <div class="w-2/3 mx-auto">
+    <h1 class="text-2xl font-bold mb-4">UUID Generator</h1>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="generateUUID">Generate UUID</button>
+    <div class="flex items-center mt-4">
+      <input type="text" class="border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-lg focus:outline-none w-2/3" :value="uuid" readonly>
+      <CopyButton :textToCopy="uuid" class="ml-4" />
+    </div>
   </div>
 </template>
 
 <script>
 import { v4 as uuidv4 } from 'uuid';
+import CopyButton from '@/components/CopyButton.vue';
 
 export default {
+  components: {
+    CopyButton,
+  },
   data() {
     return {
       uuid: '',
-      snackbar: false,
-      snackbarColor: 'success',
-      snackbarText: '',
     }
   },
   methods: {
     generateUUID() {
       this.uuid = uuidv4();
     },
-    copyToClipboard() {
-      navigator.clipboard.writeText(this.uuid)
-        .then(() => {
-          this.snackbarColor = 'success';
-          this.snackbarText = 'UUID copied to clipboard!';
-          this.snackbar = true;
-        })
-        .catch(() => {
-          this.snackbarColor = 'error';
-          this.snackbarText = 'Failed to copy UUID!';
-          this.snackbar = true;
-        });
-    }
-  }
+  },
 }
 </script>
