@@ -1,14 +1,13 @@
 <template>
   <div>
     <h1>JSON Formatter</h1>
-    <v-textarea
-      label="JSON Input"
-      auto-grow
+    <textarea
+      class="resize border rounded-md p-3 w-2/3"
       v-model="inputJson"
       @input="formatJson"
-      :error-messages="errorMessages"
-      :success-messages="!hasError && formattedJson ? 'Valid JSON' : ''"
-    ></v-textarea>
+      placeholder="Input JSON"
+    ></textarea>
+
     <FormattedDisplay :formattedText="formattedJson" highlightLanguage="json" />
   </div>
 </template>

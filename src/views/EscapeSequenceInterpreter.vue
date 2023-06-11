@@ -1,7 +1,12 @@
 <template>
   <div>
     <h1>制御文字の解釈・展開</h1>
-    <v-textarea label="Input" auto-grow v-model="input" @input="interpretEscapeSequences"></v-textarea>
+    <textarea
+      class="resize border rounded-md p-3 w-2/3"
+      v-model="input"
+      @input="interpretEscapeSequences"
+      placeholder="Input Text"
+    ></textarea>
     <FormattedDisplay v-if="output" :formattedText="output" highlightLanguage="json"/>
   </div>
 </template>

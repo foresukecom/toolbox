@@ -1,12 +1,13 @@
 <template>
   <div>
     <h1>XML Formatter</h1>
-    <v-textarea
-      label="XML Input"
-      auto-grow
+    <textarea
+      class="resize border rounded-md p-3 w-2/3"
       v-model="inputXml"
       @input="formatXml"
-    ></v-textarea>
+      placeholder="Input XML"
+    ></textarea>
+
     <FormattedDisplay :formattedText="formattedXml" highlightLanguage="xml" />
   </div>
 </template>
