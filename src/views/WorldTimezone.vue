@@ -1,26 +1,29 @@
 <template>
-  <div>
-    <h1>World Clock</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Time Zone</th>
-          <th>Current Time</th>
-          <th>Offset</th>
-          <th>サマータイム</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="zone in timeZoneData" :key="zone.name" :class="{ highlight: zone.name === 'Asia/Tokyo' }">
-          <td>{{ zone.name }}</td>
-          <td>{{ zone.time }}</td>
-          <td>{{ zone.offset }}</td>
-          <td>
-            <span v-if="zone.isDST" class="mdi mdi-weather-sunny" style="color: #FFA500;"></span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="w-4/5 mx-auto my-8">
+    <h1 class="text-2xl font-bold mb-4">ワールドクロック</h1>
+    <div class="overflow-x-auto">
+      <table class="table-auto w-full">
+        <thead>
+          <tr>
+            <th class="px-4 py-2">タイムゾーン</th>
+            <th class="px-4 py-2">現在の時間</th>
+            <th class="px-4 py-2">オフセット</th>
+            <th class="px-4 py-2">サマータイム</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="zone in timeZoneData" :key="zone.name" :class="{ 'bg-blue-100': zone.name === 'Asia/Tokyo' }"
+            :id="zone.name === 'Asia/Tokyo' ? 'tokyoRow' : ''">
+            <td class="border px-4 py-2">{{ zone.name }}</td>
+            <td class="border px-4 py-2">{{ zone.time }}</td>
+            <td class="border px-4 py-2">{{ zone.offset }}</td>
+            <td class="border px-4 py-2">
+              <span v-if="zone.isDST" class="text-yellow-500">☀️</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -45,6 +48,7 @@ export default {
           !zoneName.match(/GMT[+-]\d+/)
         );
       });
+
       return filteredZones.sort((a, b) => {
         const aOffset = moment.tz(a).utcOffset();
         const bOffset = moment.tz(b).utcOffset();
@@ -67,38 +71,21 @@ export default {
         };
       });
     },
+    scrollToTokyo() {
+      const tokyoRow = document.getElementById('tokyoRow');
+      if (tokyoRow) {
+        tokyoRow.scrollIntoView();
+      }
+    },
   },
   mounted() {
     setInterval(() => {
       this.timeZoneData = this.getTimeZoneData();
     }, 1000);
+
+    this.$nextTick(() => {
+      this.scrollToTokyo();
+    });
   },
 };
 </script>
-
-<style scoped>
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-.highlight {
-  background-color: #cce5ff;
-}
-
-.sun-icon {
-  color: #FFA500;
-}
-
-</style>
