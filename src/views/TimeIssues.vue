@@ -29,7 +29,6 @@ import timeIssuesData from "@/assets/time_issues.json";
 export default {
   name: "TimeIssues",
   setup() {
-    // FIXME データを修正
     const timeIssues = ref(timeIssuesData);
 
     const updateDateTime = () => {
