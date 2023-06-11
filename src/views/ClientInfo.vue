@@ -1,41 +1,33 @@
 <template>
   <div>
-    <h2>ネットワーク情報</h2>
-    <v-container>
-      <v-row>
-        <InfoCard :title="'IPアドレス'" :text="ipAddress" />
-        <InfoCard :title="'ISP'" :text="isp" />
-      </v-row>
-    </v-container>
+    <h2 class="text-2xl font-bold mt-4 mb-2">ネットワーク情報</h2>
+    <div class="flex flex-wrap -mx-2">
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'IPアドレス'" :text="ipAddress" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'ISP'" :text="isp" />
+    </div>
 
-    <h2>ブラウザ情報</h2>
-    <v-container>
-      <v-row>
-        <InfoCard :title="'OS'" :text="os" />
-        <InfoCard :title="'ブラウザ'" :text="browser" />
-        <InfoCard :title="'ユーザーエージェント'" :text="userAgent" />
-        <InfoCard :title="'言語設定'" :text="language" />
-      </v-row>
-    </v-container>
+    <h2 class="text-2xl font-bold mt-4 mb-2">ブラウザ情報</h2>
+    <div class="flex flex-wrap -mx-2">
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'OS'" :text="os" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'ブラウザ'" :text="browser" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'ユーザーエージェント'" :text="userAgent" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'言語設定'" :text="language" />
+    </div>
 
-    <h2>画面情報</h2>
-    <v-container>
-      <v-row>
-        <InfoCard :title="'画面サイズ'" :text="displaySize" />
-        <InfoCard :title="'ウインドウサイズ(内側)'" :text="innerWindowSize" />
-        <InfoCard :title="'ウインドウサイズ(外側)'" :text="outerWindowSize" />
-      </v-row>
-    </v-container>
+    <h2 class="text-2xl font-bold mt-4 mb-2">画面情報</h2>
+    <div class="flex flex-wrap -mx-2">
+      <InfoCard class="w-full sm:w-1/2 md:w-1/3 px-2 mb-4" :title="'画面サイズ'" :text="displaySize" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/3 px-2 mb-4" :title="'ウインドウサイズ(内側)'" :text="innerWindowSize" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/3 px-2 mb-4" :title="'ウインドウサイズ(外側)'" :text="outerWindowSize" />
+    </div>
 
-    <h2>地域情報</h2>
-    <v-container>
-      <v-row>
-        <InfoCard :title="'国'" :text="country" />
-        <InfoCard :title="'都道府県'" :text="region" />
-        <InfoCard :title="'市町村'" :text="city" />
-        <InfoCard :title="'タイムゾーン'" :text="timezone" />
-      </v-row>
-    </v-container>
+    <h2 class="text-2xl font-bold mt-4 mb-2">地域情報</h2>
+    <div class="flex flex-wrap -mx-2">
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'国'" :text="country" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'都道府県'" :text="region" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'市町村'" :text="city" />
+      <InfoCard class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4" :title="'タイムゾーン'" :text="timezone" />
+    </div>
   </div>
 </template>
 
