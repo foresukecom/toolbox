@@ -1,15 +1,16 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <ol class="breadcrumb mb-0">
-        <li v-for="(item, index) in breadcrumbItems" :key="index" class="breadcrumb-item"
-          :class="{ active: index === breadcrumbItems.length - 1 }">
-          <router-link v-if="index !== breadcrumbItems.length - 1" :to="item.href">{{ item.text }}</router-link>
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center py-2">
+      <ol class="flex mb-0 space-x-4">
+        <li v-for="(item, index) in breadcrumbItems" :key="index"
+            class="text-sm"
+            :class="{ 'font-semibold': index === breadcrumbItems.length - 1 }">
+          <router-link v-if="index !== breadcrumbItems.length - 1" :to="item.href" class="text-blue-600">{{ item.text }}</router-link>
           <span v-else>{{ item.text }}</span>
         </li>
       </ol>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <script>
