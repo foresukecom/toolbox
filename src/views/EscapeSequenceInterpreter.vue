@@ -13,6 +13,7 @@
 
 <script>
 import FormattedDisplay from '@/components/FormattedDisplay.vue';
+import { interpretEscapeSequences as interpret } from '@/utilities/escapeSequenceUtils.js';
 
 export default {
   components: {
@@ -26,17 +27,7 @@ export default {
   },
   methods: {
     interpretEscapeSequences() {
-      // Replace escape sequences with their actual characters
-      this.output = this.input
-        .replace(/\\n/g, '\n')
-        .replace(/\\t/g, '\t')
-        .replace(/\\r/g, '\r')
-        .replace(/\\b/g, '\b')
-        .replace(/\\f/g, '\f')
-        .replace(/\\'/g, '\'')
-        // eslint-disable-next-line no-useless-escape
-        .replace(/\\"/g, '\"')
-        .replace(/\\\\/g, '\\');
+      this.output = interpret(this.input);
     },
   },
 };
