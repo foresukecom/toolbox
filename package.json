@@ -25,6 +25,7 @@
     "tailwindcss": "^3.3.2",
     "uuid": "^9.0.0",
     "vue": "^3.2.13",
+    "vue-gtag": "^2.0.1",
     "vue-leaflet": "^0.1.0",
     "vue-router": "^4.1.6",
     "webfontloader": "^1.0.0",
