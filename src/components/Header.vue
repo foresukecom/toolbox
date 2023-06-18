@@ -1,6 +1,6 @@
 <template>
   <div class="container bg-sky-100 mx-auto px-4">
-    <nav class="flex items-center py-2">
+    <nav class="flex items-center justify-between py-2">
       <ol class="flex mb-0 space-x-4">
         <li v-for="(item, index) in breadcrumbItems" :key="index"
             class="text-sm"
@@ -9,6 +9,7 @@
           <span v-else>{{ item.text }}</span>
         </li>
       </ol>
+      <router-link to="/about" class="text-blue-600">About</router-link>
     </nav>
   </div>
 </template>
@@ -28,6 +29,7 @@ export default {
       ];
 
       const pages = [
+        { path: '/about', text: 'About' },
         { path: '/client-info', text: 'クライアント情報' },
         { path: '/text-hash', text: 'テキストハッシュ' },
         { path: '/video-to-gif', text: 'ビデオからGIFへ' },

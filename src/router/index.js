@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../views/HomePage.vue';
+import AboutPage from '../views/About.vue';
 import ClientInfo from '../views/ClientInfo.vue'; 
 import TextHash from '../views/TextHash.vue';
 import VideoToGif from '../views/VideoToGif.vue';
@@ -18,6 +19,11 @@ import TemplateBasedRandomGenerator from '../views/TemplateBasedRandomGenerator.
 import UUIDGenerator from '../views/UUIDGenerator.vue';
 
 const routes = [
+  {
+    path: '/about',
+    name: 'AboutPage',
+    component: AboutPage,
+  },
   {
     path: '/',
     name: 'home',
