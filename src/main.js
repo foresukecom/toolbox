@@ -8,6 +8,8 @@ console.log(
   `App author: ${process.env.VUE_APP_AUTHOR}, Git commit hash: ${process.env.VUE_APP_GIT_COMMIT_HASH}`
 );
 
+console.log(`Google Analytics ID: ${process.env.VUE_APP_GA_TRACKING_ID}`);
+
 const app = createApp(App);
 
 app.use(router);
