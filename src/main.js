@@ -16,7 +16,8 @@ app.use(router);
 
 // Google Analytics の設定を追加
 app.use(VueGtag, {
-  config: { id: process.env.VUE_APP_GA_TRACKING_ID } // あなたのGoogle Analytics 4の測定ID
+  config: { id: process.env.VUE_APP_GA_TRACKING_ID },
+  debug: true
 });
 
 app.mount('#app');
