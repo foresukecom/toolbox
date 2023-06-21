@@ -17,6 +17,7 @@ import EscapeSequenceInterpreter from '../views/EscapeSequenceInterpreter.vue';
 import RegexTester from '../views/RegexTester.vue';
 import TemplateBasedRandomGenerator from '../views/TemplateBasedRandomGenerator.vue'
 import UUIDGenerator from '../views/UUIDGenerator.vue';
+import TextCounter from '../views/TextCounter.vue';
 
 const routes = [
   {
@@ -108,6 +109,11 @@ const routes = [
     path: "/uuid-generator",
     name: "uuid-generator",
     component: UUIDGenerator,
+  },
+  {
+    path: "/text-counter",
+    name: "text-counter",
+    component: TextCounter,
   },
 ];
 

@@ -45,7 +45,8 @@ export default {
         { path: '/escape-sequence-interpreter', text: '制御文字展開' },
         { path: '/regex-tester', text: '正規表現テスター' },
         { path: '/template-base-random-generator', text: 'ランダム文字列生成' },
-        { path: '/uuid-generator', text: 'UUID生成' }
+        { path: '/uuid-generator', text: 'UUID生成' },
+        { path: '/text-counter', text: '文字数カウンター' }
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
