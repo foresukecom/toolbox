@@ -75,6 +75,11 @@ export default {
               image: '/images/pc_images_009.png',
               route: 'uuid-generator',
             },
+            {
+              title: 'テキストカウンター',
+              image: '/images/pc_images_010.png',
+              route: 'text-counter',
+            },
           ],
         },
         {
@@ -83,7 +88,7 @@ export default {
 
             {
               title: 'Gif 変換',
-              image: '/images/pc_images_010.png',
+              image: '/images/pc_images_011.png',
               route: 'video-to-gif',
             },
           ],
@@ -93,32 +98,32 @@ export default {
           tiles: [
             {
               title: '祝日タイマー',
-              image: '/images/pc_images_011.png',
+              image: '/images/pc_images_012.png',
               route: 'countdown-to-holidays',
             },
             {
               title: '世界時計',
-              image: '/images/pc_images_012.png',
+              image: '/images/pc_images_013.png',
               route: 'world-timezone',
             },
             {
               title: 'タイムゾーン変換',
-              image: '/images/pc_images_013.png',
+              image: '/images/pc_images_014.png',
               route: 'timezone-converter',
             },
             {
               title: '和暦',
-              image: '/images/pc_images_014.png',
+              image: '/images/pc_images_015.png',
               route: 'japanese-era',
             },
             {
               title: 'コンピュータ時刻問題',
-              image: '/images/pc_images_015.png',
+              image: '/images/pc_images_016.png',
               route: 'time-issues',
             },
             {
               title: '時間進捗バー',
-              image: '/images/pc_images_016.png',
+              image: '/images/pc_images_017.png',
               route: 'time-progress',
             },
           ],
