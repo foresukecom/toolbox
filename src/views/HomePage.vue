@@ -126,6 +126,11 @@ export default {
               image: '/images/pc_images_017.png',
               route: 'time-progress',
             },
+            {
+              title: 'UNIXTIME変換',
+              image: '/images/pc_images_018.png',
+              route: 'unix-time-converter',
+            },
           ],
         },
       ]

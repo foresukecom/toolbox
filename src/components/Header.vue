@@ -46,7 +46,8 @@ export default {
         { path: '/regex-tester', text: '正規表現テスター' },
         { path: '/template-base-random-generator', text: 'ランダム文字列生成' },
         { path: '/uuid-generator', text: 'UUID生成' },
-        { path: '/text-counter', text: '文字数カウンター' }
+        { path: '/text-counter', text: '文字数カウンター' },
+        { path: '/unix-time-converter', text: 'UNIXTIME変換' }
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
