@@ -10,15 +10,15 @@
           <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
           <InfoCard title="小学校"
             :text="`${result.primarySchoolAdmissionYear}年4月〜${result.primarySchoolGraduationYear}年3月
-                                                                              (${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
+                                                                                          (${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
           <InfoCard title="中学校"
             :text="`${result.middleSchoolAdmissionYear}年4月〜${result.middleSchoolGraduationYear}年3月
-                                                                            (${toJapaneseEra(result.middleSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.middleSchoolGraduationYear)}年3月)`"
+                                                                                        (${toJapaneseEra(result.middleSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.middleSchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
           <InfoCard title="高校"
             :text="`${result.highSchoolAdmissionYear}年4月〜${result.highSchoolGraduationYear}年3月
-                                                                            (${toJapaneseEra(result.highSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.highSchoolGraduationYear)}年3月)`"
+                                                                                        (${toJapaneseEra(result.highSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.highSchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
           <label>大学・専門学校の制度: </label>
           <select v-model="universityDuration" @change="calculate()">
@@ -28,13 +28,12 @@
             <option value="6">6年制（大学院含む）</option>
           </select>
 
-          <InfoCard title="大学"
+          <InfoCard title="大学・専門学校"
             :text="`${result.universityAdmissionYear}年4月〜${result.universityGraduationYear}年3月
-                                                      (${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
+                                                                  (${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
             :showCopyButton="false" />
-
-
           <InfoCard title="社会人歴" :text="result.workExperience.toString() + ' 年'" :showCopyButton="false" />
+
           <InfoCard title="成人年" :text="result.adultYear.toString()" :showCopyButton="false" />
           <InfoCard title="還暦年" :text="result.kanrekiYear.toString()" :showCopyButton="false" />
           <InfoCard title="喜寿年" :text="result.kijuYear.toString()" :showCopyButton="false" />
@@ -78,6 +77,8 @@ export default {
       const universityAdmissionYear = birthYear + 19;
       const universityGraduationYear = universityAdmissionYear + this.universityDuration;
 
+
+
       const result = {
         zodiac: '星座',  // 星座を正確に計算するロジックは省略
         zodiacSign: this.getZodiacSign(birthYear),
@@ -90,7 +91,7 @@ export default {
         highSchoolGraduationYear: birthYear + 7 + 6 + 3 + 3,
         universityAdmissionYear: universityAdmissionYear,
         universityGraduationYear: universityGraduationYear,
-        workExperience: currentYear - (birthYear + 7 + 6 + 3 + 3 + 4),
+        workExperience: currentYear - universityGraduationYear,
         adultYear: birthYear + 20,
         kanrekiYear: birthYear + 60,
         kijuYear: birthYear + 77,
