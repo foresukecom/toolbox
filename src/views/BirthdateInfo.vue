@@ -32,8 +32,7 @@
             :text="`${result.universityAdmissionYear}年4月〜${result.universityGraduationYear}年3月
                                                                   (${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
             :showCopyButton="false" />
-          <InfoCard title="社会人歴" :text="result.workExperience.toString() + ' 年'" :showCopyButton="false" />
-
+          <InfoCard title="社会人歴" :text="result.workExperience > 0 ? result.workExperience.toString() + ' 年' : '-'" :showCopyButton="false" />
           <InfoCard title="成人年" :text="result.adultYear.toString()" :showCopyButton="false" />
           <InfoCard title="還暦年" :text="result.kanrekiYear.toString()" :showCopyButton="false" />
           <InfoCard title="喜寿年" :text="result.kijuYear.toString()" :showCopyButton="false" />
@@ -75,10 +74,7 @@ export default {
       const birthYear = birthdate.getFullYear();
       const currentYear = new Date().getFullYear();
       const universityAdmissionYear = birthYear + 19;
-      const universityGraduationYear = universityAdmissionYear + this.universityDuration;
-
-
-
+      const universityGraduationYear = universityAdmissionYear + parseInt(this.universityDuration);
       const result = {
         zodiac: '星座',  // 星座を正確に計算するロジックは省略
         zodiacSign: this.getZodiacSign(birthYear),
@@ -91,7 +87,7 @@ export default {
         highSchoolGraduationYear: birthYear + 7 + 6 + 3 + 3,
         universityAdmissionYear: universityAdmissionYear,
         universityGraduationYear: universityGraduationYear,
-        workExperience: currentYear - universityGraduationYear,
+        workExperience: Math.max(0, currentYear - universityGraduationYear),
         adultYear: birthYear + 20,
         kanrekiYear: birthYear + 60,
         kijuYear: birthYear + 77,
