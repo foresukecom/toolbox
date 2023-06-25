@@ -18,7 +18,7 @@ import RegexTester from '../views/RegexTester.vue';
 import TemplateBasedRandomGenerator from '../views/TemplateBasedRandomGenerator.vue'
 import UUIDGenerator from '../views/UUIDGenerator.vue';
 import TextCounter from '../views/TextCounter.vue';
-import UnixTimeXonverter from '../views/UnixTimeConverter.vue';
+import UnixTimeConverter from '../views/UnixTimeConverter.vue';
 
 const routes = [
   {
