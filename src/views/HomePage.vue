@@ -131,6 +131,11 @@ export default {
               image: '/images/pc_images_018.png',
               route: 'unix-time-converter',
             },
+            {
+              title: '生年月日情報',
+              image: '/images/pc_images_019.png',
+              route: 'birthdate-info',
+            },
           ],
         },
       ]

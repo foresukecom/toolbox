@@ -19,6 +19,8 @@ import TemplateBasedRandomGenerator from '../views/TemplateBasedRandomGenerator.
 import UUIDGenerator from '../views/UUIDGenerator.vue';
 import TextCounter from '../views/TextCounter.vue';
 import UnixTimeConverter from '../views/UnixTimeConverter.vue';
+import BirthdateInfo from '../views/BirthdateInfo.vue';
+
 
 const routes = [
   {
@@ -120,6 +122,11 @@ const routes = [
     path: "/unix-time-converter",
     name: "unix-time-converter",
     component: UnixTimeConverter,
+  },
+  {
+    path: "/birthdate-info",
+    name: "birthdate-info",
+    component: BirthdateInfo,
   },
 ];
 
