@@ -10,15 +10,15 @@
           <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
           <InfoCard title="小学校"
             :text="`${result.primarySchoolAdmissionYear}年4月〜${result.primarySchoolGraduationYear}年3月
-                                                                  (${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
+                                                                              (${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
           <InfoCard title="中学校"
             :text="`${result.middleSchoolAdmissionYear}年4月〜${result.middleSchoolGraduationYear}年3月
-                                                                (${toJapaneseEra(result.middleSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.middleSchoolGraduationYear)}年3月)`"
+                                                                            (${toJapaneseEra(result.middleSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.middleSchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
           <InfoCard title="高校"
             :text="`${result.highSchoolAdmissionYear}年4月〜${result.highSchoolGraduationYear}年3月
-                                                                (${toJapaneseEra(result.highSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.highSchoolGraduationYear)}年3月)`"
+                                                                            (${toJapaneseEra(result.highSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.highSchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
           <label>大学・専門学校の制度: </label>
           <select v-model="universityDuration" @change="calculate()">
@@ -30,7 +30,7 @@
 
           <InfoCard title="大学"
             :text="`${result.universityAdmissionYear}年4月〜${result.universityGraduationYear}年3月
-                                          (${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
+                                                      (${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
             :showCopyButton="false" />
 
 
@@ -60,12 +60,15 @@ export default {
   },
   data() {
     return {
-      birthdate: null,
+      birthdate: '1989-01-01',
       result: null,
       universityDuration: 4,
       zodiacSigns: ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'],
       daysOfWeek: ['日', '月', '火', '水', '木', '金']
     }
+  },
+  mounted() {
+    this.calculate();
   },
   methods: {
     calculate() {
