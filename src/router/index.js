@@ -119,7 +119,7 @@ const routes = [
   {
     path: "/unix-time-converter",
     name: "unix-time-converter",
-    component: UnixTimeXonverter,
+    component: UnixTimeConverter,
   },
 ];
 
