@@ -80,6 +80,8 @@ export default {
   methods: {
     calculate() {
       const birthdate = new Date(this.birthdate);
+      const birthMonth = birthdate.getMonth() + 1; // Months are zero-indexed in JavaScript.
+      const birthDay = birthdate.getDate();
       const birthYear = birthdate.getFullYear();
       const currentYear = new Date().getFullYear();
       const universityAdmissionYear = birthYear + 19;
@@ -98,7 +100,7 @@ export default {
       milestones.sort((a, b) => a.year - b.year);
 
       const result = {
-        zodiac: '星座',  // 星座を正確に計算するロジックは省略
+        zodiac: this.getZodiac(birthMonth, birthDay),
         zodiacSign: this.getZodiacSign(birthYear),
         dayOfWeek: this.daysOfWeek[birthdate.getDay()],
         primarySchoolAdmissionYear: birthYear + 7,
@@ -117,6 +119,33 @@ export default {
     getZodiacSign(year) {
       const signs = Object.keys(this.zodiacSigns);
       return this.zodiacSigns[signs[year % 12]];
+    },
+    getZodiac(month, day) {
+      if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+        return "♒️: 水瓶座";
+      } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+        return "♓️: 魚座";
+      } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+        return "♈️: 牡羊座";
+      } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+        return "♉️: 牡牛座";
+      } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+        return "♊️: 双子座";
+      } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+        return "♋️: 蟹座";
+      } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+        return "♌️: 獅子座";
+      } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+        return "♍️: 乙女座";
+      } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+        return "♎️: 天秤座";
+      } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+        return "♏️: 蠍座";
+      } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+        return "♐️: 射手座";
+      } else {
+        return "♑️: 山羊座";
+      }
     },
     toJapaneseEra: function (year) {
       if (year < 1926) {
