@@ -57,7 +57,20 @@ export default {
       birthdate: '1989-01-01',
       result: null,
       universityDuration: 4,
-      zodiacSigns: ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'],
+      zodiacSigns: {
+        '子': '子 (🐭)',
+        '丑': '丑 (🐮)',
+        '寅': '寅 (🐯)',
+        '卯': '卯 (🐰)',
+        '辰': '辰 (🐲)',
+        '巳': '巳 (🐍)',
+        '午': '午 (🐴)',
+        '未': '未 (🐑)',
+        '申': '申 (🐵)',
+        '酉': '酉 (🐔)',
+        '戌': '戌 (🐶)',
+        '亥': '亥 (🐗)'
+      },
       daysOfWeek: ['日', '月', '火', '水', '木', '金']
     }
   },
@@ -102,7 +115,8 @@ export default {
       this.result = result;
     },
     getZodiacSign(year) {
-      return this.zodiacSigns[year % 12];
+      const signs = Object.keys(this.zodiacSigns);
+      return this.zodiacSigns[signs[year % 12]];
     },
     toJapaneseEra: function (year) {
       if (year < 1926) {
