@@ -7,7 +7,7 @@
           <CopyButton v-if="showCopyButton" :textToCopy="text" />
         </div>
       </div>
-      <p class="text-gray-700">{{ text }}</p>
+      <div :style="{ 'white-space': 'pre-line' }">{{ text }}</div>
     </div>
   </div>
 </template>

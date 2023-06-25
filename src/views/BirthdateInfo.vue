@@ -8,18 +8,20 @@
           <InfoCard title="星座" :text="result.zodiac" :showCopyButton="false" />
           <InfoCard title="干支" :text="result.zodiacSign" :showCopyButton="false" />
           <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
+
+
           <InfoCard title="小学校"
-            :text="`${result.primarySchoolAdmissionYear}年4月〜${result.primarySchoolGraduationYear}年3月
-                                                                                                      (${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
+            :text="`${result.primarySchoolAdmissionYear}年4月〜${result.primarySchoolGraduationYear}年3月 \n(${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
+
           <InfoCard title="中学校"
-            :text="`${result.middleSchoolAdmissionYear}年4月〜${result.middleSchoolGraduationYear}年3月
-                                                                                                    (${toJapaneseEra(result.middleSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.middleSchoolGraduationYear)}年3月)`"
+            :text="`${result.middleSchoolAdmissionYear}年4月〜${result.middleSchoolGraduationYear}年3月 \n(${toJapaneseEra(result.middleSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.middleSchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
+
           <InfoCard title="高校"
-            :text="`${result.highSchoolAdmissionYear}年4月〜${result.highSchoolGraduationYear}年3月
-                                                                                                    (${toJapaneseEra(result.highSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.highSchoolGraduationYear)}年3月)`"
+            :text="`${result.highSchoolAdmissionYear}年4月〜${result.highSchoolGraduationYear}年3月 \n(${toJapaneseEra(result.highSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.highSchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
+
           <label>大学・専門学校の制度: </label>
           <select v-model="universityDuration" @change="calculate()">
             <option value="2">2年制</option>
@@ -27,15 +29,9 @@
             <option value="4" selected>4年制</option>
             <option value="6">6年制（大学院含む）</option>
           </select>
-
           <InfoCard title="大学・専門学校"
-            :text="`${result.universityAdmissionYear}年4月〜${result.universityGraduationYear}年3月
-                                                                              (${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
+            :text="`${result.universityAdmissionYear}年4月〜${result.universityGraduationYear}年3月 \n(${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
             :showCopyButton="false" />
-          <InfoCard title="社会人歴" :text="result.workExperience > 0 ? result.workExperience.toString() + ' 年' : '-'"
-            :showCopyButton="false" />
-
-
 
           <div v-for="(milestone, index) in result.milestones" :key="index">
             <InfoCard :title="milestone.name"
