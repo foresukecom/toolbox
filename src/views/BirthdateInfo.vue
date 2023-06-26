@@ -5,11 +5,12 @@
         <label>生年月日: </label>
         <input type="date" v-model="birthdate" @change="calculate()" />
         <div v-if="result">
+          <h2 class="text-2xl my-5">生まれた日の情報</h2>
           <InfoCard title="星座" :text="result.zodiac" :showCopyButton="false" />
           <InfoCard title="干支" :text="result.zodiacSign" :showCopyButton="false" />
           <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
 
-
+          <h2 class="text-2xl my-5">学生生活の年表</h2>
           <InfoCard title="小学校"
             :text="`${result.primarySchoolAdmissionYear}年4月〜${result.primarySchoolGraduationYear}年3月 \n(${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
@@ -33,6 +34,7 @@
             :text="`${result.universityAdmissionYear}年4月〜${result.universityGraduationYear}年3月 \n(${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
             :showCopyButton="false" />
 
+          <h2 class="text-2xl my-5">人生のマイルストーン</h2>
           <div v-for="(milestone, index) in result.milestones" :key="index">
             <InfoCard :title="milestone.name"
               :text="milestone.year.toString() + '年 (' + toJapaneseEra(milestone.year) + '年)'" :showCopyButton="false" />
