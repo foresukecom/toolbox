@@ -27,7 +27,7 @@ export default {
           tiles: [
             {
               title: 'Client Info',
-              image: '/images/pc_images_001.png',
+              image: '/images/client/client_tile_1.png',
               route: 'client-info',
             },
           ],
@@ -37,103 +37,103 @@ export default {
           tiles: [
             {
               title: 'Text Hash',
-              image: '/images/pc_images_002.png',
+              image: '/images/character/character_tile_1.png',
               route: 'text-hash',
             },
             {
               title: 'json整形',
-              image: '/images/pc_images_003.png',
+              image: '/images/character/character_tile_2.png',
               route: 'json-formatter',
             },
             {
               title: 'xml整形',
-              image: '/images/pc_images_004.png',
+              image: '/images/character/character_tile_3.png',
               route: 'xml-formatter',
             },
             {
               title: '制御文字展開',
-              image: '/images/pc_images_005.png',
+              image: '/images/character/character_tile_4.png',
               route: 'escape-sequence-interpreter',
             },
             {
               title: 'テキストケース変換',
-              image: '/images/pc_images_006.png',
+              image: '/images/character/character_tile_5.png',
               route: 'text-case-converter',
             },
             {
               title: '正規表現テスター',
-              image: '/images/pc_images_007.png',
+              image: '/images/character/character_tile_6.png',
               route: 'regex-tester',
             },
             {
               title: 'ランダム文字列生成',
-              image: '/images/pc_images_008.png',
+              image: '/images/character/character_tile_7.png',
               route: 'template-base-random-generator',
             },
             {
               title: 'UUID生成',
-              image: '/images/pc_images_009.png',
+              image: '/images/character/character_tile_8.png',
               route: 'uuid-generator',
             },
             {
               title: 'テキストカウンター',
-              image: '/images/pc_images_010.png',
+              image: '/images/character/character_tile_9.png',
               route: 'text-counter',
             },
           ],
         },
-        {
-          name: '画像操作ツール',
-          tiles: [
+        // {
+        //   name: '画像操作ツール',
+        //   tiles: [
 
-            {
-              title: 'Gif 変換',
-              image: '/images/pc_images_011.png',
-              route: 'video-to-gif',
-            },
-          ],
-        },
+        //     {
+        //       title: 'Gif 変換',
+        //       image: '/images/pc_images_011.png',
+        //       route: 'video-to-gif',
+        //     },
+        //   ],
+        // },
         {
           name: '日付ツール',
           tiles: [
             {
               title: '祝日タイマー',
-              image: '/images/pc_images_012.png',
+              image: '/images/datetime/datetime_tile_1.png',
               route: 'countdown-to-holidays',
             },
             {
               title: '世界時計',
-              image: '/images/pc_images_013.png',
+              image: '/images/datetime/datetime_tile_2.png',
               route: 'world-timezone',
             },
             {
               title: 'タイムゾーン変換',
-              image: '/images/pc_images_014.png',
+              image: '/images/datetime/datetime_tile_3.png',
               route: 'timezone-converter',
             },
             {
               title: '和暦',
-              image: '/images/pc_images_015.png',
+              image: '/images/datetime/datetime_tile_4.png',
               route: 'japanese-era',
             },
             {
               title: 'コンピュータ時刻問題',
-              image: '/images/pc_images_016.png',
+              image: '/images/datetime/datetime_tile_5.png',
               route: 'time-issues',
             },
             {
               title: '時間進捗バー',
-              image: '/images/pc_images_017.png',
+              image: '/images/datetime/datetime_tile_6.png',
               route: 'time-progress',
             },
             {
               title: 'UNIXTIME変換',
-              image: '/images/pc_images_018.png',
+              image: '/images/datetime/datetime_tile_7.png',
               route: 'unix-time-converter',
             },
             {
               title: '生年月日情報',
-              image: '/images/pc_images_019.png',
+              image: '/images/datetime/datetime_tile_8.png',
               route: 'birthdate-info',
             },
           ],
