@@ -10,7 +10,7 @@
           <InfoCard title="干支" :text="result.zodiacSign" :showCopyButton="false" />
           <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
 
-          <h2 class="text-2xl my-5">学生生活の年表</h2>
+          <h2 class="text-2xl my-5">年表</h2>
           <InfoCard title="小学校"
             :text="`${result.primarySchoolAdmissionYear}年4月〜${result.primarySchoolGraduationYear}年3月 \n(${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
             :showCopyButton="false" />
@@ -34,18 +34,28 @@
             :text="`${result.universityAdmissionYear}年4月〜${result.universityGraduationYear}年3月 \n(${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
             :showCopyButton="false" />
 
-          <h2 class="text-2xl my-5">人生のマイルストーン</h2>
-          <div v-for="(milestone, index) in result.milestones" :key="index">
-            <InfoCard :title="milestone.name"
-              :text="milestone.year.toString() + '年 (' + toJapaneseEra(milestone.year) + '年)'" :showCopyButton="false" />
-          </div>
         </div>
       </div>
     </div>
   </div>
+
+
+
+  <div style="display: flex; justify-content: center;">
+    <ol class="relative border-l border-gray-200 dark:border-gray-700">
+      <li class="mb-10 ml-4" v-for="(milestone, index) in milestones" :key="index">
+        <div
+          class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+        </div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ milestone.year }} ({{
+          toJapaneseEra(milestone.year) }}年) </time>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ milestone.name }}</h3>
+        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"> {{ milestone.name }}  </p>
+      </li>
+    </ol>
+
+  </div>
 </template>
-
-
 
 <script>
 import InfoCard from '@/components/InfoCard.vue';
@@ -53,6 +63,11 @@ import InfoCard from '@/components/InfoCard.vue';
 export default {
   components: {
     InfoCard
+  },
+  computed: {
+    milestones() {
+      return this.result?.milestones || [];
+    },
   },
   data() {
     return {
@@ -89,15 +104,26 @@ export default {
       const universityAdmissionYear = birthYear + 19;
       const universityGraduationYear = universityAdmissionYear + parseInt(this.universityDuration);
 
+      // const milestones = [
+      //   { name: "成人年", year: birthYear + 20 },
+      //   { name: "古希年", year: birthYear + 70 },
+      //   { name: "還暦年", year: birthYear + 60 },
+      //   { name: "喜寿年", year: birthYear + 77 },
+      //   { name: "米寿年", year: birthYear + 88 },
+      //   { name: "卒寿年", year: birthYear + 90 },
+      //   { name: "白寿年", year: birthYear + 99 },
+      //   { name: "傘寿年", year: birthYear + 100 }
+      // ];
+
       const milestones = [
-        { name: "成人年", year: birthYear + 20 },
-        { name: "古希年", year: birthYear + 70 },
-        { name: "還暦年", year: birthYear + 60 },
-        { name: "喜寿年", year: birthYear + 77 },
-        { name: "米寿年", year: birthYear + 88 },
-        { name: "卒寿年", year: birthYear + 90 },
-        { name: "白寿年", year: birthYear + 99 },
-        { name: "傘寿年", year: birthYear + 100 }
+        { name: "成人年", year: birthYear + 20, age: 20 },
+        { name: "古希年", year: birthYear + 70, age: 70 },
+        { name: "還暦年", year: birthYear + 60, age: 60 },
+        { name: "喜寿年", year: birthYear + 77, age: 77 },
+        { name: "米寿年", year: birthYear + 88, age: 88 },
+        { name: "卒寿年", year: birthYear + 90, age: 90 },
+        { name: "白寿年", year: birthYear + 99, age: 99 },
+        { name: "傘寿年", year: birthYear + 100, age: 100 }
       ];
       milestones.sort((a, b) => a.year - b.year);
 

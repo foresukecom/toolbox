@@ -17,6 +17,7 @@
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.7",
     "ffmpeg.js": "^4.2.9003",
+    "flowbite": "^1.7.0",
     "gif.js": "^0.2.0",
     "leaflet": "^1.9.3",
     "moment-duration-format": "^2.3.2",
