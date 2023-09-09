@@ -4,10 +4,10 @@
       <hr class="border-b border-gray-200" />
       <h2 class="text-2xl font-semibold mt-4">{{ category.name }}</h2>
       <div class="flex flex-wrap -mx-4">
-        <div v-for="(tile, index) in category.tiles" :key="'tile-' + index" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/6 p-4">
+        <div v-for="(tile, index) in category.tiles" :key="'tile-' + index" class="flex-auto p-4">
           <div @click="goTo(tile.route)"
-               class="fusen text-center py-2 text-lg cursor-pointer transform transition hover:scale-105"
-               :style="{ 'border-left-color': titleToColor(tile.title) }">
+            class="fusen text-center py-2 text-lg cursor-pointer transform transition hover:scale-105"
+            :style="{ 'border-left-color': titleToColor(tile.title) }">
             {{ tile.title }}
           </div>
         </div>
@@ -163,5 +163,11 @@ export default {
   border-left: 27px solid #2589d0;
   background-color: #f5f5f5;
   color: #333333;
-}
-</style>
+  min-width: 150px;
+  max-width: 300px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 50px;
+  height: auto;
+}</style>
