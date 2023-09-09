@@ -6,8 +6,8 @@
       <div class="flex flex-wrap -mx-4">
         <div v-for="(tile, index) in category.tiles" :key="'tile-' + index" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/6 p-4">
           <div @click="goTo(tile.route)"
-            class="fusen text-center py-2 text-lg cursor-pointer transform transition hover:scale-105"
-            :style="{ 'border-left-color': getRandomColor() }">
+               class="fusen text-center py-2 text-lg cursor-pointer transform transition hover:scale-105"
+               :style="{ 'border-left-color': titleToColor(tile.title) }">
             {{ tile.title }}
           </div>
         </div>
@@ -27,7 +27,6 @@ export default {
           tiles: [
             {
               title: 'Client Info',
-              image: '/images/client/client_tile_1.png',
               route: 'client-info',
             },
           ],
@@ -37,47 +36,38 @@ export default {
           tiles: [
             {
               title: 'Text Hash',
-              image: '/images/character/character_tile_1.png',
               route: 'text-hash',
             },
             {
               title: 'json整形',
-              image: '/images/character/character_tile_2.png',
               route: 'json-formatter',
             },
             {
               title: 'xml整形',
-              image: '/images/character/character_tile_3.png',
               route: 'xml-formatter',
             },
             {
               title: '制御文字展開',
-              image: '/images/character/character_tile_4.png',
               route: 'escape-sequence-interpreter',
             },
             {
               title: 'テキストケース変換',
-              image: '/images/character/character_tile_5.png',
               route: 'text-case-converter',
             },
             {
               title: '正規表現テスター',
-              image: '/images/character/character_tile_6.png',
               route: 'regex-tester',
             },
             {
               title: 'ランダム文字列生成',
-              image: '/images/character/character_tile_7.png',
               route: 'template-base-random-generator',
             },
             {
               title: 'UUID生成',
-              image: '/images/character/character_tile_8.png',
               route: 'uuid-generator',
             },
             {
               title: 'テキストカウンター',
-              image: '/images/character/character_tile_9.png',
               route: 'text-counter',
             },
           ],
@@ -88,7 +78,6 @@ export default {
 
         //     {
         //       title: 'Gif 変換',
-        //       image: '/images/pc_images_011.png',
         //       route: 'video-to-gif',
         //     },
         //   ],
@@ -98,42 +87,34 @@ export default {
           tiles: [
             {
               title: '祝日タイマー',
-              image: '/images/datetime/datetime_tile_1.png',
               route: 'countdown-to-holidays',
             },
             {
               title: '世界時計',
-              image: '/images/datetime/datetime_tile_2.png',
               route: 'world-timezone',
             },
             {
               title: 'タイムゾーン変換',
-              image: '/images/datetime/datetime_tile_3.png',
               route: 'timezone-converter',
             },
             {
               title: '和暦',
-              image: '/images/datetime/datetime_tile_4.png',
               route: 'japanese-era',
             },
             {
               title: 'コンピュータ時刻問題',
-              image: '/images/datetime/datetime_tile_5.png',
               route: 'time-issues',
             },
             {
               title: '時間進捗バー',
-              image: '/images/datetime/datetime_tile_6.png',
               route: 'time-progress',
             },
             {
               title: 'UNIXTIME変換',
-              image: '/images/datetime/datetime_tile_7.png',
               route: 'unix-time-converter',
             },
             {
               title: '生年月日情報',
-              image: '/images/datetime/datetime_tile_8.png',
               route: 'birthdate-info',
             },
           ],
@@ -145,14 +126,30 @@ export default {
     goTo(route) {
       this.$router.push({ name: route });
     },
-    getRandomColor() {
-      const letters = '0123456789ABCDEF';
+    // 文字列からハッシュを生成
+    stringToHash(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    },
+    // ハッシュから色を生成
+    hashToColor(hash) {
       let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+      for (let i = 0; i < 3; i++) {
+        const value = (hash >> (i * 8)) & 0xFF;
+        color += ('00' + value.toString(16)).substr(-2);
       }
       return color;
-    }
+    },
+    // タイトルから色を生成
+    titleToColor(title) {
+      const hash = this.stringToHash(title);
+      return this.hashToColor(hash);
+    },
   },
 };
 </script>
@@ -160,11 +157,11 @@ export default {
 
 <style>
 .fusen {
-    display: inline-block;
-    position: relative;
-    padding: .5em 1em;
-    border-left: 27px solid #2589d0;
-    background-color: #f5f5f5;
-    color: #333333;
+  display: inline-block;
+  position: relative;
+  padding: .5em 1em;
+  border-left: 27px solid #2589d0;
+  background-color: #f5f5f5;
+  color: #333333;
 }
 </style>
