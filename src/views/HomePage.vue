@@ -27,7 +27,6 @@ export default {
           tiles: [
             {
               title: 'Client Info',
-              image: '/images/client/client_tile_1.png',
               route: 'client-info',
             },
           ],
@@ -37,47 +36,38 @@ export default {
           tiles: [
             {
               title: 'Text Hash',
-              image: '/images/character/character_tile_1.png',
               route: 'text-hash',
             },
             {
               title: 'json整形',
-              image: '/images/character/character_tile_2.png',
               route: 'json-formatter',
             },
             {
               title: 'xml整形',
-              image: '/images/character/character_tile_3.png',
               route: 'xml-formatter',
             },
             {
               title: '制御文字展開',
-              image: '/images/character/character_tile_4.png',
               route: 'escape-sequence-interpreter',
             },
             {
               title: 'テキストケース変換',
-              image: '/images/character/character_tile_5.png',
               route: 'text-case-converter',
             },
             {
               title: '正規表現テスター',
-              image: '/images/character/character_tile_6.png',
               route: 'regex-tester',
             },
             {
               title: 'ランダム文字列生成',
-              image: '/images/character/character_tile_7.png',
               route: 'template-base-random-generator',
             },
             {
               title: 'UUID生成',
-              image: '/images/character/character_tile_8.png',
               route: 'uuid-generator',
             },
             {
               title: 'テキストカウンター',
-              image: '/images/character/character_tile_9.png',
               route: 'text-counter',
             },
           ],
@@ -88,7 +78,6 @@ export default {
 
         //     {
         //       title: 'Gif 変換',
-        //       image: '/images/pc_images_011.png',
         //       route: 'video-to-gif',
         //     },
         //   ],
@@ -98,42 +87,34 @@ export default {
           tiles: [
             {
               title: '祝日タイマー',
-              image: '/images/datetime/datetime_tile_1.png',
               route: 'countdown-to-holidays',
             },
             {
               title: '世界時計',
-              image: '/images/datetime/datetime_tile_2.png',
               route: 'world-timezone',
             },
             {
               title: 'タイムゾーン変換',
-              image: '/images/datetime/datetime_tile_3.png',
               route: 'timezone-converter',
             },
             {
               title: '和暦',
-              image: '/images/datetime/datetime_tile_4.png',
               route: 'japanese-era',
             },
             {
               title: 'コンピュータ時刻問題',
-              image: '/images/datetime/datetime_tile_5.png',
               route: 'time-issues',
             },
             {
               title: '時間進捗バー',
-              image: '/images/datetime/datetime_tile_6.png',
               route: 'time-progress',
             },
             {
               title: 'UNIXTIME変換',
-              image: '/images/datetime/datetime_tile_7.png',
               route: 'unix-time-converter',
             },
             {
               title: '生年月日情報',
-              image: '/images/datetime/datetime_tile_8.png',
               route: 'birthdate-info',
             },
           ],
