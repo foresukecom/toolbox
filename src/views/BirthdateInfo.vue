@@ -47,10 +47,9 @@
         <div
           class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
         </div>
-        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ milestone.year }} ({{
-          toJapaneseEra(milestone.year) }}年) </time>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"> {{ milestone.datetime }} </time>
         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ milestone.name }}</h3>
-        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"> {{ milestone.name }}  </p>
+        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"> {{ milestone.name }} </p>
       </li>
     </ol>
 
@@ -59,6 +58,7 @@
 
 <script>
 import InfoCard from '@/components/InfoCard.vue';
+import { formatDate } from "@/utilities/japaneseEra";
 
 export default {
   components: {
@@ -104,26 +104,15 @@ export default {
       const universityAdmissionYear = birthYear + 19;
       const universityGraduationYear = universityAdmissionYear + parseInt(this.universityDuration);
 
-      // const milestones = [
-      //   { name: "成人年", year: birthYear + 20 },
-      //   { name: "古希年", year: birthYear + 70 },
-      //   { name: "還暦年", year: birthYear + 60 },
-      //   { name: "喜寿年", year: birthYear + 77 },
-      //   { name: "米寿年", year: birthYear + 88 },
-      //   { name: "卒寿年", year: birthYear + 90 },
-      //   { name: "白寿年", year: birthYear + 99 },
-      //   { name: "傘寿年", year: birthYear + 100 }
-      // ];
-
       const milestones = [
-        { name: "成人年", year: birthYear + 20, age: 20 },
-        { name: "古希年", year: birthYear + 70, age: 70 },
-        { name: "還暦年", year: birthYear + 60, age: 60 },
-        { name: "喜寿年", year: birthYear + 77, age: 77 },
-        { name: "米寿年", year: birthYear + 88, age: 88 },
-        { name: "卒寿年", year: birthYear + 90, age: 90 },
-        { name: "白寿年", year: birthYear + 99, age: 99 },
-        { name: "傘寿年", year: birthYear + 100, age: 100 }
+        { name: "成人年", year: birthYear + 20, age: 20, datetime: formatDate(this.addYearsToDate(birthdate, 20), true, false) },
+        { name: "還暦", year: birthYear + 60, age: 60, datetime: formatDate(this.addYearsToDate(birthdate, 60), true, false) },
+        { name: "古希", year: birthYear + 70, age: 70, datetime: formatDate(this.addYearsToDate(birthdate, 70), true, false) },
+        { name: "喜寿", year: birthYear + 77, age: 77, datetime: formatDate(this.addYearsToDate(birthdate, 77), true, false) },
+        { name: "米寿", year: birthYear + 88, age: 88, datetime: formatDate(this.addYearsToDate(birthdate, 88), true, false) },
+        { name: "卒寿", year: birthYear + 90, age: 90, datetime: formatDate(this.addYearsToDate(birthdate, 90), true, false) },
+        { name: "白寿", year: birthYear + 99, age: 99, datetime: formatDate(this.addYearsToDate(birthdate, 99), true, false) },
+        { name: "傘寿", year: birthYear + 100, age: 100, datetime: formatDate(this.addYearsToDate(birthdate, 100), true, false) },
       ];
       milestones.sort((a, b) => a.year - b.year);
 
@@ -185,6 +174,16 @@ export default {
       } else {
         return `令和${year - 2018}`;
       }
+    },
+    addYearsToDate(baseDate, yearsToAdd) {
+      // ベース日付に基づいて新しいDateオブジェクトを作成
+      const newDate = new Date(baseDate);
+
+      // 指定された年数を新しい日付に追加
+      newDate.setFullYear(newDate.getFullYear() + yearsToAdd);
+
+      // 新しい日付を返す
+      return newDate;
     },
   }
 }

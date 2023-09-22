@@ -16,3 +16,17 @@ export function formatJapaneseEra(era, date) {
 
   return `${era.name}${yearsSinceEraStart}年 ${formattedDate}`;
 }
+
+export function formatDate(date, includeEra = false, includeTime = false) {
+  let dateArry = [];
+  dateArry.push(Intl.DateTimeFormat("ja-JP", {year: "numeric"}).format(date));
+  if (includeEra) {
+    dateArry.push("("+Intl.DateTimeFormat("ja-JP-u-ca-japanese", {year: "numeric"}).format(date)+")");
+  }
+  dateArry.push(Intl.DateTimeFormat("ja-JP", {month: "long", day: "numeric", weekday: "long"}).format(date));
+  if (includeTime){
+    dateArry.push(Intl.DateTimeFormat("ja-JP", {hour: "numeric", minute: "numeric", second: "numeric"}).format(date));
+  }
+
+  return dateArry.join(" ");
+}
