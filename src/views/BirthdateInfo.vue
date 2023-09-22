@@ -104,13 +104,13 @@ export default {
       const universityGraduationYear = universityAdmissionYear + parseInt(this.universityDuration);
 
       const milestones = [
-        { name: "還暦", year: birthYear + 60, age: 60, datetime: formatDate(this.addYearsToDate(birthdate, 60), true, false) },
-        { name: "古希", year: birthYear + 70, age: 70, datetime: formatDate(this.addYearsToDate(birthdate, 70), true, false) },
-        { name: "喜寿", year: birthYear + 77, age: 77, datetime: formatDate(this.addYearsToDate(birthdate, 77), true, false) },
-        { name: "米寿", year: birthYear + 88, age: 88, datetime: formatDate(this.addYearsToDate(birthdate, 88), true, false) },
-        { name: "卒寿", year: birthYear + 90, age: 90, datetime: formatDate(this.addYearsToDate(birthdate, 90), true, false) },
-        { name: "白寿", year: birthYear + 99, age: 99, datetime: formatDate(this.addYearsToDate(birthdate, 99), true, false) },
-        { name: "傘寿", year: birthYear + 100, age: 100, datetime: formatDate(this.addYearsToDate(birthdate, 100), true, false) },
+        { name: "還暦", age: 60, datetime: formatDate(this.addYearsToDate(birthdate, 60), true, false) },
+        { name: "古希", age: 70, datetime: formatDate(this.addYearsToDate(birthdate, 70), true, false) },
+        { name: "喜寿", age: 77, datetime: formatDate(this.addYearsToDate(birthdate, 77), true, false) },
+        { name: "米寿", age: 88, datetime: formatDate(this.addYearsToDate(birthdate, 88), true, false) },
+        { name: "卒寿", age: 90, datetime: formatDate(this.addYearsToDate(birthdate, 90), true, false) },
+        { name: "白寿", age: 99, datetime: formatDate(this.addYearsToDate(birthdate, 99), true, false) },
+        { name: "傘寿", age: 100, datetime: formatDate(this.addYearsToDate(birthdate, 100), true, false) },
       ];
       milestones.sort((a, b) => a.year - b.year);
 
