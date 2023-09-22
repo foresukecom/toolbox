@@ -105,7 +105,6 @@ export default {
       const universityGraduationYear = universityAdmissionYear + parseInt(this.universityDuration);
 
       const milestones = [
-        { name: "成人年", year: birthYear + 20, age: 20, datetime: formatDate(this.addYearsToDate(birthdate, 20), true, false) },
         { name: "還暦", year: birthYear + 60, age: 60, datetime: formatDate(this.addYearsToDate(birthdate, 60), true, false) },
         { name: "古希", year: birthYear + 70, age: 70, datetime: formatDate(this.addYearsToDate(birthdate, 70), true, false) },
         { name: "喜寿", year: birthYear + 77, age: 77, datetime: formatDate(this.addYearsToDate(birthdate, 77), true, false) },
