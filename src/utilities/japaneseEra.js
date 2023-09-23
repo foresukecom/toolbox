@@ -17,14 +17,41 @@ export function formatJapaneseEra(era, date) {
   return `${era.name}${yearsSinceEraStart}年 ${formattedDate}`;
 }
 
-export function formatDate(date, includeEra = false, includeTime = false) {
+export function formatDate(date, includeAD = false, includeJapaneseEra = false, includeAdEra = false, includeMonth = false, includeDay = false, includeWeekday = false, includeTime = false) {
   let dateArry = [];
-  dateArry.push(Intl.DateTimeFormat("ja-JP", {year: "numeric"}).format(date));
-  if (includeEra) {
+
+  // 西暦を含める場合
+  if (includeAD) {
+    dateArry.push(Intl.DateTimeFormat("ja-JP", {year: "numeric"}).format(date));
+  }
+
+  // 和暦を含める場合
+  if (includeJapaneseEra) {
     dateArry.push("("+Intl.DateTimeFormat("ja-JP-u-ca-japanese", {year: "numeric"}).format(date)+")");
   }
-  dateArry.push(Intl.DateTimeFormat("ja-JP", {month: "long", day: "numeric", weekday: "long"}).format(date));
-  if (includeTime){
+
+  // 西暦と和暦を含める場合
+  if (includeAdEra) {
+    dateArry.push(Intl.DateTimeFormat("ja-JP", {year: "numeric"}).format(date)) + " (" + Intl.DateTimeFormat("ja-JP-u-ca-japanese", {year: "numeric"}).format(date) + ")";
+  }
+
+  // 月を含める場合
+  if (includeMonth) {
+    dateArry.push(Intl.DateTimeFormat("ja-JP", {month: "long"}).format(date));
+  }
+
+  // 日を含める場合
+  if (includeDay) {
+    dateArry.push(Intl.DateTimeFormat("ja-JP", {day: "numeric"}).format(date));
+  }
+
+  // 曜日を含める場合
+  if (includeWeekday) {
+    dateArry.push(Intl.DateTimeFormat("ja-JP", {weekday: "long"}).format(date));
+  }
+
+  // 時間を含める場合
+  if (includeTime) {
     dateArry.push(Intl.DateTimeFormat("ja-JP", {hour: "numeric", minute: "numeric", second: "numeric"}).format(date));
   }
 
