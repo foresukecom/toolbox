@@ -102,8 +102,18 @@ export default {
       const currentYear = new Date().getFullYear();
       const universityAdmissionYear = birthYear + 19;
       const universityGraduationYear = universityAdmissionYear + parseInt(this.universityDuration);
+      const schoolDates = this.calculateSchoolDates(birthdate);
 
       const milestones = [
+        { name: "小学校入学", age: 6,datetime: formatDate(schoolDates.elementary.enter, false, false, true, true, false, false, false) },
+        { name: "小学校卒業", age: 12, datetime: formatDate(schoolDates.elementary.graduate, false, false, true, true, false, false, false) },
+        { name: "中学校入学", age: 13,datetime: formatDate(schoolDates.middle.enter, false, false, true, true, false, false, false) },
+        { name: "中学校卒業", age: 15, datetime: formatDate(schoolDates.middle.graduate, false, false, true, true, false, false, false) },
+        { name: "高校入学", age: 16,datetime: formatDate(schoolDates.high.enter, false, false, true, true, false, false, false) },
+        { name: "高校卒業", age: 18, datetime: formatDate(schoolDates.high.graduate, false, false, true, true, false, false, false) },
+        { name: "大学入学", age: 19,datetime: formatDate(schoolDates.university.enter, false, false, true, true, false, false, false) },
+        { name: "2年制大学卒業", age: 20, datetime: formatDate(schoolDates.junior_college.graduate, false, false, true, true, false, false, false) },
+        { name: "4年制大学卒業", age: 22, datetime: formatDate(schoolDates.university.graduate, false, false, true, true, false, false, false) },
         { name: "還暦", age: 60, datetime: formatDate(this.addYearsToDate(birthdate, 60), false, false, true, true, true, true, false) },
         { name: "古希", age: 70, datetime: formatDate(this.addYearsToDate(birthdate, 70), false, false, true, true, true, true, false) },
         { name: "喜寿", age: 77, datetime: formatDate(this.addYearsToDate(birthdate, 77), false, false, true, true, true, true, false) },
@@ -183,6 +193,29 @@ export default {
       // 新しい日付を返す
       return newDate;
     },
+    calculateSchoolDates(birthDate) {
+      const birth = new Date(birthDate);
+      const schoolDates = {};
+
+      // 4月1日以前と4月2日以降で学年が異なる
+      const offset = (birth.getMonth() === 3 && birth.getDate() >= 2) ? 1 : 0;
+
+      // 入学日と卒業日の設定
+      const setSchoolDates = (ageEnter, ageGraduate, school) => {
+        schoolDates[school] = {
+          enter: new Date(birth.getFullYear() + ageEnter + offset, 3, 1),
+          graduate: new Date(birth.getFullYear() + ageGraduate + offset, 2, 31)
+        };
+      };
+    
+      setSchoolDates(6, 12, 'elementary'); // 小学校
+      setSchoolDates(13, 15, 'middle');    // 中学校
+      setSchoolDates(16, 18, 'high');      // 高校
+      setSchoolDates(19, 23, 'university'); // 4年制大学
+      setSchoolDates(19, 21, 'junior_college'); // 2年制大学
+    
+      return schoolDates;
+    }
   }
 }
 </script>
