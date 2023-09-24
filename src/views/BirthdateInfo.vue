@@ -10,30 +10,6 @@
           <InfoCard title="干支" :text="result.zodiacSign" :showCopyButton="false" />
           <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
 
-          <h2 class="text-2xl my-5">年表</h2>
-          <InfoCard title="小学校"
-            :text="`${result.primarySchoolAdmissionYear}年4月〜${result.primarySchoolGraduationYear}年3月 \n(${toJapaneseEra(result.primarySchoolAdmissionYear)}年4月〜${toJapaneseEra(result.primarySchoolGraduationYear)}年3月)`"
-            :showCopyButton="false" />
-
-          <InfoCard title="中学校"
-            :text="`${result.middleSchoolAdmissionYear}年4月〜${result.middleSchoolGraduationYear}年3月 \n(${toJapaneseEra(result.middleSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.middleSchoolGraduationYear)}年3月)`"
-            :showCopyButton="false" />
-
-          <InfoCard title="高校"
-            :text="`${result.highSchoolAdmissionYear}年4月〜${result.highSchoolGraduationYear}年3月 \n(${toJapaneseEra(result.highSchoolAdmissionYear)}年4月〜${toJapaneseEra(result.highSchoolGraduationYear)}年3月)`"
-            :showCopyButton="false" />
-
-          <label>大学・専門学校の制度: </label>
-          <select v-model="universityDuration" @change="calculate()">
-            <option value="2">2年制</option>
-            <option value="3">3年制</option>
-            <option value="4" selected>4年制</option>
-            <option value="6">6年制（大学院含む）</option>
-          </select>
-          <InfoCard title="大学・専門学校"
-            :text="`${result.universityAdmissionYear}年4月〜${result.universityGraduationYear}年3月 \n(${toJapaneseEra(result.universityAdmissionYear)}年4月〜${toJapaneseEra(result.universityGraduationYear)}年3月)`"
-            :showCopyButton="false" />
-
         </div>
       </div>
     </div>
@@ -170,17 +146,6 @@ export default {
         return "♐️: 射手座";
       } else {
         return "♑️: 山羊座";
-      }
-    },
-    toJapaneseEra: function (year) {
-      if (year < 1926) {
-        return `大正${year - 1911}`;
-      } else if (year < 1989) {
-        return `昭和${year - 1925}`;
-      } else if (year < 2019) {
-        return `平成${year - 1988}`;
-      } else {
-        return `令和${year - 2018}`;
       }
     },
     addYearsToDate(baseDate, yearsToAdd) {
