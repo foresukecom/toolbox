@@ -9,7 +9,6 @@
           <InfoCard title="星座" :text="result.zodiac" :showCopyButton="false" />
           <InfoCard title="干支" :text="result.zodiacSign" :showCopyButton="false" />
           <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
-
         </div>
       </div>
     </div>
@@ -24,7 +23,7 @@
           class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
         </div>
         <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"> {{ milestone.datetime }} </time>
-        <p class="mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"> {{ milestone.name }} ({{ milestone.age }}歳)</p>
+        <p class="mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"> {{ milestone.name }}</p>
       </li>
     </ol>
 
@@ -81,22 +80,22 @@ export default {
       const schoolDates = this.calculateSchoolDates(birthdate);
 
       const milestones = [
-        { name: "小学校入学", age: 6,datetime: formatDate(schoolDates.elementary.enter, false, false, true, true, false, false, false) },
-        { name: "小学校卒業", age: 12, datetime: formatDate(schoolDates.elementary.graduate, false, false, true, true, false, false, false) },
-        { name: "中学校入学", age: 13,datetime: formatDate(schoolDates.middle.enter, false, false, true, true, false, false, false) },
-        { name: "中学校卒業", age: 15, datetime: formatDate(schoolDates.middle.graduate, false, false, true, true, false, false, false) },
-        { name: "高校入学", age: 16,datetime: formatDate(schoolDates.high.enter, false, false, true, true, false, false, false) },
-        { name: "高校卒業", age: 18, datetime: formatDate(schoolDates.high.graduate, false, false, true, true, false, false, false) },
-        { name: "大学入学", age: 19,datetime: formatDate(schoolDates.university.enter, false, false, true, true, false, false, false) },
-        { name: "2年制大学卒業", age: 20, datetime: formatDate(schoolDates.junior_college.graduate, false, false, true, true, false, false, false) },
-        { name: "4年制大学卒業", age: 22, datetime: formatDate(schoolDates.university.graduate, false, false, true, true, false, false, false) },
-        { name: "還暦", age: 60, datetime: formatDate(this.addYearsToDate(birthdate, 60), false, false, true, true, true, true, false) },
-        { name: "古希", age: 70, datetime: formatDate(this.addYearsToDate(birthdate, 70), false, false, true, true, true, true, false) },
-        { name: "喜寿", age: 77, datetime: formatDate(this.addYearsToDate(birthdate, 77), false, false, true, true, true, true, false) },
-        { name: "米寿", age: 88, datetime: formatDate(this.addYearsToDate(birthdate, 88), false, false, true, true, true, true, false) },
-        { name: "卒寿", age: 90, datetime: formatDate(this.addYearsToDate(birthdate, 90), false, false, true, true, true, true, false) },
-        { name: "白寿", age: 99, datetime: formatDate(this.addYearsToDate(birthdate, 99), false, false, true, true, true, true, false) },
-        { name: "傘寿", age: 100, datetime: formatDate(this.addYearsToDate(birthdate, 100),false, false, true, true, true, true, false) },
+        { name: "小学校入学",datetime: formatDate(schoolDates.elementary.enter, false, false, true, true, false, false, false) },
+        { name: "小学校卒業", datetime: formatDate(schoolDates.elementary.graduate, false, false, true, true, false, false, false) },
+        { name: "中学校入学", datetime: formatDate(schoolDates.middle.enter, false, false, true, true, false, false, false) },
+        { name: "中学校卒業", datetime: formatDate(schoolDates.middle.graduate, false, false, true, true, false, false, false) },
+        { name: "高校入学", datetime: formatDate(schoolDates.high.enter, false, false, true, true, false, false, false) },
+        { name: "高校卒業", datetime: formatDate(schoolDates.high.graduate, false, false, true, true, false, false, false) },
+        { name: "大学入学", datetime: formatDate(schoolDates.university.enter, false, false, true, true, false, false, false) },
+        { name: "大学卒業(2年制)", datetime: formatDate(schoolDates.junior_college.graduate, false, false, true, true, false, false, false) },
+        { name: "大学卒業(4年制)", datetime: formatDate(schoolDates.university.graduate, false, false, true, true, false, false, false) },
+        { name: "還暦", datetime: formatDate(this.addYearsToDate(birthdate, 60), false, false, true, true, true, true, false) },
+        { name: "古希", datetime: formatDate(this.addYearsToDate(birthdate, 70), false, false, true, true, true, true, false) },
+        { name: "喜寿", datetime: formatDate(this.addYearsToDate(birthdate, 77), false, false, true, true, true, true, false) },
+        { name: "米寿", datetime: formatDate(this.addYearsToDate(birthdate, 88), false, false, true, true, true, true, false) },
+        { name: "卒寿", datetime: formatDate(this.addYearsToDate(birthdate, 90), false, false, true, true, true, true, false) },
+        { name: "白寿", datetime: formatDate(this.addYearsToDate(birthdate, 99), false, false, true, true, true, true, false) },
+        { name: "傘寿", datetime: formatDate(this.addYearsToDate(birthdate, 100),false, false, true, true, true, true, false) },
       ];
       milestones.sort((a, b) => a.year - b.year);
 
