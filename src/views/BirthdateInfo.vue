@@ -1,21 +1,25 @@
 <template>
-  <div>
-    <div style="display: flex; justify-content: center;">
-      <div style="width: 33%;">
-        <label>生年月日: </label>
-        <input type="date" v-model="birthdate" @change="calculate()" />
-        <div v-if="result">
-          <h2 class="text-2xl my-5">生まれた日の情報</h2>
-          <InfoCard title="星座" :text="result.zodiac" :showCopyButton="false" />
-          <InfoCard title="干支" :text="result.zodiacSign" :showCopyButton="false" />
-          <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
-        </div>
-      </div>
+  <!-- 誕生日入力 -->
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 33%;">
+      <label>生年月日: </label>
+      <input type="date" v-model="birthdate" @change="calculate()" />
     </div>
   </div>
 
+  <!-- 誕生日情報 -->
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 33%;">
+      <div v-if="result">
+        <h2 class="text-2xl my-5">生まれた日の情報</h2>
+        <InfoCard title="星座" :text="result.zodiac" :showCopyButton="false" />
+        <InfoCard title="干支" :text="result.zodiacSign" :showCopyButton="false" />
+        <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
+      </div>
+    </div>
+  </div>  
 
-
+<!-- タイムライン表示 -->
   <div style="display: flex; justify-content: center;">
     <ol class="relative border-l border-gray-200 dark:border-gray-700">
       <li class="mb-10 ml-4" v-for="(milestone, index) in milestones" :key="index">
