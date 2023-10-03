@@ -11,10 +11,22 @@
   <div style="display: flex; justify-content: center;">
     <div style="width: 33%;">
       <div v-if="result">
-        <h2 class="text-2xl my-5">生まれた日の情報</h2>
-        <InfoCard title="星座" :text="result.zodiac" :showCopyButton="false" />
-        <InfoCard title="干支" :text="result.zodiacSign" :showCopyButton="false" />
-        <InfoCard title="曜日" :text="result.dayOfWeek" :showCopyButton="false" />
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-lg my-2">生まれた日の情報</h2>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>星座:</strong> {{ result.zodiac }}
+            </li>
+            <li class="list-group-item">
+              <strong>干支:</strong> {{ result.zodiacSign }}
+            </li>
+            <li class="list-group-item">
+              <strong>曜日:</strong> {{ result.dayOfWeek }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>  
@@ -30,18 +42,14 @@
         <p class="mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"> {{ milestone.name }}</p>
       </li>
     </ol>
-
   </div>
+
 </template>
 
 <script>
-import InfoCard from '@/components/InfoCard.vue';
 import { formatDate } from "@/utilities/japaneseEra";
 
 export default {
-  components: {
-    InfoCard
-  },
   computed: {
     milestones() {
       return this.result?.milestones || [];
