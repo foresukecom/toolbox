@@ -9,9 +9,9 @@
 
   <!-- 誕生日情報 -->
   <div style="display: flex; justify-content: center;">
-    <div style="width: 33%;">
+    <div style="width: 20%;">
       <div v-if="result">
-        <div class="card">
+        <div class="card" style="text-align: center;">
           <div class="card-header">
             <h2 class="text-lg my-2">生まれた日の情報</h2>
           </div>
