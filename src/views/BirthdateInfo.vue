@@ -9,9 +9,9 @@
 
   <!-- 誕生日情報 -->
   <div style="display: flex; justify-content: center;">
-    <div style="width: 33%;">
+    <div style="width: 20%;">
       <div v-if="result">
-        <div class="card">
+        <div class="card" style="text-align: center;">
           <div class="card-header">
             <h2 class="text-lg my-2">生まれた日の情報</h2>
           </div>
@@ -68,10 +68,6 @@ export default {
   methods: {
     calculate() {
       const birthdate = new Date(this.birthdate);
-      const birthYear = birthdate.getFullYear();
-      const currentYear = new Date().getFullYear();
-      const universityAdmissionYear = birthYear + 19;
-      const universityGraduationYear = universityAdmissionYear + parseInt(this.universityDuration);
       const schoolDates = this.calculateSchoolDates(birthdate);
 
       const milestones = [
@@ -100,15 +96,6 @@ export default {
         zodiac: this.getZodiac(birthdate),
         eto: this.getEto(birthdate),
         dayOfWeek: Intl.DateTimeFormat("ja-JP", {weekday: "long"}).format(birthdate),
-        primarySchoolAdmissionYear: birthYear + 7,
-        primarySchoolGraduationYear: birthYear + 7 + 6,
-        middleSchoolAdmissionYear: birthYear + 7 + 6,
-        middleSchoolGraduationYear: birthYear + 7 + 6 + 3,
-        highSchoolAdmissionYear: birthYear + 7 + 6 + 3,
-        highSchoolGraduationYear: birthYear + 7 + 6 + 3 + 3,
-        universityAdmissionYear: universityAdmissionYear,
-        universityGraduationYear: universityGraduationYear,
-        workExperience: Math.max(0, currentYear - universityGraduationYear),
         milestones: milestones,
       };
       this.result = result;
