@@ -60,7 +60,6 @@ export default {
       birthdate: '1989-01-01',
       result: null,
       universityDuration: 4,
-      daysOfWeek: ['日', '月', '火', '水', '木', '金']
     }
   },
   mounted() {
@@ -98,7 +97,7 @@ export default {
       const result = {
         zodiac: this.getZodiac(birthdate),
         eto: this.getEto(birthdate),
-        dayOfWeek: this.daysOfWeek[birthdate.getDay()],
+        dayOfWeek: Intl.DateTimeFormat("ja-JP", {weekday: "long"}).format(birthdate),
         primarySchoolAdmissionYear: birthYear + 7,
         primarySchoolGraduationYear: birthYear + 7 + 6,
         middleSchoolAdmissionYear: birthYear + 7 + 6,
