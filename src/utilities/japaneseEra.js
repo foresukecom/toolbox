@@ -32,7 +32,8 @@ export function formatDate(date, includeAD = false, includeJapaneseEra = false, 
 
   // 西暦と和暦を含める場合
   if (includeAdEra) {
-    dateArry.push(Intl.DateTimeFormat("ja-JP", {year: "numeric"}).format(date)) + " (" + Intl.DateTimeFormat("ja-JP-u-ca-japanese", {year: "numeric"}).format(date) + ")";
+    dateArry.push(Intl.DateTimeFormat("ja-JP", {year: "numeric"}).format(date)) ;
+    dateArry.push(" (" + Intl.DateTimeFormat("ja-JP-u-ca-japanese", {year: "numeric"}).format(date) + ")");
   }
 
   // 月を含める場合
