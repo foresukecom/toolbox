@@ -20,7 +20,7 @@
               <strong>星座:</strong> {{ result.zodiac }}
             </li>
             <li class="list-group-item">
-              <strong>干支:</strong> {{ result.zodiacSign }}
+              <strong>干支:</strong> {{ result.eto }}
             </li>
             <li class="list-group-item">
               <strong>曜日:</strong> {{ result.dayOfWeek }}
@@ -60,20 +60,6 @@ export default {
       birthdate: '1989-01-01',
       result: null,
       universityDuration: 4,
-      zodiacSigns: {
-        '子': '🐭: 子',
-        '丑': '🐮: 丑',
-        '寅': '🐯: 寅',
-        '卯': '🐰: 卯',
-        '辰': '🐲: 辰',
-        '巳': '🐍: 巳',
-        '午': '🐴: 午',
-        '未': '🐑: 未',
-        '申': '🐵: 申',
-        '酉': '🐔: 酉',
-        '戌': '🐶: 戌',
-        '亥': '🐗: 亥'
-      },
       daysOfWeek: ['日', '月', '火', '水', '木', '金']
     }
   },
@@ -111,7 +97,7 @@ export default {
 
       const result = {
         zodiac: this.getZodiac(birthdate),
-        zodiacSign: this.getZodiacSign(birthYear),
+        eto: this.getEto(birthdate),
         dayOfWeek: this.daysOfWeek[birthdate.getDay()],
         primarySchoolAdmissionYear: birthYear + 7,
         primarySchoolGraduationYear: birthYear + 7 + 6,
@@ -126,9 +112,23 @@ export default {
       };
       this.result = result;
     },
-    getZodiacSign(year) {
-      const signs = Object.keys(this.zodiacSigns);
-      return this.zodiacSigns[signs[year % 12]];
+    getEto(date) {
+      const year = date.getFullYear();
+      const etos = [
+        "子: 鼠: 🐭", 
+        "丑: 牛: 🐮", 
+        "寅: 虎: 🐯", 
+        "卯: 兎: 🐰", 
+        "辰: 龍: 🐉", 
+        "巳: 蛇: 🐍", 
+        "午: 馬: 🐎", 
+        "未: 羊: 🐑", 
+        "申: 猿: 🐒", 
+        "酉: 鶏: 🐓", 
+        "戌: 犬: 🐕", 
+        "亥: 猪: 🐖"
+      ];
+      return etos[(year - 1912) % 12];
     },
     getZodiac(date) {
       const month = date.getMonth() + 1;  // 1-12
