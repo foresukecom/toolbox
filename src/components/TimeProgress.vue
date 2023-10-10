@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div class="progress-container">
-      <div class="progress-value">{{ currentVal }}{{ unit }}</div>
-      <div class="progress">
-        <div class="progress-bar" :style="{ width: progressPercentage + '%' }"  />
-      </div>
-      <div class="progress-value">{{ nextVal }}{{ unit }}</div>
+  <div class="progress-container">
+    <div class="progress-value">{{ currentVal }}{{ unit }}</div>
+    <div class="progress mb-4 bg-gray-200 rounded-full h-2/5 position-relative dark:bg-gray-700">
+      <div class="progress-bar bg-primary position-absolute" :style="{ width: progressPercentage + '%' }"></div>
     </div>
+    <div class="progress-value">{{ nextVal }}{{ unit }}</div>
   </div>
 </template>
 
