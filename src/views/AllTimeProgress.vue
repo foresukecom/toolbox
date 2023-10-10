@@ -1,18 +1,12 @@
 <template>
   <div>
     <div class="current-time">{{ formattedNow }}</div>
-    <TimeProgress unit="年" :currentTime="currentTimeOfYear" :totalTime="totalTimeOfYear" :currentVal="currentYear"
-      :nextVal="nextYear" />
-      <TimeProgress unit="月" :currentTime="currentTimeOfMonth" :totalTime="totalTimeOfMonth" :currentVal="currentMonth"
-      :nextVal="nextMonth" />
-      <TimeProgress unit="日" :currentTime="currentTimeOfDay" :totalTime="totalTimeOfDay" :currentVal="currentDay"
-      :nextVal="nextDay" />
-      <TimeProgress unit="時" :currentTime="currentTimeOfHour" :totalTime="totalTimeOfHour" :currentVal="currentHour"
-      :nextVal="nextHour" />
-      <TimeProgress unit="分" :currentTime="currentTimeOfMinute" :totalTime="totalTimeOfMinute"
-      :currentVal="currentMinute" :nextVal="nextMinute" />
-    <TimeProgress unit="秒" :currentTime="currentTimeOfSecond" :totalTime="totalTimeOfSecond"
-      :currentVal="currentSecond" :nextVal="nextSecond" />
+    <TimeProgress unit="年" :currentTime="currentTimeOfYear" :totalTime="totalTimeOfYear" :currentVal="currentYear" :nextVal="nextYear" barHeight="h-16" />
+    <TimeProgress unit="月" :currentTime="currentTimeOfMonth" :totalTime="totalTimeOfMonth" :currentVal="currentMonth" :nextVal="nextMonth" barHeight="h-14" />
+    <TimeProgress unit="日" :currentTime="currentTimeOfDay" :totalTime="totalTimeOfDay" :currentVal="currentDay" :nextVal="nextDay" barHeight="h-12" />
+    <TimeProgress unit="時" :currentTime="currentTimeOfHour" :totalTime="totalTimeOfHour" :currentVal="currentHour" :nextVal="nextHour" barHeight="h-9" />
+    <TimeProgress unit="分" :currentTime="currentTimeOfMinute" :totalTime="totalTimeOfMinute" :currentVal="currentMinute" :nextVal="nextMinute" barHeight="h-6" />
+    <TimeProgress unit="秒" :currentTime="currentTimeOfSecond" :totalTime="totalTimeOfSecond" :currentVal="currentSecond" :nextVal="nextSecond" barHeight="h-3" />
   </div>
 </template>
 
