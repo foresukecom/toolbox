@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"testing"
@@ -6,7 +6,7 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 )
 
-func TestHandler(t *testing.T) {
+func TestIPHandler(t *testing.T) {
 	testCases := []struct {
 		name       string
 		request    events.APIGatewayProxyRequest
@@ -49,7 +49,7 @@ func TestHandler(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			// handler 関数を呼び出す
-			response, err := handler(tc.request)
+			response, err := IPHandler(tc.request)
 
 			// エラーがある場合はテスト失敗
 			if err != nil {
