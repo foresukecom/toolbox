@@ -1,20 +1,28 @@
 <template>
   <div class="countdown-container mx-auto max-w-2xl">
     <h1 class="text-center text-2xl font-bold mb-6">祝日までのカウントダウン</h1>
-    <div class="grid grid-cols-1 gap-4">
-      <InfoCard v-for="(holiday, index) in upcomingHolidays" :showCopyButton=false :key="index" :title="`${holiday.name} (${holiday.date})`"
-        :text="countdown(holiday.date)" />
-    </div>
+
+
+
+    <div style="display: flex; justify-content: center;">
+    <ol class="relative border-l border-gray-200 dark:border-gray-700">
+      <li class="mb-10 ml-4" v-for="(name, date) in holidays" :key="date">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+        </div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"> {{ date }} {{ name }}</time>
+        <p class="mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"> {{ countdown(date) }}</p>
+      </li>
+    </ol>
+  </div>
+
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import InfoCard from '../components/InfoCard.vue';
 
 export default {
   components: {
-    InfoCard,
   },
   data() {
     return {
