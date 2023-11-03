@@ -45,13 +45,10 @@ export default {
     },
     countdown(targetDate) {
       const now = new Date();
+      // Convert the current time to JST by adding 9 hours
+      now.setHours(now.getHours() + 9);
       const target = new Date(targetDate);
       const diff = target - now;
-
-      if (diff < 0) {
-        return '祝日が過ぎました';
-      }
-
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
