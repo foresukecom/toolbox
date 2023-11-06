@@ -1,19 +1,21 @@
 <template>
   <div class="countdown-container mx-auto max-w-2xl">
     <h1 class="text-center text-2xl font-bold mb-6">祝日までのカウントダウン</h1>
-
-
-
     <div style="display: flex; justify-content: center;">
-    <ol class="relative border-l border-gray-200 dark:border-gray-700">
-      <li class="mb-10 ml-4" v-for="(name, date) in holidays" :key="date">
-        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
-        </div>
-        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"> {{ date }} {{ name }}</time>
-        <p class="mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"> {{ countdown(date) }}</p>
-      </li>
-    </ol>
-  </div>
+      <ol class="relative border-l border-gray-200 dark:border-gray-700">
+        <li class="mb-10 ml-4" v-for="holiday in filteredHolidays" :key="holiday.date">
+          <div
+            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+          </div>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            {{ holiday.date }} {{ holiday.name }}
+          </time>
+          <p class="mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
+            {{ countdown(holiday.date) }}
+          </p>
+        </li>
+      </ol>
+    </div>
 
   </div>
 </template>
@@ -52,17 +54,25 @@ export default {
         .slice(0, 20);
     },
     countdown(targetDate) {
-      const now = new Date();
-      // Convert the current time to JST by adding 9 hours
-      now.setHours(now.getHours() + 9);
-      const target = new Date(targetDate);
-      const diff = target - now;
+      // 現在時刻をUTCに変換
+      const nowUTC = new Date().getTime() + (new Date().getTimezoneOffset() * 60000);
+      // UTCからJST（日本標準時、UTC+9）に変換
+      const nowJST = new Date(nowUTC + (3600000 * 9));
+      const target = new Date(targetDate + "T00:00:00+09:00"); // JSTを明示的に指定
+
+      const diff = target - nowJST;
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
       return `${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
+    },
+
+    isTodayOrLater(date) {
+      const currentDate = new Date();
+      const holidayDate = new Date(date);
+      return holidayDate >= currentDate;
     },
   },
   async mounted() {
@@ -77,6 +87,15 @@ export default {
       this.countdownInterval = null;
     }
   },
+  computed: {
+    filteredHolidays() {
+      // まずはオブジェクトのキーと値を配列に変換する
+      return Object.entries(this.holidays)
+        .map(([date, name]) => ({ date, name })) // ここでオブジェクトの配列に変換される
+        .filter(holiday => this.isTodayOrLater(holiday.date)); // 祝日が今日以降であるかフィルタリング
+    }
+  },
+
 };
 </script>
 
