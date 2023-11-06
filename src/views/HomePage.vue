@@ -70,6 +70,10 @@ export default {
               title: 'テキストカウンター',
               route: 'text-counter',
             },
+            {
+              title: 'ルビ生成',
+              route: 'ruby-generator',
+            },
           ],
         },
         // {

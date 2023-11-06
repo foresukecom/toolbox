@@ -20,7 +20,7 @@ import UUIDGenerator from '../views/UUIDGenerator.vue';
 import TextCounter from '../views/TextCounter.vue';
 import UnixTimeConverter from '../views/UnixTimeConverter.vue';
 import BirthdateInfo from '../views/BirthdateInfo.vue';
-
+import RubyGenerator from '../views/HtmlRubyGenerator.vue';
 
 const routes = [
   {
@@ -128,7 +128,11 @@ const routes = [
     name: "birthdate-info",
     component: BirthdateInfo,
   },
-];
+  {
+    path: "/ruby-generator",
+    name: "ruby-generator",
+    component: RubyGenerator,
+  },];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

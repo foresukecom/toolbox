@@ -48,7 +48,8 @@ export default {
         { path: '/uuid-generator', text: 'UUID生成' },
         { path: '/text-counter', text: '文字数カウンター' },
         { path: '/unix-time-converter', text: 'UNIXTIME変換' },
-        { path: '/birthdate-info', text: '誕生日情報' }
+        { path: '/birthdate-info', text: '誕生日情報' },
+        { path: '/ruby-generator', text: 'ルビ生成'}
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
