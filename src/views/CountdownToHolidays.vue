@@ -9,6 +9,7 @@
           </div>
           <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
             {{ holiday.date }} {{ holiday.name }}
+            <span v-if="isToday(holiday.date)" class="text-red-500">🎌</span>
           </time>
           <p class="mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
             {{ countdown(holiday.date) }}
@@ -74,6 +75,15 @@ export default {
       const holidayDate = new Date(date);
       return holidayDate >= currentDate;
     },
+    isToday(date) {
+      const currentDate = new Date();
+      const holidayDate = new Date(date);
+      return (
+        holidayDate.getFullYear() === currentDate.getFullYear() &&
+        holidayDate.getMonth() === currentDate.getMonth() &&
+        holidayDate.getDate() === currentDate.getDate()
+      );
+    }
   },
   async mounted() {
     await this.fetchHolidays();
