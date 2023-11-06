@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./src/**/*.vue'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'roboto-mono': ['monospace']
+      }
+    }
   },
   plugins: [],
 }
