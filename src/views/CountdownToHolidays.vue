@@ -1,20 +1,31 @@
 <template>
   <div class="countdown-container mx-auto max-w-2xl">
     <h1 class="text-center text-2xl font-bold mb-6">祝日までのカウントダウン</h1>
-    <div class="grid grid-cols-1 gap-4">
-      <InfoCard v-for="(holiday, index) in upcomingHolidays" :showCopyButton=false :key="index" :title="`${holiday.name} (${holiday.date})`"
-        :text="countdown(holiday.date)" />
+    <div style="display: flex; justify-content: center;">
+      <ol class="relative border-l border-gray-200 dark:border-gray-700">
+        <li class="mb-10 ml-4" v-for="holiday in filteredHolidays" :key="holiday.date">
+          <div
+            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+          </div>
+          <time class="mb-1 text-x font-normal leading-none text-gray-400 dark:text-gray-500">
+            {{ holiday.date }} {{ holiday.name }}
+            <span v-if="isToday(holiday.date)" class="text-red-500"></span>
+          </time>
+          <p class="mb-4 text-xl text-base font-semibold text-gray-500 dark:text-gray-700 pt-3">
+            <span class="w-30 inline-block">{{ countdown(holiday.date) }}</span>
+          </p>
+        </li>
+      </ol>
     </div>
+
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import InfoCard from '../components/InfoCard.vue';
 
 export default {
   components: {
-    InfoCard,
   },
   data() {
     return {
@@ -44,14 +55,13 @@ export default {
         .slice(0, 20);
     },
     countdown(targetDate) {
-      const now = new Date();
-      const target = new Date(targetDate);
-      const diff = target - now;
+      // 現在時刻をUTCに変換
+      const nowUTC = new Date().getTime() + (new Date().getTimezoneOffset() * 60000);
+      // UTCからJST（日本標準時、UTC+9）に変換
+      const nowJST = new Date(nowUTC + (3600000 * 9));
+      const target = new Date(targetDate + "T00:00:00+09:00"); // JSTを明示的に指定
 
-      if (diff < 0) {
-        return '祝日が過ぎました';
-      }
-
+      const diff = target - nowJST;
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -59,6 +69,21 @@ export default {
 
       return `${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
     },
+
+    isTodayOrLater(date) {
+      const currentDate = new Date();
+      const holidayDate = new Date(date);
+      return holidayDate >= currentDate;
+    },
+    isToday(date) {
+      const currentDate = new Date();
+      const holidayDate = new Date(date);
+      return (
+        holidayDate.getFullYear() === currentDate.getFullYear() &&
+        holidayDate.getMonth() === currentDate.getMonth() &&
+        holidayDate.getDate() === currentDate.getDate()
+      );
+    }
   },
   async mounted() {
     await this.fetchHolidays();
@@ -72,11 +97,14 @@ export default {
       this.countdownInterval = null;
     }
   },
+  computed: {
+    filteredHolidays() {
+      // まずはオブジェクトのキーと値を配列に変換する
+      return Object.entries(this.holidays)
+        .map(([date, name]) => ({ date, name })) // ここでオブジェクトの配列に変換される
+        .filter(holiday => this.isTodayOrLater(holiday.date)); // 祝日が今日以降であるかフィルタリング
+    }
+  },
+
 };
 </script>
-
-<style scoped>
-.countdown-container {
-  padding: 1rem;
-}
-</style>
