@@ -7,12 +7,12 @@
           <div
             class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
           </div>
-          <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+          <time class="mb-1 text-x font-normal leading-none text-gray-400 dark:text-gray-500">
             {{ holiday.date }} {{ holiday.name }}
-            <span v-if="isToday(holiday.date)" class="text-red-500">🎌</span>
+            <span v-if="isToday(holiday.date)" class="text-red-500"></span>
           </time>
-          <p class="mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-            {{ countdown(holiday.date) }}
+          <p class="mb-4 text-xl text-base font-semibold text-gray-500 dark:text-gray-700 pt-3">
+            <span class="w-30 inline-block">{{ countdown(holiday.date) }}</span>
           </p>
         </li>
       </ol>
@@ -108,9 +108,3 @@ export default {
 
 };
 </script>
-
-<style scoped>
-.countdown-container {
-  padding: 1rem;
-}
-</style>
