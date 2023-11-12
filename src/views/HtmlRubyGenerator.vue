@@ -16,12 +16,13 @@
     </div>
     <div v-if="escapedHtml" class="mt-4">
       <p class="text-gray-600">エスケープされたHTMLタグ:</p>
-      <div class="bg-gray-100 p-2 w-full" v-html="escapedHtml"></div>
+      <FormattedDisplay :formattedText="escapedHtml" highlightLanguage="html" />
     </div>
   </div>
 </template>
 
 <script>
+import FormattedDisplay from "@/components/FormattedDisplay.vue";
 export default {
   data() {
     return {
@@ -39,24 +40,19 @@ export default {
       this.generateHtml();
     }
   },
+  components: {
+    FormattedDisplay,
+  },
   methods: {
     generateHtml() {
       if (this.kanji && this.ruby) {
         const rawHtml = `<ruby>${this.kanji}<rt>${this.ruby}</rt></ruby>`;
         this.outputHtml = rawHtml;
-        this.escapedHtml = this.escapeHtml(rawHtml);
+        this.escapedHtml = rawHtml;
       } else {
         this.outputHtml = '';
         this.escapedHtml = '';
       }
-    },
-    escapeHtml(html) {
-      return html
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
     },
   }
 }
