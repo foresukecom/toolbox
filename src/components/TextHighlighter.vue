@@ -17,7 +17,10 @@ export default {
   },
   props: {
     formattedText: String,
-    highlightLanguage: String,
+    highlightLanguage: {
+      type: String,
+      default: 'plaintext' // デフォルトの言語を指定
+    },
     showCopyButton: {
       type: Boolean,
       default: true, // デフォルトでコピーボタンを表示
