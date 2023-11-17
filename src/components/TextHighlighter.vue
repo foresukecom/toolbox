@@ -1,5 +1,6 @@
 <template>
   <div class="formatted-display">
+  <div v-if="label" class="label">{{ label }}</div>
     <div class="text-area-container relative">
       <pre class="formatted-text prose prose-sm max-w-none" v-html="highlightedText"></pre>
       <CopyButton v-if="showCopyButton" class="copy-button absolute top-2 right-2" :textToCopy="formattedText" />
@@ -24,6 +25,10 @@ export default {
     showCopyButton: {
       type: Boolean,
       default: true, // デフォルトでコピーボタンを表示
+    },
+    label: {
+      type: String,
+      default: '', // ラベルのデフォルト値は空文字列
     },
   },
   computed: {
@@ -53,5 +58,11 @@ export default {
   color: #f8f8f2;
   padding: 16px;
   border-radius: 4px;
+}
+
+.label {
+  /* ラベルのスタイリング例 */
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 </style>
