@@ -16,13 +16,13 @@
     </div>
     <div v-if="escapedHtml" class="mt-4">
       <p class="text-gray-600">エスケープされたHTMLタグ:</p>
-      <FormattedDisplay :formattedText="escapedHtml" highlightLanguage="html" />
+      <TextHighlighter :formattedText="escapedHtml" highlightLanguage="html" />
     </div>
   </div>
 </template>
 
 <script>
-import FormattedDisplay from "@/components/FormattedDisplay.vue";
+import TextHighlighter from "@/components/TextHighlighter.vue";
 export default {
   data() {
     return {
@@ -41,7 +41,7 @@ export default {
     }
   },
   components: {
-    FormattedDisplay,
+    TextHighlighter,
   },
   methods: {
     generateHtml() {

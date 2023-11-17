@@ -7,17 +7,17 @@
       @input="interpretEscapeSequences"
       placeholder="Input Text"
     ></textarea>
-    <FormattedDisplay v-if="output" :formattedText="output" highlightLanguage="json"/>
+    <TextHighlighter v-if="output" :formattedText="output" highlightLanguage="json"/>
   </div>
 </template>
 
 <script>
-import FormattedDisplay from '@/components/FormattedDisplay.vue';
+import TextHighlighter from '@/components/TextHighlighter.vue';
 import { interpretEscapeSequences as interpret } from '@/utilities/escapeSequenceUtils.js';
 
 export default {
   components: {
-    FormattedDisplay,
+    TextHighlighter,
   },
   data() {
     return {

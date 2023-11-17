@@ -8,13 +8,13 @@
       placeholder="Input JSON"
     ></textarea>
 
-    <FormattedDisplay :formattedText="formattedJson" highlightLanguage="json" />
+    <TextHighlighter :formattedText="formattedJson" highlightLanguage="json" />
   </div>
 </template>
 
 <script>
 import "highlight.js/styles/monokai.css";
-import FormattedDisplay from "@/components/FormattedDisplay.vue";
+import TextHighlighter from "@/components/TextHighlighter.vue";
 
 export default {
   data() {
@@ -26,7 +26,7 @@ export default {
     };
   },
   components: {
-    FormattedDisplay,
+    TextHighlighter,
   },
   methods: {
     formatJson() {

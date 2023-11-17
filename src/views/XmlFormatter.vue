@@ -8,13 +8,13 @@
       placeholder="Input XML"
     ></textarea>
 
-    <FormattedDisplay :formattedText="formattedXml" highlightLanguage="xml" />
+    <TextHighlighter :formattedText="formattedXml" highlightLanguage="xml" />
   </div>
 </template>
 
 <script>
 import "highlight.js/styles/monokai.css";
-import FormattedDisplay from "@/components/FormattedDisplay.vue";
+import TextHighlighter from "@/components/TextHighlighter.vue";
 import format from 'xml-formatter';
 
 export default {
@@ -25,7 +25,7 @@ export default {
     };
   },
   components: {
-    FormattedDisplay,
+    TextHighlighter,
   },
   methods: {
     formatXml() {
