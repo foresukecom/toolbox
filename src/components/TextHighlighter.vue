@@ -2,7 +2,7 @@
   <div class="formatted-display">
     <div class="text-area-container relative">
       <pre class="formatted-text prose prose-sm max-w-none" v-html="highlightedText"></pre>
-      <CopyButton class="copy-button absolute top-2 right-2" :textToCopy="formattedText" />
+      <CopyButton v-if="showCopyButton" class="copy-button absolute top-2 right-2" :textToCopy="formattedText" />
     </div>
   </div>
 </template>
@@ -15,7 +15,14 @@ export default {
   components: {
     CopyButton,
   },
-  props: ["formattedText", "highlightLanguage"],
+  props: {
+    formattedText: String,
+    highlightLanguage: String,
+    showCopyButton: {
+      type: Boolean,
+      default: true, // デフォルトでコピーボタンを表示
+    },
+  },
   computed: {
     highlightedText() {
       if (!this.formattedText) {
