@@ -2,7 +2,7 @@
   <div class="relative">
     <div v-if="label" class="font-bold mb-2 text-lg">{{ label }}</div>
     <div class="relative">
-      <div v-html="highlightedText" class="hljs min-h-[2rem]" ></div>
+      <pre v-html="highlightedText" class="whitespace-pre-wrap font-mono bg-gray-800 text-white p-4 rounded min-h-[2rem]"></pre>
       <CopyButton
         v-if="showCopyButton"
         class="absolute top-2 right-2"
@@ -46,3 +46,8 @@ export default {
 };
 </script>
 
+<style>
+.formatted-text {
+  @apply whitespace-pre-wrap font-mono bg-gray-800 text-white p-4 rounded;
+}
+</style>
