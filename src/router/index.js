@@ -21,6 +21,7 @@ import TextCounter from '../views/TextCounter.vue';
 import UnixTimeConverter from '../views/UnixTimeConverter.vue';
 import BirthdateInfo from '../views/BirthdateInfo.vue';
 import RubyGenerator from '../views/HtmlRubyGenerator.vue';
+import LengthConverter from '../views/LengthConverter.vue'
 
 const routes = [
   {
@@ -132,7 +133,13 @@ const routes = [
     path: "/ruby-generator",
     name: "ruby-generator",
     component: RubyGenerator,
-  },];
+  },
+  {
+    path: "/length-converter",
+    name: "length-converter",
+    component: LengthConverter,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

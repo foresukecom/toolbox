@@ -123,6 +123,17 @@ export default {
             },
           ],
         },
+
+        {
+          name: '単位ツール',
+          tiles: [
+            {
+              title: '距離単位変換',
+              route: 'length-converter',
+            },
+          ],
+        },
+
       ]
     };
   },

@@ -49,7 +49,8 @@ export default {
         { path: '/text-counter', text: '文字数カウンター' },
         { path: '/unix-time-converter', text: 'UNIXTIME変換' },
         { path: '/birthdate-info', text: '誕生日情報' },
-        { path: '/ruby-generator', text: 'ルビ生成'}
+        { path: '/ruby-generator', text: 'ルビ生成'},
+        { path: '/length-converter', text: '距離単位変換'},
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
