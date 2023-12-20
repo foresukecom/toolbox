@@ -46,7 +46,7 @@
 export default {
   data() {
     return {
-      inputValue: 0,
+      inputValue: 1,
       inputUnit: 'm',
       units: [
         // メートル法（小さい順）
