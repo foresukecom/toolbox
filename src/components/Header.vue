@@ -17,6 +17,7 @@
 <script>
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import pageTitles from '@/router/pageTitles'; // pageTitles.js のインポート
 
 export default {
   name: 'AppHeader',
@@ -28,29 +29,30 @@ export default {
         { text: '🏠 ホーム', href: '/' },
       ];
 
+      // pageTitles を使用してページのタイトルを定義
       const pages = [
-        { path: '/about', text: 'About' },
-        { path: '/client-info', text: 'クライアント情報' },
-        { path: '/text-hash', text: 'テキストハッシュ' },
-        { path: '/video-to-gif', text: 'ビデオからGIFへ' },
-        { path: '/json-formatter', text: 'JSON整形' },
-        { path: '/xml-formatter', text: 'XML整形' },
-        { path: '/text-case-converter', text: 'テキストケース変換' },
-        { path: '/countdown-to-holidays', text: '祝日タイマー' },
-        { path: '/world-timezone', text: '世界時計' },
-        { path: '/timezone-converter', text: 'タイムゾーン変換' },
-        { path: '/japanese-era', text: '和暦' },
-        { path: '/time-issues', text: 'コンピュータ時刻問題' },
-        { path: '/time-progress', text: '時間進捗バー' },
-        { path: '/escape-sequence-interpreter', text: '制御文字展開' },
-        { path: '/regex-tester', text: '正規表現テスター' },
-        { path: '/template-base-random-generator', text: 'ランダム文字列生成' },
-        { path: '/uuid-generator', text: 'UUID生成' },
-        { path: '/text-counter', text: '文字数カウンター' },
-        { path: '/unix-time-converter', text: 'UNIXTIME変換' },
-        { path: '/birthdate-info', text: '誕生日情報' },
-        { path: '/ruby-generator', text: 'ルビ生成'},
-        { path: '/length-converter', text: '距離単位変換'},
+        { path: '/about', text: pageTitles.about },
+        { path: '/client-info', text: pageTitles.clientInfo },
+        { path: '/text-hash', text: pageTitles.textHash },
+        { path: '/video-to-gif', text: pageTitles.videoToGif },
+        { path: '/json-formatter', text: pageTitles.jsonFormatter },
+        { path: '/xml-formatter', text: pageTitles.xmlFormatter },
+        { path: '/text-case-converter', text: pageTitles.textCaseConverter },
+        { path: '/countdown-to-holidays', text: pageTitles.countdownToHolidays },
+        { path: '/world-timezone', text: pageTitles.worldTimezone },
+        { path: '/timezone-converter', text: pageTitles.timezoneConverter },
+        { path: '/japanese-era', text: pageTitles.japaneseEra },
+        { path: '/time-issues', text: pageTitles.timeIssues },
+        { path: '/time-progress', text: pageTitles.timeProgress },
+        { path: '/escape-sequence-interpreter', text: pageTitles.escapeSequenceInterpreter },
+        { path: '/regex-tester', text: pageTitles.regexTester },
+        { path: '/template-base-random-generator', text: pageTitles.templateBaseRandomGenerator },
+        { path: '/uuid-generator', text: pageTitles.uuidGenerator },
+        { path: '/text-counter', text: pageTitles.textCounter },
+        { path: '/unix-time-converter', text: pageTitles.unixTimeConverter },
+        { path: '/birthdate-info', text: pageTitles.birthdateInfo },
+        { path: '/ruby-generator', text: pageTitles.rubyGenerator },
+        { path: '/length-converter', text: pageTitles.lengthConverter },
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
