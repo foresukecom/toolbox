@@ -26,7 +26,7 @@ export default {
           name: 'クライアント情報',
           tiles: [
             {
-              title: 'Client Info',
+              title: '閲覧環境',
               route: 'client-info',
             },
           ],

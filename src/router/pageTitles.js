@@ -2,7 +2,7 @@
 const pageTitles = {
   home: 'ホーム',
   about: 'About',
-  clientInfo: 'クライアント情報',
+  clientInfo: '閲覧環境',
   textHash: 'テキストハッシュ',
   videoToGif: 'ビデオからGIFへ',
   jsonFormatter: 'JSON整形',
