@@ -4,16 +4,13 @@
 
     <h2 class="text-xl mb-2 underline">このサイトについて</h2>
     <p class="mb-4">
-      このサイトはWebで使用する便利機能をまとめたサイトになります。
+      このサイトでは仕事で使えるちょっと便利な機能、楽しめる機能を提供しています。  
     </p>
 
     <h2 class="text-xl mb-2 underline">作者について</h2>
     <p class="mb-4">
-      このサイトの作者に関する詳しい情報は、以下のプロフィールページでご確認いただけます。
-    </p>
-    <p class="mb-4">
-      <a href="https://foresuke.com/" target="_blank" rel="noopener noreferrer"
-        class="text-blue-500 underline">作者のプロフィールページ</a>
+      作者については<a href="https://foresuke.com/" target="_blank" rel="noopener noreferrer"
+        class="text-blue-500 underline">プロフィールページ</a>をご確認ください。
     </p>
 
     <h2 class="text-xl mb-2 underline">Google Analyticsについてのプライバシーポリシー</h2>
