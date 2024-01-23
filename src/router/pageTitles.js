@@ -22,7 +22,8 @@ const pageTitles = {
   unixTimeConverter: 'UNIXTIME変換',
   birthdateInfo: '誕生日情報',
   rubyGenerator: 'ルビ生成',
-  lengthConverter: '距離単位変換'
+  lengthConverter: '距離単位変換',
+  textStyler: '文字装飾', 
 };
 
 export default pageTitles;

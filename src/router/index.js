@@ -23,6 +23,7 @@ import UnixTimeConverter from '../views/UnixTimeConverter.vue';
 import BirthdateInfo from '../views/BirthdateInfo.vue';
 import RubyGenerator from '../views/HtmlRubyGenerator.vue';
 import LengthConverter from '../views/LengthConverter.vue'
+import TextStyler from '../views/TextStyler.vue';
 
 const routes = [
   {
@@ -162,6 +163,12 @@ const routes = [
     name: "length-converter",
     component: LengthConverter,
     meta: { title: `toolbox: ${pageTitles.lengthConverter}` } 
+  },
+  {
+    path: "/text-styler",
+    name: "text-styler",
+    component: TextStyler,
+    meta: { title: `toolbox: ${pageTitles.textStyler}` } 
   },
 ];
 
