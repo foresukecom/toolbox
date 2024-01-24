@@ -59,10 +59,18 @@
     </div>
     <div class="grid grid-cols-3 gap-4 mt-4">
       <div class="col-span-2 relative">
-        <label for="overlinedText" class="block text-sm font-medium text-gray-700">太字</label>
+        <label for="overlinedText" class="block text-sm font-medium text-gray-700">上線付き</label>
         <textarea id="overlinedText" readonly v-model="overlinedText"
           class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
         <CopyButton :textToCopy="overlinedText" class="absolute top-2 right-2" />
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="strikethroughText" class="block text-sm font-medium text-gray-700">打ち消し線付き</label>
+        <textarea id="strikethroughText" readonly v-model="strikethroughText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="strikethroughText" class="absolute top-2 right-2" />
       </div>
     </div>
 
@@ -86,6 +94,7 @@ export default {
       enclosedAlphanumericsText: '',
       underlinedText: '',
       overlinedText: '',
+      strikethroughText: '',
     };
   },
   methods: {
@@ -97,6 +106,7 @@ export default {
       this.enclosedAlphanumericsText = this.toEnclosedAlphanumericsText(this.inputText);
       this.underlinedText = this.toUnderlinedText(this.inputText);
       this.overlinedText = this.toOverlinedText(this.inputText);
+      this.strikethroughText = this.toStrikethroughText(this.inputText);
     },
     toBoldText(str) {
       const boldChars = {
@@ -152,6 +162,10 @@ export default {
     toOverlinedText(str) {
       const overlineCombiningChar = '\u0305';
       return str.split('').map(char => char + overlineCombiningChar).join('');
+    },
+    toStrikethroughText(str) {
+      const strikethroughCombiningChar = '\u0336';
+      return str.split('').map(char => char + strikethroughCombiningChar).join('');
     },
   }
 };
