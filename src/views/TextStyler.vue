@@ -41,6 +41,14 @@
         <CopyButton :textToCopy="bubbleText" class="absolute top-2 right-2" />
       </div>
     </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="enclosedAlphanumericsText" class="block text-sm font-medium text-gray-700">四角囲み文字</label>
+        <textarea id="enclosedAlphanumericsText" readonly v-model="enclosedAlphanumericsText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="enclosedAlphanumericsText" class="absolute top-2 right-2" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -59,6 +67,7 @@ export default {
       italicText: '',
       blackletterText: '',
       bubbleText: '',
+      enclosedAlphanumericsText: '',
     };
   },
   methods: {
@@ -67,6 +76,7 @@ export default {
       this.italicText = this.toItalicText(this.inputText);
       this.blackletterText = this.toBlackletterText(this.inputText);
       this.bubbleText = this.toBubbleText(this.inputText);
+      this.enclosedAlphanumericsText = this.toEnclosedAlphanumericsText(this.inputText);
     },
     toBoldText(str) {
       const boldChars = {
@@ -106,6 +116,14 @@ export default {
         '0': '⓪', '1': '①', '2': '②', '3': '③', '4': '④', '5': '⑤', '6': '⑥', '7': '⑦', '8': '⑧', '9': '⑨'
       };
       return str.split('').map(char => bubbleChars[char] || char).join('');
+    },
+    toEnclosedAlphanumericsText(str) {
+      const enclosedAlphanumericsChars = {
+        'A': '🄰', 'B': '🄱', 'C': '🄲', 'D': '🄳', 'E': '🄴', 'F': '🄵', 'G': '🄶', 'H': '🄷', 'I': '🄸', 'J': '🄹', 'K': '🄺', 'L': '🄻', 'M': '🄼',
+        'N': '🄽', 'O': '🄾', 'P': '🄿', 'Q': '🅀', 'R': '🅁', 'S': '🅂', 'T': '🅃', 'U': '🅄', 'V': '🅅', 'W': '🅆', 'X': '🅇', 'Y': '🅈', 'Z': '🅉',
+        // 四角囲み文字は通常、数字には対応していません。
+      };
+      return str.split('').map(char => enclosedAlphanumericsChars[char] || char).join('');
     },
   }
 };
