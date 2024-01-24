@@ -57,6 +57,14 @@
         <CopyButton :textToCopy="underlinedText" class="absolute top-2 right-2" />
       </div>
     </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="overlinedText" class="block text-sm font-medium text-gray-700">太字</label>
+        <textarea id="overlinedText" readonly v-model="overlinedText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="overlinedText" class="absolute top-2 right-2" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -77,6 +85,7 @@ export default {
       bubbleText: '',
       enclosedAlphanumericsText: '',
       underlinedText: '',
+      overlinedText: '',
     };
   },
   methods: {
@@ -87,6 +96,7 @@ export default {
       this.bubbleText = this.toBubbleText(this.inputText);
       this.enclosedAlphanumericsText = this.toEnclosedAlphanumericsText(this.inputText);
       this.underlinedText = this.toUnderlinedText(this.inputText);
+      this.overlinedText = this.toOverlinedText(this.inputText);
     },
     toBoldText(str) {
       const boldChars = {
@@ -138,6 +148,10 @@ export default {
     toUnderlinedText(str) {
       const underlineCombiningChar = '\u0332';
       return str.split('').map(char => char + underlineCombiningChar).join('');
+    },
+    toOverlinedText(str) {
+      const overlineCombiningChar = '\u0305';
+      return str.split('').map(char => char + overlineCombiningChar).join('');
     },
   }
 };
