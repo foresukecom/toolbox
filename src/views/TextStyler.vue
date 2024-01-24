@@ -33,6 +33,14 @@
         <CopyButton :textToCopy="blackletterText" class="absolute top-2 right-2" />
       </div>
     </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="bubbleText" class="block text-sm font-medium text-gray-700">バブル文字</label>
+        <textarea id="bubbleText" readonly v-model="bubbleText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="bubbleText" class="absolute top-2 right-2" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -50,13 +58,15 @@ export default {
       boldText: '',
       italicText: '',
       blackletterText: '',
+      bubbleText: '',
     };
   },
   methods: {
     convertText() {
       this.boldText = this.toBoldText(this.inputText);
       this.italicText = this.toItalicText(this.inputText);
-      this.blackletterText = this.toBlackletterText(this.inputText)
+      this.blackletterText = this.toBlackletterText(this.inputText);
+      this.bubbleText = this.toBubbleText(this.inputText);
     },
     toBoldText(str) {
       const boldChars = {
@@ -86,6 +96,16 @@ export default {
         'n': '𝔫', 'o': '𝔬', 'p': '𝔭', 'q': '𝔮', 'r': '𝔯', 's': '𝔰', 't': '𝔱', 'u': '𝔲', 'v': '𝔳', 'w': '𝔴', 'x': '𝔵', 'y': '𝔶', 'z': '𝔷'
       };
       return str.split('').map(char => blackletterChars[char] || char).join('');
+    },
+    toBubbleText(str) {
+      const bubbleChars = {
+        'A': 'Ⓐ', 'B': 'Ⓑ', 'C': 'Ⓒ', 'D': 'Ⓓ', 'E': 'Ⓔ', 'F': 'Ⓕ', 'G': 'Ⓖ', 'H': 'Ⓗ', 'I': 'Ⓘ', 'J': 'Ⓙ', 'K': 'Ⓚ', 'L': 'Ⓛ', 'M': 'Ⓜ',
+        'N': 'Ⓝ', 'O': 'Ⓞ', 'P': 'Ⓟ', 'Q': 'Ⓠ', 'R': 'Ⓡ', 'S': 'Ⓢ', 'T': 'Ⓣ', 'U': 'Ⓤ', 'V': 'Ⓥ', 'W': 'Ⓦ', 'X': 'Ⓧ', 'Y': 'Ⓨ', 'Z': 'Ⓩ',
+        'a': 'ⓐ', 'b': 'ⓑ', 'c': 'ⓒ', 'd': 'ⓓ', 'e': 'ⓔ', 'f': 'ⓕ', 'g': 'ⓖ', 'h': 'ⓗ', 'i': 'ⓘ', 'j': 'ⓙ', 'k': 'ⓚ', 'l': 'ⓛ', 'm': 'ⓜ',
+        'n': 'ⓝ', 'o': 'ⓞ', 'p': 'ⓟ', 'q': 'ⓠ', 'r': 'ⓡ', 's': 'ⓢ', 't': 'ⓣ', 'u': 'ⓤ', 'v': 'ⓥ', 'w': 'ⓦ', 'x': 'ⓧ', 'y': 'ⓨ', 'z': 'ⓩ',
+        '0': '⓪', '1': '①', '2': '②', '3': '③', '4': '④', '5': '⑤', '6': '⑥', '7': '⑦', '8': '⑧', '9': '⑨'
+      };
+      return str.split('').map(char => bubbleChars[char] || char).join('');
     },
   }
 };
