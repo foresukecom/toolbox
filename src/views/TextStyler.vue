@@ -89,6 +89,14 @@
         <CopyButton :textToCopy="blackSquareEnclosedText" class="absolute top-2 right-2" />
       </div>
     </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="mirrorText" class="block text-sm font-medium text-gray-700">鏡文字</label>
+        <textarea id="mirrorText" readonly v-model="mirrorText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="mirrorText" class="absolute top-2 right-2" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -112,6 +120,7 @@ export default {
       overlinedText: '',
       strikethroughText: '',
       transparentEnclosedText: '',
+      mirrorText: '',
     };
   },
   methods: {
@@ -126,6 +135,7 @@ export default {
       this.strikethroughText = this.toStrikethroughText(this.inputText);
       this.transparentEnclosedText = this.toTransparentEnclosedText(this.inputText);
       this.blackSquareEnclosedText = this.toBlackBackgroundEnclosedAlphabetText(this.inputText);
+      this.mirrorText = this.toMirrorText(this.inputText);
     },
     toBoldText(str) {
       const boldChars = {
@@ -200,6 +210,16 @@ export default {
         'N': '🅽', 'O': '🅾', 'P': '🅿', 'Q': '🆀', 'R': '🆁', 'S': '🆂', 'T': '🆃', 'U': '🆄', 'V': '🆅', 'W': '🆆', 'X': '🆇', 'Y': '🆈', 'Z': '🆉',
       };
       return str.split('').map(char => blackBackgroundEnclosedAlphabetChars[char] || char).join('');
+    },
+    toMirrorText(str) {
+      const mirrorChars = {
+        'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ', 'i': 'ı', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ',
+        'n': 'u', 'o': 'o', 'p': 'd', 'q': 'b', 'r': 'ɹ', 's': 's', 't': 'ʇ', 'u': 'n', 'v': 'ʌ', 'w': 'ʍ', 'x': 'x', 'y': 'ʎ', 'z': 'z',
+        'A': '∀', 'B': 'B', 'C': 'Ɔ', 'D': 'D', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': 'פ', 'H': 'H', 'I': 'I', 'J': 'ſ', 'K': 'K', 'L': '˥', 'M': 'W',
+        'N': 'N', 'O': 'O', 'P': 'Ԁ', 'Q': 'Q', 'R': 'R', 'S': 'S', 'T': '┴', 'U': '∩', 'V': 'Λ', 'W': 'M', 'X': 'X', 'Y': '⅄', 'Z': 'Z',
+        // 数字やその他の文字は含まれていません。
+      };
+      return str.split('').map(char => mirrorChars[char] || char).join('');
     },
   }
 };
