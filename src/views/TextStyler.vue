@@ -113,6 +113,14 @@
         <CopyButton :textToCopy="superscriptText" class="absolute top-2 right-2" />
       </div>
     </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="upsideDownText" class="block text-sm font-medium text-gray-700">逆さ文字</label>
+        <textarea id="upsideDownText" readonly v-model="upsideDownText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="upsideDownText" class="absolute top-2 right-2" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -139,6 +147,7 @@ export default {
       mirrorText: '',
       scriptText: '',
       superscriptText: '',
+      upsideDownText: '',
     };
   },
   methods: {
@@ -156,6 +165,7 @@ export default {
       this.mirrorText = this.toMirrorText(this.inputText);
       this.scriptText = this.toScriptText(this.inputText);
       this.superscriptText = this.toSuperscriptText(this.inputText);
+      this.upsideDownText = this.toUpsideDownText(this.inputText);
     },
     toBoldText(str) {
       const boldChars = {
@@ -257,6 +267,18 @@ export default {
       // 大文字や数字の小文字上付きは一般的ではないため、ここでは含めていません。
     };
     return str.split('').map(char => superscriptChars[char] || char).join('');
+  },
+  toUpsideDownText(str) {
+    const upsideDownChars = {
+      'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ', 'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ',
+      'n': 'u', 'o': 'o', 'p': 'd', 'q': 'b', 'r': 'ɹ', 's': 's', 't': 'ʇ', 'u': 'n', 'v': 'ʌ', 'w': 'ʍ', 'x': 'x', 'y': 'ʎ', 'z': 'z',
+      'A': '∀', 'B': '𐐒', 'C': 'Ɔ', 'D': 'ᗡ', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': '⅁', 'H': 'H', 'I': 'I', 'J': 'ſ', 'K': 'ᐴ', 'L': '˥', 'M': 'W',
+      'N': 'N', 'O': 'O', 'P': 'Ԁ', 'Q': 'Ὁ', 'R': 'ᴚ', 'S': 'S', 'T': '⊥', 'U': '∩', 'V': 'Λ', 'W': 'M', 'X': 'X', 'Y': '⅄', 'Z': 'Z',
+      '1': 'Ɩ', '2': 'ᄅ', '3': 'Ɛ', '4': 'ㄣ', '5': 'ϛ', '6': '9', '7': 'ㄥ', '8': '8', '9': '6', '0': '0',
+      '.': '˙', ',': '\'', '?': '¿', '!': '¡', '"': ',,', "'": ',', '(': ')', ')': '(', '[': ']', ']': '[', '{': '}', '}': '{',
+      '<': '>', '>': '<', '&': '⅋', '_': '‾'
+    };
+    return str.split('').map(char => upsideDownChars[char] || char).join('').split('').reverse().join('');
   },
   }
 };
