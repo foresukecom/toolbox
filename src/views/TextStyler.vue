@@ -9,128 +9,30 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="boldText" class="block text-sm font-medium text-gray-700">太字</label>
-        <textarea id="boldText" readonly v-model="boldText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="boldText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="italicText" class="block text-sm font-medium text-gray-700">イタリック</label>
-        <textarea id="italicText" readonly v-model="italicText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="italicText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="blackletterText" class="block text-sm font-medium text-gray-700">古風な文字</label>
-        <textarea id="blackletterText" readonly v-model="blackletterText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="blackletterText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="bubbleText" class="block text-sm font-medium text-gray-700">バブル文字</label>
-        <textarea id="bubbleText" readonly v-model="bubbleText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="bubbleText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="enclosedAlphanumericsText" class="block text-sm font-medium text-gray-700">四角囲み文字</label>
-        <textarea id="enclosedAlphanumericsText" readonly v-model="enclosedAlphanumericsText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="enclosedAlphanumericsText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="underlinedText" class="block text-sm font-medium text-gray-700">下線付き</label>
-        <textarea id="underlinedText" readonly v-model="underlinedText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="underlinedText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="overlinedText" class="block text-sm font-medium text-gray-700">上線付き</label>
-        <textarea id="overlinedText" readonly v-model="overlinedText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="overlinedText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="strikethroughText" class="block text-sm font-medium text-gray-700">打ち消し線付き</label>
-        <textarea id="strikethroughText" readonly v-model="strikethroughText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="strikethroughText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="transparentEnclosedText" class="block text-sm font-medium text-gray-700">囲み文字</label>
-        <textarea id="transparentEnclosedText" readonly v-model="transparentEnclosedText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="transparentEnclosedText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="blackSquareEnclosedText" class="block text-sm font-medium text-gray-700">黒背景四角囲み文字</label>
-        <textarea id="blackSquareEnclosedText" readonly v-model="blackSquareEnclosedText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="blackSquareEnclosedText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="mirrorText" class="block text-sm font-medium text-gray-700">鏡文字</label>
-        <textarea id="mirrorText" readonly v-model="mirrorText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="mirrorText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="scriptText" class="block text-sm font-medium text-gray-700">筆記体</label>
-        <textarea id="scriptText" readonly v-model="scriptText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="scriptText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="superscriptText" class="block text-sm font-medium text-gray-700">小文字上付き文字</label>
-        <textarea id="superscriptText" readonly v-model="superscriptText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="superscriptText" class="absolute top-2 right-2" />
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div class="col-span-2 relative">
-        <label for="upsideDownText" class="block text-sm font-medium text-gray-700">逆さ文字</label>
-        <textarea id="upsideDownText" readonly v-model="upsideDownText"
-          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
-        <CopyButton :textToCopy="upsideDownText" class="absolute top-2 right-2" />
-      </div>
-    </div>
+    <TextHighlighter :formattedText="boldText" label="太字"/>
+    <TextHighlighter :formattedText="italicText" label="イタリック"/>
+    <TextHighlighter :formattedText="blackletterText" label="古風な文字"/>
+    <TextHighlighter :formattedText="bubbleText" label="バブル文字"/>
+    <TextHighlighter :formattedText="enclosedAlphanumericsText" label="四角囲み文字"/>
+    <TextHighlighter :formattedText="underlinedText" label="下線付き"/>
+    <TextHighlighter :formattedText="overlinedText" label="上線付き"/>
+    <TextHighlighter :formattedText="strikethroughText" label="打ち消し線付き"/>
+    <TextHighlighter :formattedText="transparentEnclosedText" label="囲み文字"/>
+    <TextHighlighter :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字"/>
+    <TextHighlighter :formattedText="mirrorText" label="鏡文字"/>
+    <TextHighlighter :formattedText="scriptText" label="筆記体"/>
+    <TextHighlighter :formattedText="superscriptText" label="小文字上付き文字"/>
+    <TextHighlighter :formattedText="upsideDownText" label="逆さ文字"/>
 
   </div>
 </template>
 
 
 <script>
-import CopyButton from '@/components/CopyButton.vue';
+import TextHighlighter from "@/components/TextHighlighter.vue";
 export default {
   components: {
-    CopyButton,
+    TextHighlighter,
   },
   data() {
     return {
