@@ -97,6 +97,22 @@
         <CopyButton :textToCopy="mirrorText" class="absolute top-2 right-2" />
       </div>
     </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="scriptText" class="block text-sm font-medium text-gray-700">筆記体</label>
+        <textarea id="scriptText" readonly v-model="scriptText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="scriptText" class="absolute top-2 right-2" />
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="superscriptText" class="block text-sm font-medium text-gray-700">小文字上付き文字</label>
+        <textarea id="superscriptText" readonly v-model="superscriptText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="superscriptText" class="absolute top-2 right-2" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -122,6 +138,7 @@ export default {
       transparentEnclosedText: '',
       mirrorText: '',
       scriptText: '',
+      superscriptText: '',
     };
   },
   methods: {
@@ -138,6 +155,7 @@ export default {
       this.blackSquareEnclosedText = this.toBlackBackgroundEnclosedAlphabetText(this.inputText);
       this.mirrorText = this.toMirrorText(this.inputText);
       this.scriptText = this.toScriptText(this.inputText);
+      this.superscriptText = this.toSuperscriptText(this.inputText);
     },
     toBoldText(str) {
       const boldChars = {
@@ -231,6 +249,14 @@ export default {
       'n': '𝓃', 'o': '𝑜', 'p': '𝓅', 'q': '𝓆', 'r': '𝓇', 's': '𝓈', 't': '𝓉', 'u': '𝓊', 'v': '𝓋', 'w': '𝓌', 'x': '𝓍', 'y': '𝓎', 'z': '𝓏',
     };
     return str.split('').map(char => scriptChars[char] || char).join('');
+  },
+  toSuperscriptText(str) {
+    const superscriptChars = {
+      'a': 'ᵃ', 'b': 'ᵇ', 'c': 'ᶜ', 'd': 'ᵈ', 'e': 'ᵉ', 'f': 'ᶠ', 'g': 'ᵍ', 'h': 'ʰ', 'i': 'ⁱ', 'j': 'ʲ', 'k': 'ᵏ', 'l': 'ˡ', 'm': 'ᵐ',
+      'n': 'ⁿ', 'o': 'ᵒ', 'p': 'ᵖ', 'q': 'ᵠ', 'r': 'ʳ', 's': 'ˢ', 't': 'ᵗ', 'u': 'ᵘ', 'v': 'ᵛ', 'w': 'ʷ', 'x': 'ˣ', 'y': 'ʸ', 'z': 'ᶻ',
+      // 大文字や数字の小文字上付きは一般的ではないため、ここでは含めていません。
+    };
+    return str.split('').map(char => superscriptChars[char] || char).join('');
   },
   }
 };
