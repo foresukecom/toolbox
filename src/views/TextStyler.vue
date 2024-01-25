@@ -73,6 +73,14 @@
         <CopyButton :textToCopy="strikethroughText" class="absolute top-2 right-2" />
       </div>
     </div>
+    <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="col-span-2 relative">
+        <label for="transparentEnclosedText" class="block text-sm font-medium text-gray-700">囲み文字</label>
+        <textarea id="transparentEnclosedText" readonly v-model="transparentEnclosedText"
+          class="mt-1 block w-full rounded-md bg-gray-100 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <CopyButton :textToCopy="transparentEnclosedText" class="absolute top-2 right-2" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -95,6 +103,7 @@ export default {
       underlinedText: '',
       overlinedText: '',
       strikethroughText: '',
+      transparentEnclosedText: '',
     };
   },
   methods: {
@@ -107,6 +116,7 @@ export default {
       this.underlinedText = this.toUnderlinedText(this.inputText);
       this.overlinedText = this.toOverlinedText(this.inputText);
       this.strikethroughText = this.toStrikethroughText(this.inputText);
+      this.transparentEnclosedText = this.toTransparentEnclosedText(this.inputText);
     },
     toBoldText(str) {
       const boldChars = {
@@ -167,6 +177,14 @@ export default {
       const strikethroughCombiningChar = '\u0336';
       return str.split('').map(char => char + strikethroughCombiningChar).join('');
     },
+    toTransparentEnclosedText(str) {
+    const transparentEnclosedChars = {
+      'A': '🅐', 'B': '🅑', 'C': '🅒', 'D': '🅓', 'E': '🅔', 'F': '🅕', 'G': '🅖', 'H': '🅗', 'I': '🅘', 'J': '🅙', 'K': '🅚', 'L': '🅛', 'M': '🅜',
+      'N': '🅝', 'O': '🅞', 'P': '🅟', 'Q': '🅠', 'R': '🅡', 'S': '🅢', 'T': '🅣', 'U': '🅤', 'V': '🅥', 'W': '🅦', 'X': '🅧', 'Y': '🅨', 'Z': '🅩',
+      // 透明な四角囲み文字は通常、数字には対応していません。
+    };
+    return str.split('').map(char => transparentEnclosedChars[char] || char).join('');
+  },
   }
 };
 </script>
