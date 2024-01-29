@@ -1,27 +1,30 @@
 <template>
-  <div class="container mx-auto px-4">
-    <h1 class="text-2xl mb-4">Text Converter</h1>
-    <div class="col-span-2">
-      <label for="inputText" class="block text-sm font-medium text-gray-700">Input Text</label>
-      <textarea id="inputText" v-model="inputText" @input="convertText"
-        class="mt-1 block w-50 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+  <div class="flex justify-center">
+    <div class="w-2/3 px-4">
+      <h1 class="text-2xl mb-4">Text Converter</h1>
+      <div>
+        <label for="inputText" class="block text-sm font-medium text-gray-700">Input Text</label>
+        <textarea id="inputText" v-model="inputText" @input="convertText"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+      </div>
+
+      <TextHighlighter width="w-full" :formattedText="boldText" label="太字" />
+      <TextHighlighter width="w-full" :formattedText="boldText" label="太字" />
+      <TextHighlighter width="w-full" :formattedText="italicText" label="イタリック" />
+      <TextHighlighter width="w-full" :formattedText="blackletterText" label="古風な文字" />
+      <TextHighlighter width="w-full" :formattedText="bubbleText" label="バブル文字" />
+      <TextHighlighter width="w-full" :formattedText="enclosedAlphanumericsText" label="四角囲み文字" />
+      <TextHighlighter width="w-full" :formattedText="underlinedText" label="下線付き" />
+      <TextHighlighter width="w-full" :formattedText="overlinedText" label="上線付き" />
+      <TextHighlighter width="w-full" :formattedText="strikethroughText" label="打ち消し線付き" />
+      <TextHighlighter width="w-full" :formattedText="transparentEnclosedText" label="囲み文字" />
+      <TextHighlighter width="w-full" :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字" />
+      <TextHighlighter width="w-full" :formattedText="mirrorText" label="鏡文字" />
+      <TextHighlighter width="w-full" :formattedText="scriptText" label="筆記体" />
+      <TextHighlighter width="w-full" :formattedText="superscriptText" label="小文字上付き文字" />
+      <TextHighlighter width="w-full" :formattedText="upsideDownText" label="逆さ文字" />
+
     </div>
-
-    <TextHighlighter width="w-50" :formattedText="boldText" label="太字" />
-    <TextHighlighter width="w-50" :formattedText="italicText" label="イタリック" />
-    <TextHighlighter width="w-50" :formattedText="blackletterText" label="古風な文字" />
-    <TextHighlighter width="w-50" :formattedText="bubbleText" label="バブル文字" />
-    <TextHighlighter width="w-50" :formattedText="enclosedAlphanumericsText" label="四角囲み文字" />
-    <TextHighlighter width="w-50" :formattedText="underlinedText" label="下線付き" />
-    <TextHighlighter width="w-50" :formattedText="overlinedText" label="上線付き" />
-    <TextHighlighter width="w-50" :formattedText="strikethroughText" label="打ち消し線付き" />
-    <TextHighlighter width="w-50" :formattedText="transparentEnclosedText" label="囲み文字" />
-    <TextHighlighter width="w-50" :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字" />
-    <TextHighlighter width="w-50" :formattedText="mirrorText" label="鏡文字" />
-    <TextHighlighter width="w-50" :formattedText="scriptText" label="筆記体" />
-    <TextHighlighter width="w-50" :formattedText="superscriptText" label="小文字上付き文字" />
-    <TextHighlighter width="w-50" :formattedText="upsideDownText" label="逆さ文字" />
-
   </div>
 </template>
 
