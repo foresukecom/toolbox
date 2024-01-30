@@ -1,9 +1,9 @@
 <template>
-  <div class="relative" :class="widthClass">
-    <div v-if="label" class="font-bold mb-2 text-lg">{{ label }}</div>
+  <div class="relative mb-4" :class="widthClass">
+    <div v-if="label" class="font-bold mb-1 text-lg">{{ label }}</div>
     <div class="relative">
       <pre v-html="highlightedText"
-        class="whitespace-pre-wrap font-mono bg-gray-800 text-white p-4 rounded min-h-[2rem]"></pre>
+        class="mt-2 whitespace-pre-wrap font-mono bg-gray-800 text-white p-4 rounded min-h-[2rem]"></pre> 
       <CopyButton v-if="showCopyButton" class="absolute top-2 right-2" :textToCopy="formattedText" />
     </div>
   </div>
