@@ -1,14 +1,17 @@
 <template>
   <div class="flex justify-center">
     <div class="w-2/3 px-4">
-      <h1 class="text-2xl mb-4">Text Converter</h1>
+      <h1 class="text-2xl mb-4">修飾文字ジェネレーター</h1>
+
       <div>
-        <label for="inputText" class="block text-sm font-medium text-gray-700">Input Text</label>
-        <textarea id="inputText" v-model="inputText" @input="convertText"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+        <label for="inputText" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">テキスト入力</label>
+        <input type="text" id="inputText" v-model="inputText" @input="convertText"
+          class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="装飾したいテキストを入力" required>
       </div>
 
-      <TextHighlighter width="w-full" :formattedText="boldText" label="太字" />
+      <div class="mb-8"></div> 
+
       <TextHighlighter width="w-full" :formattedText="boldText" label="太字" />
       <TextHighlighter width="w-full" :formattedText="italicText" label="イタリック" />
       <TextHighlighter width="w-full" :formattedText="blackletterText" label="古風な文字" />
