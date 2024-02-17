@@ -24,6 +24,7 @@ import BirthdateInfo from '../views/BirthdateInfo.vue';
 import RubyGenerator from '../views/HtmlRubyGenerator.vue';
 import LengthConverter from '../views/LengthConverter.vue'
 import TextStyler from '../views/TextStyler.vue';
+import ImageMetadata from '../views/ImageMetadata.vue'
 
 const routes = [
   {
@@ -169,6 +170,12 @@ const routes = [
     name: "text-styler",
     component: TextStyler,
     meta: { title: `toolbox: ${pageTitles.textStyler}` } 
+  },
+  {
+    path: "/image-metadata",
+    name: "image-metadata",
+    component: ImageMetadata,
+    meta: { title: `toolbox: ${pageTitles.imageMetadata}` } 
   },
 ];
 
