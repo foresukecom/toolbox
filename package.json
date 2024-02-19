@@ -21,6 +21,7 @@
     "flowbite": "^1.7.0",
     "gif.js": "^0.2.0",
     "leaflet": "^1.9.3",
+    "mapbox-gl": "^3.1.2",
     "moment-duration-format": "^2.3.2",
     "moment-timezone": "^0.5.43",
     "roboto-fontface": "*",
