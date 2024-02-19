@@ -1,21 +1,21 @@
 <template>
-  <div class="container mx-auto">
-    <div class="max-w-sm mx-auto">
-      <input type="file" @change="handleFileChange" class="block w-full text-sm py-2 px-3 border rounded-lg text-gray-700 bg-white shadow-md focus:outline-none focus:border-indigo-500">
+  <div class="container mx-auto p-4">
+    <div 
+      class="border-4 border-dashed border-gray-200 rounded-lg p-6 cursor-pointer"
+      @dragover.prevent="handleDragOver" 
+      @dragleave.prevent="handleDragLeave" 
+      @drop.prevent="handleDrop"
+      :class="{ 'bg-gray-100': isDragOver }"
+    >
+      <p class="text-center text-gray-500">画像をここにドラッグアンドドロップしてください</p>
     </div>
-    <div v-if="exifData" class="mt-5">
-      <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-        <div class="md:flex">
-          <div class="p-8">
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">EXIF Data</div>
-            <ul class="mt-2 text-gray-500">
-              <li v-for="(value, key) in exifData" :key="key" class="py-1">
-                <strong>{{ key }}:</strong> {{ value }}
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div v-if="exifData" class="mt-4">
+      <h3 class="text-lg font-semibold">EXIF Information:</h3>
+      <ul class="list-disc pl-5">
+        <li v-for="(value, key) in exifData" :key="key">
+          <strong>{{ key }}:</strong> {{ value }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -26,12 +26,26 @@ import EXIF from 'exif-js';
 export default {
   data() {
     return {
+      isDragOver: false,
       exifData: null,
     };
   },
   methods: {
-    handleFileChange(event) {
-      const file = event.target.files[0];
+    handleDragOver() {
+      this.isDragOver = true;
+    },
+    handleDragLeave() {
+      this.isDragOver = false;
+    },
+    handleDrop(e) {
+      this.isDragOver = false;
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        const file = files[0];
+        this.processFile(file);
+      }
+    },
+    processFile(file) {
       EXIF.getData(file, () => {
         this.exifData = EXIF.getAllTags(file);
       });
@@ -39,3 +53,6 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+</style>
