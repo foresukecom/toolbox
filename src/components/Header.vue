@@ -53,6 +53,8 @@ export default {
         { path: '/birthdate-info', text: pageTitles.birthdateInfo },
         { path: '/ruby-generator', text: pageTitles.rubyGenerator },
         { path: '/length-converter', text: pageTitles.lengthConverter },
+        { path: '/text-styler', text: pageTitles.textStyler },
+        { path: '/image-metadata', text: pageTitles.imageMetadata },
       ];
 
       const currentPage = pages.find(page => page.path === route.path);
