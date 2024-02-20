@@ -1,8 +1,21 @@
 <template>
   <div class="container mx-auto p-4">
-    <div class="border-4 border-dashed border-gray-200 rounded-lg p-6 cursor-pointer" @dragover.prevent="handleDragOver"
-      @dragleave.prevent="handleDragLeave" @drop.prevent="handleDrop" :class="{ 'bg-gray-100': isDragOver }">
-      <p class="text-center text-gray-500">画像をここにドラッグアンドドロップしてください</p>
+    <div class="flex items-center justify-center w-full">
+      <label for="dropzone-file"
+        class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+        @dragover.prevent="handleDragOver" @dragleave.prevent="handleDragLeave" @drop.prevent="handleDrop">
+        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+          <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M7 7h10M7 12h10m-5 5h5a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">EXIF情報を取得したいファイルを選択するか、画面内にドラッグ・アンド・ドロップしてください。</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">image/jpeg, image/tiff</p>
+        </div>
+        <input id="dropzone-file" type="file" class="hidden" 
+        @change="handleFileChange" accept="image/jpeg, image/tiff" />
+
+      </label>
     </div>
 
     <div v-if="selectedImageUrl" class="mt-4">
@@ -54,6 +67,14 @@ export default {
     handleDrop(e) {
       this.isDragOver = false;
       const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        const file = files[0];
+        this.processFile(file); // EXIFデータの処理
+        this.loadImage(file); // 画像の読み込み
+      }
+    },
+    handleFileChange(e) {
+      const files = e.target.files;
       if (files.length > 0) {
         const file = files[0];
         this.processFile(file); // EXIFデータの処理
