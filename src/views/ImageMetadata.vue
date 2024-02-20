@@ -12,7 +12,7 @@
         </li>
       </ul>
     </div>
-    <div ref="mapContainer" class="map-container h-64" />
+    <div :style="mapStyle" ref="mapContainer" class="map-container h-64"></div>
   </div>
 </template>
 
@@ -26,6 +26,7 @@ export default {
       isDragOver: false,
       exifData: null,
       map: null, // 地図のインスタンスを保持
+      mapStyle: { visibility: 'hidden' },
     };
   },
   mounted() {
@@ -58,10 +59,14 @@ export default {
         if (this.exifData.GPSLatitude && this.exifData.GPSLongitude) {
           const lat = this.convertGPSInfo(this.exifData.GPSLatitude);
           const lng = this.convertGPSInfo(this.exifData.GPSLongitude);
+          this.mapVisible = true; 
           // 地図がロードされていることを確認してから、中心を更新
           if (this.map && this.map.isStyleLoaded()) {
             this.map.flyTo({ center: [lng, lat] });
+            this.showMap();
           }
+        }else{
+          this.hideMap();
         }
       });
     },
@@ -77,6 +82,12 @@ export default {
       } else {
         return 0; // 不正なデータの場合は0を返す
       }
+    },
+    showMap() {
+      this.mapStyle.visibility = 'visible'; // 地図を表示
+    },
+    hideMap() {
+      this.mapStyle.visibility = 'hidden'; // 地図を非表示
     },
   },
 };
