@@ -80,16 +80,19 @@ export default {
             },
           ],
         },
-        // {
-        //   name: '画像操作ツール',
-        //   tiles: [
-
-        //     {
-        //       title: 'Gif 変換',
-        //       route: 'video-to-gif',
-        //     },
-        //   ],
-        // },
+        {
+          name: '画像操作ツール',
+          tiles: [
+            // {
+            //   title: 'Gif 変換',
+            //   route: 'video-to-gif',
+            // },
+            {
+              title: 'exifビューア',
+              route: 'image-metadata'
+            }
+          ],
+        },
         {
           name: '日付ツール',
           tiles: [
@@ -189,4 +192,5 @@ export default {
   text-overflow: ellipsis;
   min-height: 50px;
   height: auto;
-}</style>
+}
+</style>
