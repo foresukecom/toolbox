@@ -24,7 +24,7 @@ const pageTitles = {
   rubyGenerator: 'ルビ生成',
   lengthConverter: '距離単位変換',
   textStyler: '文字装飾', 
-  imageMetadata: 'exifビューア'
+  imageMetadata: '画像メタ情報操作'
 };
 
 export default pageTitles;
