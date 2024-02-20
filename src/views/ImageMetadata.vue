@@ -12,8 +12,7 @@
           <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">EXIF情報を取得したいファイルを選択するか、画面内にドラッグ・アンド・ドロップしてください。</p>
           <p class="text-xs text-gray-500 dark:text-gray-400">image/jpeg, image/tiff</p>
         </div>
-        <input id="dropzone-file" type="file" class="hidden" 
-        @change="handleFileChange" accept="image/jpeg, image/tiff" />
+        <input id="dropzone-file" type="file" class="hidden" @change="handleFileChange" accept="image/jpeg, image/tiff" />
 
       </label>
     </div>
@@ -23,6 +22,17 @@
         :src="selectedImageUrl" />
     </div>
     <div v-if="exifData" class="mt-4">
+
+      <button type="button" @click="removeExifAndDownload(selectedFile)"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mt-4 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <svg class="w-5 h-5 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+        </svg>
+        EXIF情報を削除した画像ファイルをダウンロード
+      </button>
+
       <h3 class="text-lg font-semibold">EXIF Information:</h3>
       <ul class="list-disc pl-5">
         <li v-for="(value, key) in exifData" :key="key">
@@ -73,12 +83,12 @@ export default {
         this.loadImage(file); // 画像の読み込み
       }
     },
-    handleFileChange(e) {
-      const files = e.target.files;
+    handleFileChange(event) {
+      const files = event.target.files;
       if (files.length > 0) {
-        const file = files[0];
-        this.processFile(file); // EXIFデータの処理
-        this.loadImage(file); // 画像の読み込み
+        this.selectedFile = files[0]; // selectedFile を更新
+        this.processFile(this.selectedFile); // EXIFデータの処理
+        this.loadImage(this.selectedFile); // 画像の読み込み
       }
     },
     processFile(file) {
@@ -124,6 +134,39 @@ export default {
       };
       reader.readAsDataURL(file); // ファイルをデータURLとして読み込む
     },
+    // EXIF削除
+    removeExifAndDownload(file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          // canvasを使用して画像を描画し、EXIF情報を削除
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+
+          // canvasから画像をエクスポート
+          canvas.toBlob((blob) => {
+            const url = URL.createObjectURL(blob);
+
+            // ダウンロードリンクを作成
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'no-exif_' + file.name;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Blob URLを解放
+            URL.revokeObjectURL(url);
+          }, 'image/jpeg');
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
   },
 };
 </script>
@@ -133,5 +176,4 @@ export default {
   width: 100%;
   height: 400px;
   /* 地図の高さ */
-}
-</style>
+}</style>
