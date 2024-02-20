@@ -3,6 +3,10 @@
     <div class="w-2/3 px-4">
       <h1 class="text-2xl mb-4">修飾文字ジェネレーター</h1>
 
+      <p class="mb-4 text-sm text-gray-700">
+        このツールを使用して、様々なスタイルでテキストを装飾できます。太字、イタリック、古風な文字、バブル文字など、多様なスタイルが利用可能です。変換されたテキストは、SNSの投稿やデザイン作業などで自由に利用できます。
+      </p>
+
       <div>
         <label for="inputText" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">テキスト入力</label>
         <input type="text" id="inputText" v-model="inputText" @input="convertText"
@@ -16,15 +20,15 @@
       <TextHighlighter width="w-full" :formattedText="italicText" label="イタリック" />
       <TextHighlighter width="w-full" :formattedText="blackletterText" label="古風な文字" />
       <TextHighlighter width="w-full" :formattedText="bubbleText" label="バブル文字" />
-      <TextHighlighter width="w-full" :formattedText="enclosedAlphanumericsText" label="四角囲み文字" />
+      <TextHighlighter width="w-full" :formattedText="enclosedAlphanumericsText" label="四角囲み文字(大文字のみ対応)" />
       <TextHighlighter width="w-full" :formattedText="underlinedText" label="下線付き" />
       <TextHighlighter width="w-full" :formattedText="overlinedText" label="上線付き" />
       <TextHighlighter width="w-full" :formattedText="strikethroughText" label="打ち消し線付き" />
-      <TextHighlighter width="w-full" :formattedText="transparentEnclosedText" label="囲み文字" />
-      <TextHighlighter width="w-full" :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字" />
+      <TextHighlighter width="w-full" :formattedText="transparentEnclosedText" label="黒背景丸囲み文字(大文字のみ対応)" />
+      <TextHighlighter width="w-full" :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字(大文字のみ対応)" />
       <TextHighlighter width="w-full" :formattedText="mirrorText" label="鏡文字" />
       <TextHighlighter width="w-full" :formattedText="scriptText" label="筆記体" />
-      <TextHighlighter width="w-full" :formattedText="superscriptText" label="小文字上付き文字" />
+      <TextHighlighter width="w-full" :formattedText="superscriptText" label="小文字上付き文字(小文字のみ対応)" />
       <TextHighlighter width="w-full" :formattedText="upsideDownText" label="逆さ文字" />
 
     </div>
