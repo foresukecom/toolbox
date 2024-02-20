@@ -4,6 +4,11 @@
       @dragleave.prevent="handleDragLeave" @drop.prevent="handleDrop" :class="{ 'bg-gray-100': isDragOver }">
       <p class="text-center text-gray-500">画像をここにドラッグアンドドロップしてください</p>
     </div>
+
+    <div v-if="selectedImageUrl" class="mt-4">
+      <img class="h-auto max-w-lg transition-all duration-300 rounded-lg blur-sm hover:blur-none"
+        :src="selectedImageUrl" />
+    </div>
     <div v-if="exifData" class="mt-4">
       <h3 class="text-lg font-semibold">EXIF Information:</h3>
       <ul class="list-disc pl-5">
@@ -23,6 +28,7 @@ import EXIF from 'exif-js';
 export default {
   data() {
     return {
+      selectedImageUrl: null,
       isDragOver: false,
       exifData: null,
       map: null, // 地図のインスタンスを保持
@@ -50,7 +56,8 @@ export default {
       const files = e.dataTransfer.files;
       if (files.length > 0) {
         const file = files[0];
-        this.processFile(file);
+        this.processFile(file); // EXIFデータの処理
+        this.loadImage(file); // 画像の読み込み
       }
     },
     processFile(file) {
@@ -59,13 +66,13 @@ export default {
         if (this.exifData.GPSLatitude && this.exifData.GPSLongitude) {
           const lat = this.convertGPSInfo(this.exifData.GPSLatitude);
           const lng = this.convertGPSInfo(this.exifData.GPSLongitude);
-          this.mapVisible = true; 
+          this.mapVisible = true;
           // 地図がロードされていることを確認してから、中心を更新
           if (this.map && this.map.isStyleLoaded()) {
             this.map.flyTo({ center: [lng, lat] });
             this.showMap();
           }
-        }else{
+        } else {
           this.hideMap();
         }
       });
@@ -88,6 +95,13 @@ export default {
     },
     hideMap() {
       this.mapStyle.visibility = 'hidden'; // 地図を非表示
+    },
+    loadImage(file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.selectedImageUrl = e.target.result; // 読み込んだ画像のデータURLを設定
+      };
+      reader.readAsDataURL(file); // ファイルをデータURLとして読み込む
     },
   },
 };
