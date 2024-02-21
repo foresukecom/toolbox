@@ -79,6 +79,7 @@ export default {
       const files = e.dataTransfer.files;
       if (files.length > 0) {
         const file = files[0];
+        this.selectedFile = file; 
         this.processFile(file); // EXIFデータの処理
         this.loadImage(file); // 画像の読み込み
       }
