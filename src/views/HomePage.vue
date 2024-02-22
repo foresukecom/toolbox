@@ -88,7 +88,7 @@ export default {
             //   route: 'video-to-gif',
             // },
             {
-              title: '画像メタ情報操作',
+              title: 'EXIF削除',
               route: 'image-metadata'
             }
           ],
