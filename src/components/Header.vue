@@ -1,14 +1,20 @@
 <template>
   <div class="w-full bg-gray-50 mx-auto px-4">
     <nav class="flex items-center justify-between py-2">
-      <ol class="flex mb-0 space-x-4">
-        <li v-for="(item, index) in breadcrumbItems" :key="index"
-            class="text-sm"
-            :class="{ 'font-semibold': index === breadcrumbItems.length - 1 }">
-          <router-link v-if="index !== breadcrumbItems.length - 1" :to="item.href" class="text-blue-600">{{ item.text }}</router-link>
-          <span v-else>{{ item.text }}</span>
-        </li>
-      </ol>
+      <div>
+        <div class="flex items-center"> 
+          <img src="@/assets/logo.png" alt="ロゴ" class="h-8">
+          <h1 class="text-2xl">開発の友</h1>
+        </div>
+        <ol class="flex mb-0 space-x-4 mt-2">
+          <li v-for="(item, index) in breadcrumbItems" :key="index"
+              class="text-sm"
+              :class="{ 'font-semibold': index === breadcrumbItems.length - 1 }">
+            <router-link v-if="index !== breadcrumbItems.length - 1" :to="item.href" class="text-blue-600">{{ item.text }}</router-link>
+            <span v-else>{{ item.text }}</span>
+          </li>
+        </ol>
+      </div>
       <router-link to="/about" class="text-blue-600">About</router-link>
     </nav>
   </div>
