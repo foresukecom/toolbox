@@ -26,156 +26,157 @@ import LengthConverter from '../views/LengthConverter.vue'
 import TextStyler from '../views/TextStyler.vue';
 import ImageMetadata from '../views/ImageMetadata.vue'
 
+const appName = "開発の友"
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomePage,
-    meta: { title: `toolbox: ${pageTitles.home}` } 
+    meta: { title: `${appName}: ${pageTitles.home}` } 
   },
   {
     path: '/about',
     name: 'AboutPage',
     component: AboutPage,
-    meta: { title: `toolbox: ${pageTitles.about}` }
+    meta: { title: `${appName}: ${pageTitles.about}` }
   },
   {
     path: '/client-info',
     name: 'client-info',
     component: ClientInfo,
-    meta: { title: `toolbox: ${pageTitles.clientInfo}` } 
+    meta: { title: `${appName}: ${pageTitles.clientInfo}` } 
   },
   {
     path: '/text-hash',
     name: 'text-hash',
     component: TextHash,
-    meta: { title: `toolbox: ${pageTitles.textHash}` } 
+    meta: { title: `${appName}: ${pageTitles.textHash}` } 
   },
   {
     path: '/video-to-gif',
     name: 'video-to-gif',
     component: VideoToGif,
-    meta: { title: `toolbox: ${pageTitles.videoToGif}` } 
+    meta: { title: `${appName}: ${pageTitles.videoToGif}` } 
   },
   {
     path: "/json-formatter",
     name: "json-formatter",
     component: JsonFormatter,
-    meta: { title: `toolbox: ${pageTitles.jsonFormatter}` } 
+    meta: { title: `${appName}: ${pageTitles.jsonFormatter}` } 
   },
   {
     path: "/xml-formatter",
     name: "xml-formatter",
     component: XmlFormatter,
-    meta: { title: `toolbox: ${pageTitles.xmlFormatter}` } 
+    meta: { title: `${appName}: ${pageTitles.xmlFormatter}` } 
   },
   {
     path: "/text-case-converter",
     name: "text-case-converter",
     component: TextCaseConverter,
-    meta: { title: `toolbox: ${pageTitles.textCaseConverter}` } 
+    meta: { title: `${appName}: ${pageTitles.textCaseConverter}` } 
   },
   {
     path: "/countdown-to-holidays",
     name: "countdown-to-holidays",
     component: CountdownToHolidays,
-    meta: { title: `toolbox: ${pageTitles.countdownToHolidays}` } 
+    meta: { title: `${appName}: ${pageTitles.countdownToHolidays}` } 
   },
   {
     path: "/world-timezone",
     name: "world-timezone",
     component: WorldTimezone,
-    meta: { title: `toolbox: ${pageTitles.worldTimezone}` } 
+    meta: { title: `${appName}: ${pageTitles.worldTimezone}` } 
   },
   {
     path: "/timezone-converter",
     name: "timezone-converter",
     component: TimezoneConverter,
-    meta: { title: `toolbox: ${pageTitles.timezoneConverter}` } 
+    meta: { title: `${appName}: ${pageTitles.timezoneConverter}` } 
   },
   {
     path: "/japanese-era",
     name: "japanese-era",
     component: JapaneseEra,
-    meta: { title: `toolbox: ${pageTitles.japaneseEra}` } 
+    meta: { title: `${appName}: ${pageTitles.japaneseEra}` } 
   },
   {
     path: "/time-issues",
     name: "time-issues",
     component: TimeIssues,
-    meta: { title: `toolbox: ${pageTitles.timeIssues}` } 
+    meta: { title: `${appName}: ${pageTitles.timeIssues}` } 
   },
   {
     path: "/time-progress",
     name: "time-progress",
     component: TimeProgress,
-    meta: { title: `toolbox: ${pageTitles.timeProgress}` } 
+    meta: { title: `${appName}: ${pageTitles.timeProgress}` } 
   },
   {
     path: "/escape-sequence-interpreter",
     name: "escape-sequence-interpreter",
     component: EscapeSequenceInterpreter,
-    meta: { title: `toolbox: ${pageTitles.escapeSequenceInterpreter}` } 
+    meta: { title: `${appName}: ${pageTitles.escapeSequenceInterpreter}` } 
   },
   {
     path: "/regex-tester",
     name: "regex-tester",
     component: RegexTester,
-    meta: { title: `toolbox: ${pageTitles.regexTester}` } 
+    meta: { title: `${appName}: ${pageTitles.regexTester}` } 
   },
   {
     path: "/template-base-random-generator",
     name: "template-base-random-generator",
     component: TemplateBasedRandomGenerator,
-    meta: { title: `toolbox: ${pageTitles.templateBaseRandomGenerator}` } 
+    meta: { title: `${appName}: ${pageTitles.templateBaseRandomGenerator}` } 
   },
   {
     path: "/uuid-generator",
     name: "uuid-generator",
     component: UUIDGenerator,
-    meta: { title: `toolbox: ${pageTitles.uuidGenerator}` } 
+    meta: { title: `${appName}: ${pageTitles.uuidGenerator}` } 
   },
   {
     path: "/text-counter",
     name: "text-counter",
     component: TextCounter,
-    meta: { title: `toolbox: ${pageTitles.textCounter}` } 
+    meta: { title: `${appName}: ${pageTitles.textCounter}` } 
   },
   {
     path: "/unix-time-converter",
     name: "unix-time-converter",
     component: UnixTimeConverter,
-    meta: { title: `toolbox: ${pageTitles.unixTimeConverter}` } 
+    meta: { title: `${appName}: ${pageTitles.unixTimeConverter}` } 
   },
   {
     path: "/birthdate-info",
     name: "birthdate-info",
     component: BirthdateInfo,
-    meta: { title: `toolbox: ${pageTitles.birthdateInfo}` } 
+    meta: { title: `${appName}: ${pageTitles.birthdateInfo}` } 
   },
   {
     path: "/ruby-generator",
     name: "ruby-generator",
     component: RubyGenerator,
-    meta: { title: `toolbox: ${pageTitles.rubyGenerator}` } 
+    meta: { title: `${appName}: ${pageTitles.rubyGenerator}` } 
   },
   {
     path: "/length-converter",
     name: "length-converter",
     component: LengthConverter,
-    meta: { title: `toolbox: ${pageTitles.lengthConverter}` } 
+    meta: { title: `${appName}: ${pageTitles.lengthConverter}` } 
   },
   {
     path: "/text-styler",
     name: "text-styler",
     component: TextStyler,
-    meta: { title: `toolbox: ${pageTitles.textStyler}` } 
+    meta: { title: `${appName}: ${pageTitles.textStyler}` } 
   },
   {
     path: "/image-metadata",
     name: "image-metadata",
     component: ImageMetadata,
-    meta: { title: `toolbox: ${pageTitles.imageMetadata}` } 
+    meta: { title: `${appName}: ${pageTitles.imageMetadata}` } 
   },
 ];
 
