@@ -61,6 +61,7 @@ export default {
         { path: '/length-converter', text: pageTitles.lengthConverter },
         { path: '/text-styler', text: pageTitles.textStyler },
         { path: '/image-metadata', text: pageTitles.imageMetadata },
+        { path: '/sosu', text: pageTitles.sosu },
       ];
 
       const currentPage = pages.find(page => page.path === route.path);

@@ -141,6 +141,16 @@ export default {
           ],
         },
 
+        {
+          name: '数値ツール',
+          tiles: [
+            {
+              title: '素数カウンター',
+              route: 'sosu',
+            },
+          ],
+        },
+
       ]
     };
   },
