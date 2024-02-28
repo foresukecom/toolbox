@@ -1,9 +1,10 @@
 <template>
-  <div class="grid grid-cols-3 gap-4">
-    <div v-for="(prime, index) in primes" :key="index" class="card bg-white shadow-lg rounded-lg p-4">
-      <div class="font-bold text-xl">{{ prime.number }}</div>
-      <div class="text-gray-500">Found at: {{ prime.time }}</div>
-    </div>
+  <div>
+    <ul>
+      <li v-for="(item, index) in displayedPrimes" :key="index">
+        {{ item.number }} ({{ item.time }})
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -11,36 +12,47 @@
 export default {
   data() {
     return {
-      primes: [], // 素数と発見時刻を保持する配列
-      currentNumber: 2
+      currentNumber: 2,
+      displayedPrimes: [],
     };
   },
-  created() {
-    this.findPrimes(); // コンポーネントの作成時に素数探索を開始
+  mounted() {
+    this.findNextPrime();
+  },
+  beforeUnmount() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
   },
   methods: {
-    findPrimes() {
-      this.interval = setInterval(() => {
+    findNextPrime() {
+      let found = false;
+      while (!found) {
         if (this.isPrime(this.currentNumber)) {
           const now = new Date();
-          this.primes.push({ 
+          this.displayedPrimes.push({
             number: this.currentNumber,
-            time: now.toLocaleTimeString() // 現在の時刻を文字列として追加
+            time: now.toLocaleTimeString(),
           });
+          found = true;
         }
         this.currentNumber++;
-      }, 1000);
+      }
+      this.adjustNextCall();
+    },
+    adjustNextCall() {
+      const now = new Date();
+      const nextCallDelay = 1000 - (now.getMilliseconds());
+      this.timeoutId = setTimeout(() => {
+        this.findNextPrime();
+      }, nextCallDelay);
     },
     isPrime(num) {
       for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
         if (num % i === 0) return false;
       }
-      return num > 1;
-    }
+      return num !== 1;
+    },
   },
-  beforeUnmount() {
-    clearInterval(this.interval);
-  }
 };
 </script>
-
