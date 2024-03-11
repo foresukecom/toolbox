@@ -14,10 +14,11 @@
           placeholder="装飾したいテキストを入力" required>
       </div>
 
-      <div class="mb-8"></div> 
+      <div class="mb-8"></div>
 
       <TextHighlighter width="w-full" :formattedText="boldText" label="太字" />
       <TextHighlighter width="w-full" :formattedText="italicText" label="イタリック" />
+      <TextHighlighter width="w-full" :formattedText="boldItalicText" label="太字イタリック" />
       <TextHighlighter width="w-full" :formattedText="blackletterText" label="古風な文字" />
       <TextHighlighter width="w-full" :formattedText="bubbleText" label="バブル文字" />
       <TextHighlighter width="w-full" :formattedText="enclosedAlphanumericsText" label="四角囲み文字(大文字のみ対応)" />
@@ -47,6 +48,7 @@ export default {
       inputText: '',
       boldText: '',
       italicText: '',
+      boldItalicText: '',
       blackletterText: '',
       bubbleText: '',
       enclosedAlphanumericsText: '',
@@ -64,6 +66,7 @@ export default {
     convertText() {
       this.boldText = this.toBoldText(this.inputText);
       this.italicText = this.toItalicText(this.inputText);
+      this.boldItalicText = this.toBoldItalicText(this.inputText);
       this.blackletterText = this.toBlackletterText(this.inputText);
       this.bubbleText = this.toBubbleText(this.inputText);
       this.enclosedAlphanumericsText = this.toEnclosedAlphanumericsText(this.inputText);
@@ -96,6 +99,16 @@ export default {
         // 数字のイタリックは一般的ではないため、ここでは含めていません。
       };
       return str.split('').map(char => italicChars[char] || char).join('');
+    },
+    toBoldItalicText(str) {
+      const boldItalicChars = {
+        'A': '𝘼', 'B': '𝘽', 'C': '𝘾', 'D': '𝘿', 'E': '𝙀', 'F': '𝙁', 'G': '𝙂', 'H': '𝙃', 'I': '𝙄', 'J': '𝙅', 'K': '𝙆', 'L': '𝙇', 'M': '𝙈',
+        'N': '𝙉', 'O': '𝙊', 'P': '𝙋', 'Q': '𝙌', 'R': '𝙍', 'S': '𝙎', 'T': '𝙏', 'U': '𝙐', 'V': '𝙑', 'W': '𝙒', 'X': '𝙓', 'Y': '𝙔', 'Z': '𝙕',
+        'a': '𝙖', 'b': '𝙗', 'c': '𝙘', 'd': '𝙙', 'e': '𝙚', 'f': '𝙛', 'g': '𝙜', 'h': '𝙝', 'i': '𝙞', 'j': '𝙟', 'k': '𝙠', 'l': '𝙡', 'm': '𝙢',
+        'n': '𝙣', 'o': '𝙤', 'p': '𝙥', 'q': '𝙦', 'r': '𝙧', 's': '𝙨', 't': '𝙩', 'u': '𝙪', 'v': '𝙫', 'w': '𝙬', 'x': '𝙭', 'y': '𝙮', 'z': '𝙯',
+        '0': '𝟬', '1': '𝟭', '2': '𝟮', '3': '𝟯', '4': '𝟰', '5': '𝟱', '6': '𝟲', '7': '𝟳', '8': '𝟴', '9': '𝟵'
+      };
+      return str.split('').map(char => boldItalicChars[char] || char).join('');
     },
     toBlackletterText(str) {
       const blackletterChars = {
@@ -193,4 +206,3 @@ export default {
   }
 };
 </script>
-
