@@ -16,21 +16,21 @@
 
       <div class="mb-8"></div>
 
-      <TextHighlighter width="w-full" :formattedText="boldText" label="太字" />
-      <TextHighlighter width="w-full" :formattedText="italicText" label="イタリック" />
-      <TextHighlighter width="w-full" :formattedText="boldItalicText" label="太字イタリック" />
-      <TextHighlighter width="w-full" :formattedText="blackletterText" label="古風な文字" />
-      <TextHighlighter width="w-full" :formattedText="bubbleText" label="バブル文字" />
-      <TextHighlighter width="w-full" :formattedText="enclosedAlphanumericsText" label="四角囲み文字(大文字のみ対応)" />
-      <TextHighlighter width="w-full" :formattedText="underlinedText" label="下線付き" />
-      <TextHighlighter width="w-full" :formattedText="overlinedText" label="上線付き" />
-      <TextHighlighter width="w-full" :formattedText="strikethroughText" label="打ち消し線付き" />
-      <TextHighlighter width="w-full" :formattedText="transparentEnclosedText" label="黒背景丸囲み文字(大文字のみ対応)" />
-      <TextHighlighter width="w-full" :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字(大文字のみ対応)" />
-      <TextHighlighter width="w-full" :formattedText="mirrorText" label="鏡文字" />
-      <TextHighlighter width="w-full" :formattedText="scriptText" label="筆記体" />
-      <TextHighlighter width="w-full" :formattedText="superscriptText" label="小文字上付き文字(小文字のみ対応)" />
-      <TextHighlighter width="w-full" :formattedText="upsideDownText" label="逆さ文字" />
+      <TextHighlighter width="w-full" :formattedText="boldText" label="太字 [𝗦𝗮𝗺𝗽𝗹𝗲 𝗧𝗘𝗫𝗧]" />
+      <TextHighlighter width="w-full" :formattedText="italicText" label="イタリック (𝘚𝘢𝘮𝘱𝘭𝘦 𝘛𝘌𝘟𝘛)" />
+      <TextHighlighter width="w-full" :formattedText="boldItalicText" label="太字イタリック [𝙎𝙖𝙢𝙥𝙡𝙚 𝙏𝙀𝙓𝙏]" />
+      <TextHighlighter width="w-full" :formattedText="blackletterText" label="古風な文字 [𝔖𝔞𝔪𝔭𝔩𝔢 𝔗𝔈𝔛𝔗]" />
+      <TextHighlighter width="w-full" :formattedText="bubbleText" label="バブル文字 [Ⓢⓐⓜⓟⓛⓔ ⓉⒺⓍⓉ]" />
+      <TextHighlighter width="w-full" :formattedText="enclosedAlphanumericsText" label="四角囲み文字(大文字のみ対応) [🅂🄰🄼🄿🄻🄴 🅃🄴🅇🅃]" />
+      <TextHighlighter width="w-full" :formattedText="underlinedText" label="下線付き [S̲a̲m̲p̲l̲e̲ ̲T̲E̲X̲T̲]" />
+      <TextHighlighter width="w-full" :formattedText="overlinedText" label="上線付き [S̅a̅m̅p̅l̅e̅ ̅T̅E̅X̅T̅]" />
+      <TextHighlighter width="w-full" :formattedText="strikethroughText" label="打ち消し線付き [S̶a̶m̶p̶l̶e̶ ̶T̶E̶X̶T̶]" />
+      <TextHighlighter width="w-full" :formattedText="transparentEnclosedText" label="黒背景丸囲み文字(大文字のみ対応) [🅢🅐🅜🅟🅛🅔 🅣🅔🅧🅣]" />
+      <TextHighlighter width="w-full" :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字(大文字のみ対応) [🆂🅰🅼🅿🅻🅴 🆃🅴🆇🆃]" />
+      <TextHighlighter width="w-full" :formattedText="mirrorText" label="鏡文字 [Sɐɯdlǝ ┴ƎX┴]" />
+      <TextHighlighter width="w-full" :formattedText="scriptText" label="筆記体 [𝒮𝒶𝓂𝓅𝓁𝑒 𝒯ℰ𝒳𝒯]" />
+      <TextHighlighter width="w-full" :formattedText="superscriptText" label="小文字上付き文字(小文字のみ対応) [ˢᵃᵐᵖˡᵉ ᵗᵉˣᵗ]" />
+      <TextHighlighter width="w-full" :formattedText="upsideDownText" label="逆さ文字 [⊥XƎ⊥ ǝldɯɐS]" />
 
     </div>
   </div>
