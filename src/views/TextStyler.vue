@@ -14,22 +14,23 @@
           placeholder="装飾したいテキストを入力" required>
       </div>
 
-      <div class="mb-8"></div> 
+      <div class="mb-8"></div>
 
-      <TextHighlighter width="w-full" :formattedText="boldText" label="太字" />
-      <TextHighlighter width="w-full" :formattedText="italicText" label="イタリック" />
-      <TextHighlighter width="w-full" :formattedText="blackletterText" label="古風な文字" />
-      <TextHighlighter width="w-full" :formattedText="bubbleText" label="バブル文字" />
-      <TextHighlighter width="w-full" :formattedText="enclosedAlphanumericsText" label="四角囲み文字(大文字のみ対応)" />
-      <TextHighlighter width="w-full" :formattedText="underlinedText" label="下線付き" />
-      <TextHighlighter width="w-full" :formattedText="overlinedText" label="上線付き" />
-      <TextHighlighter width="w-full" :formattedText="strikethroughText" label="打ち消し線付き" />
-      <TextHighlighter width="w-full" :formattedText="transparentEnclosedText" label="黒背景丸囲み文字(大文字のみ対応)" />
-      <TextHighlighter width="w-full" :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字(大文字のみ対応)" />
-      <TextHighlighter width="w-full" :formattedText="mirrorText" label="鏡文字" />
-      <TextHighlighter width="w-full" :formattedText="scriptText" label="筆記体" />
-      <TextHighlighter width="w-full" :formattedText="superscriptText" label="小文字上付き文字(小文字のみ対応)" />
-      <TextHighlighter width="w-full" :formattedText="upsideDownText" label="逆さ文字" />
+      <TextHighlighter width="w-full" :formattedText="boldText" label="太字 [𝗦𝗮𝗺𝗽𝗹𝗲 𝗧𝗘𝗫𝗧]" />
+      <TextHighlighter width="w-full" :formattedText="italicText" label="イタリック (𝘚𝘢𝘮𝘱𝘭𝘦 𝘛𝘌𝘟𝘛)" />
+      <TextHighlighter width="w-full" :formattedText="boldItalicText" label="太字イタリック [𝙎𝙖𝙢𝙥𝙡𝙚 𝙏𝙀𝙓𝙏]" />
+      <TextHighlighter width="w-full" :formattedText="blackletterText" label="古風な文字 [𝔖𝔞𝔪𝔭𝔩𝔢 𝔗𝔈𝔛𝔗]" />
+      <TextHighlighter width="w-full" :formattedText="bubbleText" label="バブル文字 [Ⓢⓐⓜⓟⓛⓔ ⓉⒺⓍⓉ]" />
+      <TextHighlighter width="w-full" :formattedText="enclosedAlphanumericsText" label="四角囲み文字(大文字のみ対応) [🅂🄰🄼🄿🄻🄴 🅃🄴🅇🅃]" />
+      <TextHighlighter width="w-full" :formattedText="underlinedText" label="下線付き [S̲a̲m̲p̲l̲e̲ ̲T̲E̲X̲T̲]" />
+      <TextHighlighter width="w-full" :formattedText="overlinedText" label="上線付き [S̅a̅m̅p̅l̅e̅ ̅T̅E̅X̅T̅]" />
+      <TextHighlighter width="w-full" :formattedText="strikethroughText" label="打ち消し線付き [S̶a̶m̶p̶l̶e̶ ̶T̶E̶X̶T̶]" />
+      <TextHighlighter width="w-full" :formattedText="transparentEnclosedText" label="黒背景丸囲み文字(大文字のみ対応) [🅢🅐🅜🅟🅛🅔 🅣🅔🅧🅣]" />
+      <TextHighlighter width="w-full" :formattedText="blackSquareEnclosedText" label="黒背景四角囲み文字(大文字のみ対応) [🆂🅰🅼🅿🅻🅴 🆃🅴🆇🆃]" />
+      <TextHighlighter width="w-full" :formattedText="mirrorText" label="鏡文字 [Sɐɯdlǝ ┴ƎX┴]" />
+      <TextHighlighter width="w-full" :formattedText="scriptText" label="筆記体 [𝒮𝒶𝓂𝓅𝓁𝑒 𝒯ℰ𝒳𝒯]" />
+      <TextHighlighter width="w-full" :formattedText="superscriptText" label="小文字上付き文字(小文字のみ対応) [ˢᵃᵐᵖˡᵉ ᵗᵉˣᵗ]" />
+      <TextHighlighter width="w-full" :formattedText="upsideDownText" label="逆さ文字 [⊥XƎ⊥ ǝldɯɐS]" />
 
     </div>
   </div>
@@ -47,6 +48,7 @@ export default {
       inputText: '',
       boldText: '',
       italicText: '',
+      boldItalicText: '',
       blackletterText: '',
       bubbleText: '',
       enclosedAlphanumericsText: '',
@@ -64,6 +66,7 @@ export default {
     convertText() {
       this.boldText = this.toBoldText(this.inputText);
       this.italicText = this.toItalicText(this.inputText);
+      this.boldItalicText = this.toBoldItalicText(this.inputText);
       this.blackletterText = this.toBlackletterText(this.inputText);
       this.bubbleText = this.toBubbleText(this.inputText);
       this.enclosedAlphanumericsText = this.toEnclosedAlphanumericsText(this.inputText);
@@ -96,6 +99,16 @@ export default {
         // 数字のイタリックは一般的ではないため、ここでは含めていません。
       };
       return str.split('').map(char => italicChars[char] || char).join('');
+    },
+    toBoldItalicText(str) {
+      const boldItalicChars = {
+        'A': '𝘼', 'B': '𝘽', 'C': '𝘾', 'D': '𝘿', 'E': '𝙀', 'F': '𝙁', 'G': '𝙂', 'H': '𝙃', 'I': '𝙄', 'J': '𝙅', 'K': '𝙆', 'L': '𝙇', 'M': '𝙈',
+        'N': '𝙉', 'O': '𝙊', 'P': '𝙋', 'Q': '𝙌', 'R': '𝙍', 'S': '𝙎', 'T': '𝙏', 'U': '𝙐', 'V': '𝙑', 'W': '𝙒', 'X': '𝙓', 'Y': '𝙔', 'Z': '𝙕',
+        'a': '𝙖', 'b': '𝙗', 'c': '𝙘', 'd': '𝙙', 'e': '𝙚', 'f': '𝙛', 'g': '𝙜', 'h': '𝙝', 'i': '𝙞', 'j': '𝙟', 'k': '𝙠', 'l': '𝙡', 'm': '𝙢',
+        'n': '𝙣', 'o': '𝙤', 'p': '𝙥', 'q': '𝙦', 'r': '𝙧', 's': '𝙨', 't': '𝙩', 'u': '𝙪', 'v': '𝙫', 'w': '𝙬', 'x': '𝙭', 'y': '𝙮', 'z': '𝙯',
+        '0': '𝟬', '1': '𝟭', '2': '𝟮', '3': '𝟯', '4': '𝟰', '5': '𝟱', '6': '𝟲', '7': '𝟳', '8': '𝟴', '9': '𝟵'
+      };
+      return str.split('').map(char => boldItalicChars[char] || char).join('');
     },
     toBlackletterText(str) {
       const blackletterChars = {
@@ -193,4 +206,3 @@ export default {
   }
 };
 </script>
-
