@@ -72,12 +72,12 @@ export default {
 
     isTodayOrLater(date) {
       const currentDate = new Date();
-      const holidayDate = new Date(date);
+      const holidayDate = new Date(date + "T00:00:00+09:00"); // タイムゾーンをJSTに設定);
       return holidayDate >= currentDate;
     },
     isToday(date) {
       const currentDate = new Date();
-      const holidayDate = new Date(date);
+      const holidayDate = new Date(date + "T00:00:00+09:00"); // タイムゾーンをJSTに設定
       return (
         holidayDate.getFullYear() === currentDate.getFullYear() &&
         holidayDate.getMonth() === currentDate.getMonth() &&
