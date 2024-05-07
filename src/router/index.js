@@ -26,6 +26,7 @@ import LengthConverter from '../views/LengthConverter.vue'
 import TextStyler from '../views/TextStyler.vue';
 import ImageMetadata from '../views/ImageMetadata.vue'
 import SosuCounter from '../views/SosuCounter.vue'
+import BlueskyShortcodes from '../views/BlueskyShortcodes.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -184,6 +185,12 @@ const routes = [
     name: "sosu",
     component: SosuCounter,
     meta: { title: `${appName}: ${pageTitles.sosu}` } 
+  },
+  {
+    path: "/bluesky-shortcodes",
+    name: "bluesky-shortcodes",
+    component: BlueskyShortcodes,
+    meta: { title: `${appName}: ${pageTitles.blueskyShortcodes}` } 
   },
 ];
 

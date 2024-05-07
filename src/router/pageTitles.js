@@ -26,6 +26,7 @@ const pageTitles = {
   textStyler: '文字装飾', 
   imageMetadata: 'EXIF削除',
   sosu: '素数カウンター',
+  blueskyShortcodes: 'Hugo埋め込みコード生成',
 };
 
 export default pageTitles;

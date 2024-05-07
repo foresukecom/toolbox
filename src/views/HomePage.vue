@@ -140,7 +140,6 @@ export default {
             },
           ],
         },
-
         {
           name: '数値ツール',
           tiles: [
@@ -150,7 +149,15 @@ export default {
             },
           ],
         },
-
+        {
+          name: 'Blueskyツール',
+          tiles: [
+            {
+              title: 'Hugo埋め込みコード生成',
+              route: 'bluesky-shortcodes',
+            },
+          ],
+        },
       ]
     };
   },
