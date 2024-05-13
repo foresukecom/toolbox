@@ -77,7 +77,10 @@ export default {
       const cid = blockquote.dataset.blueskyCid;
 
       // author, user_uri, user_domainの抽出
-      const author = p.textContent.trim();
+      let author = p.textContent.trim();
+      // 改行を削除
+      author = author.replace(/\r?\n|\r/g, " "); // 改行をスペースに置き換える
+
       const user_uri = new URL(authorLink.href).pathname.split('/')[2];
       const user_domain = authorLink.textContent.trim().replace('@', '');
 
