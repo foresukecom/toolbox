@@ -16,7 +16,14 @@
         "seatonjiang.gitmoji-vscode",
         // Go専用拡張機能
         "golang.go",
-        "tamasfe.even-better-toml"
+        "tamasfe.even-better-toml",
+        // Vue / フロントエンド拡張機能
+        "Vue.volar",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.path-intellisense",
+        "streetsidesoftware.code-spell-checker"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh",
@@ -32,7 +39,20 @@
         "go.useLanguageServer": true,
         "go.formatTool": "goimports",
         "go.lintTool": "golangci-lint",
-        "go.lintOnSave": "package"
+        "go.lintOnSave": "package",
+        // Vue / フロントエンド設定
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[vue]": {
+          "editor.defaultFormatter": "Vue.volar"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "eslint.validate": ["javascript", "vue"],
+        "tailwindCSS.includeLanguages": {
+          "vue": "html"
+        }
       }
     }
   },

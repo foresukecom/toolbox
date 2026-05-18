@@ -23,3 +23,6 @@ pnpm-debug.log*
 *.sw?
 .env
 .claude/settings.local.json
+
+# Yarn 4.x
+.yarn/install-state.gz

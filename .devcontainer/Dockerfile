@@ -17,6 +17,21 @@ ENV GOPATH=/home/developer/go
 ENV GOBIN=$GOPATH/bin
 ENV PATH=$GOBIN:$PATH
 
+# Node.jsのインストール（マルチアーキテクチャ対応）
+ENV NODE_VERSION=24.15.0
+RUN ARCH=$(uname -m | sed 's/x86_64/x64/g' | sed 's/aarch64/arm64/g') \
+    && wget -O node.tar.xz "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-${ARCH}.tar.xz" \
+    && tar -C /usr/local -xJf node.tar.xz --strip-components=1 \
+    && rm node.tar.xz
+
+# Node.js グローバルツールのインストール
+RUN corepack enable \
+    && corepack prepare yarn@stable --activate \
+    && npm install -g @vue/cli
+
+# SuperClaudeのインストール用パッケージ
+RUN apt-get update && apt-get install -y python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # 開発者ユーザーに戻る
 USER developer
 
@@ -40,8 +55,5 @@ RUN echo '# Go environment' >> ~/.zshrc \
     && echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.zshrc
 
 # SuperClaudeのインストール
-USER root
-RUN apt-get update && apt-get install -y python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
-USER developer
 RUN python3 -m pip install --user SuperClaude \
     && /home/developer/.local/bin/superclaude install
