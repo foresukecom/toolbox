@@ -13,12 +13,16 @@ export default {
   data() {
     return {
       currentNumber: 2,
-      displayedPrimes: [], // 素数とその色を保持する配列
-      colors: ['bg-blue-100', 'bg-red-100', 'bg-green-100', 'bg-yellow-100', 'bg-purple-100'], // 使用する色の配列
+      displayedPrimes: [],
+      colors: ['bg-blue-100', 'bg-red-100', 'bg-green-100', 'bg-yellow-100', 'bg-purple-100'],
+      timerId: null,
     };
   },
   mounted() {
     this.findNextPrime();
+  },
+  beforeUnmount() {
+    clearTimeout(this.timerId);
   },
   methods: {
     findNextPrime() {
@@ -37,7 +41,7 @@ export default {
         found = addPrime();
         this.currentNumber++;
       }
-      setTimeout(() => this.findNextPrime(), 1000);
+      this.timerId = setTimeout(() => this.findNextPrime(), 1000);
     },
     isPrime(num) {
       for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
