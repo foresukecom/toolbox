@@ -22,6 +22,7 @@ export default {
     return {
       now: new Date(),
       timerId: null,
+      rafId: null,
       currentTimeOfSecond: 0
     };
   },
@@ -32,7 +33,7 @@ export default {
   },
   beforeUnmount() {
     clearInterval(this.timerId);
-    cancelAnimationFrame(this.updateSecondProgress);
+    cancelAnimationFrame(this.rafId);
   },
   computed: {
     currentTimeOfYear() {
@@ -122,7 +123,7 @@ export default {
     updateSecondProgress() {
       const now = new Date();
       this.currentTimeOfSecond = now.getMilliseconds();
-      requestAnimationFrame(this.updateSecondProgress);
+      this.rafId = requestAnimationFrame(this.updateSecondProgress);
     }
   }
 };
