@@ -41,6 +41,8 @@ export default {
     return {
       ipAddress: '',
       userAgent: navigator.userAgent,
+      browser: '',
+      os: '',
       language: '',
       displaySize: '',
       outerWindowSize: '',

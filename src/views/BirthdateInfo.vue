@@ -90,7 +90,7 @@ export default {
         { name: "白寿", datetime: formatDate(this.addYearsToDate(birthdate, 99), false, false, true, true, true, true, false) },
         { name: "百寿", datetime: formatDate(this.addYearsToDate(birthdate, 100), false, false, true, true, true, true, false) },
       ];
-      milestones.sort((a, b) => a.year - b.year);
+      milestones.sort((a, b) => a.datetime.localeCompare(b.datetime));
 
       const result = {
         zodiac: this.getZodiac(birthdate),
