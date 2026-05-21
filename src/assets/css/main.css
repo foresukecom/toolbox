@@ -161,6 +161,99 @@
 .cat-number { --tb-main: var(--tb-cat-number); --tb-main-hover: var(--tb-cat-number-hover); }
 .cat-bluesky{ --tb-main: var(--tb-cat-bluesky);--tb-main-hover: var(--tb-cat-bluesky-hover); }
 
+/* =========================================================
+   単位変換ツール共通スタイル
+   ========================================================= */
+
+.unit-converter {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Fira Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.unit-converter .uc-input {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5em;
+  margin: 1em 0 1.5em;
+}
+
+.unit-converter .uc-input input,
+.unit-converter .uc-input select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.45em 0.7em;
+  border: 1px solid var(--tb-border);
+  background-color: var(--tb-bg);
+  color: var(--tb-text);
+  border-radius: 0;
+  transition: border-color 0.15s ease;
+}
+
+.unit-converter .uc-input input {
+  flex: 1;
+  min-width: 0;
+}
+
+.unit-converter .uc-input input:focus,
+.unit-converter .uc-input select:focus {
+  outline: none;
+  border-color: var(--tb-main);
+}
+
+.unit-converter .uc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Fira Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.unit-converter .uc-table th,
+.unit-converter .uc-table td {
+  padding: 0.5em 0.8em;
+  border: 1px solid var(--tb-border);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.unit-converter .uc-table th {
+  background-color: var(--tb-bg-soft);
+  font-weight: 600;
+  color: var(--tb-text);
+  border-bottom: 2px solid var(--tb-main);
+}
+
+.unit-converter .uc-table td.uc-value {
+  font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-align: right;
+  white-space: nowrap;
+  color: var(--tb-text);
+}
+
+.unit-converter .uc-table td.uc-value:empty::before {
+  content: '—';
+  color: var(--tb-border);
+}
+
+.unit-converter .uc-table td.uc-unit {
+  font-weight: 600;
+}
+
+.unit-converter .uc-table td.uc-reading,
+.unit-converter .uc-table td.uc-remark {
+  color: var(--tb-muted);
+  font-size: 0.9em;
+}
+
+.unit-converter .uc-table tbody tr:hover {
+  background-color: var(--tb-bg-soft);
+}
+
+@media (max-width: 600px) {
+  .unit-converter .uc-table td.uc-remark {
+    display: none;
+  }
+}
+
 /* パンくず */
 .blog-breadcrumb {
   font-size: 0.85em;
