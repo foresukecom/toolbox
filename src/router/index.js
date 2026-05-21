@@ -23,6 +23,12 @@ import UnixTimeConverter from '../views/UnixTimeConverter.vue';
 import BirthdateInfo from '../views/BirthdateInfo.vue';
 import RubyGenerator from '../views/HtmlRubyGenerator.vue';
 import LengthConverter from '../views/LengthConverter.vue'
+import WeightConverter from '../views/WeightConverter.vue'
+import AreaConverter from '../views/AreaConverter.vue'
+import VolumeConverter from '../views/VolumeConverter.vue'
+import TemperatureConverter from '../views/TemperatureConverter.vue'
+import DataSizeConverter from '../views/DataSizeConverter.vue'
+import DurationConverter from '../views/DurationConverter.vue'
 import TextStyler from '../views/TextStyler.vue';
 import ImageMetadata from '../views/ImageMetadata.vue'
 import SosuCounter from '../views/SosuCounter.vue'
@@ -166,7 +172,43 @@ const routes = [
     path: "/length-converter",
     name: "length-converter",
     component: LengthConverter,
-    meta: { title: `${appName}: ${pageTitles.lengthConverter}` } 
+    meta: { title: `${appName}: ${pageTitles.lengthConverter}` }
+  },
+  {
+    path: "/weight-converter",
+    name: "weight-converter",
+    component: WeightConverter,
+    meta: { title: `${appName}: ${pageTitles.weightConverter}` }
+  },
+  {
+    path: "/area-converter",
+    name: "area-converter",
+    component: AreaConverter,
+    meta: { title: `${appName}: ${pageTitles.areaConverter}` }
+  },
+  {
+    path: "/volume-converter",
+    name: "volume-converter",
+    component: VolumeConverter,
+    meta: { title: `${appName}: ${pageTitles.volumeConverter}` }
+  },
+  {
+    path: "/temperature-converter",
+    name: "temperature-converter",
+    component: TemperatureConverter,
+    meta: { title: `${appName}: ${pageTitles.temperatureConverter}` }
+  },
+  {
+    path: "/data-size-converter",
+    name: "data-size-converter",
+    component: DataSizeConverter,
+    meta: { title: `${appName}: ${pageTitles.dataSizeConverter}` }
+  },
+  {
+    path: "/duration-converter",
+    name: "duration-converter",
+    component: DurationConverter,
+    meta: { title: `${appName}: ${pageTitles.durationConverter}` }
   },
   {
     path: "/text-styler",

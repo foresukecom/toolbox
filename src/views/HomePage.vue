@@ -138,6 +138,30 @@ export default {
               title: '距離単位変換',
               route: 'length-converter',
             },
+            {
+              title: '重さ単位変換',
+              route: 'weight-converter',
+            },
+            {
+              title: '面積単位変換',
+              route: 'area-converter',
+            },
+            {
+              title: '体積単位変換',
+              route: 'volume-converter',
+            },
+            {
+              title: '温度単位変換',
+              route: 'temperature-converter',
+            },
+            {
+              title: 'データ量単位変換',
+              route: 'data-size-converter',
+            },
+            {
+              title: '期間単位変換',
+              route: 'duration-converter',
+            },
           ],
         },
         {
