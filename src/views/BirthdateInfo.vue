@@ -1,38 +1,38 @@
 <template>
   <!-- 誕生日入力 -->
-  <div style="display: flex; justify-content: center;">
-    <div style="width: 33%;">
+  <div class="flex justify-center px-4">
+    <div class="w-full max-w-xs">
       <label>生年月日: </label>
       <input type="date" v-model="birthdate" @change="calculate()" />
     </div>
   </div>
 
   <!-- 誕生日情報 -->
-  <div style="display: flex; justify-content: center;">
-    <div style="width: 20%;">
+  <div class="flex justify-center px-4">
+    <div class="w-full max-w-xs">
       <div v-if="result">
-        <div class="card" style="text-align: center;">
-          <div class="card-header">
+        <div class="text-center bg-white border border-black/[.175] rounded-md">
+          <div class="px-4 py-2 bg-black/[.03] border-b border-black/[.175]">
             <h2 class="text-lg my-2">生まれた日の情報</h2>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+          <ul>
+            <li class="px-4 py-2 border-b border-black/[.175]">
               <strong>星座:</strong> {{ result.zodiac }}
             </li>
-            <li class="list-group-item">
+            <li class="px-4 py-2 border-b border-black/[.175]">
               <strong>干支:</strong> {{ result.eto }}
             </li>
-            <li class="list-group-item">
+            <li class="px-4 py-2">
               <strong>曜日:</strong> {{ result.dayOfWeek }}
             </li>
           </ul>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 
 <!-- タイムライン表示 -->
-  <div style="display: flex; justify-content: center;">
+  <div class="flex justify-center">
     <ol class="relative border-l border-gray-200 dark:border-gray-700">
       <li class="mb-10 ml-4" v-for="(milestone, index) in milestones" :key="index">
         <div
