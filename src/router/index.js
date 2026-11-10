@@ -33,6 +33,12 @@ import TextStyler from '../views/TextStyler.vue';
 import ImageMetadata from '../views/ImageMetadata.vue'
 import SosuCounter from '../views/SosuCounter.vue'
 import BlueskyShortcodes from '../views/BlueskyShortcodes.vue'
+import JwtDecoder from '../views/JwtDecoder.vue'
+import EncodeDecode from '../views/EncodeDecode.vue'
+import CronExplainer from '../views/CronExplainer.vue'
+import ColorConverter from '../views/ColorConverter.vue'
+import TextDiff from '../views/TextDiff.vue'
+import DataFormatConverter from '../views/DataFormatConverter.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -233,6 +239,42 @@ const routes = [
     name: "bluesky-shortcodes",
     component: BlueskyShortcodes,
     meta: { title: `${appName}: ${pageTitles.blueskyShortcodes}` } 
+  },
+  {
+    path: "/jwt-decoder",
+    name: "jwt-decoder",
+    component: JwtDecoder,
+    meta: { title: `${appName}: ${pageTitles.jwtDecoder}` }
+  },
+  {
+    path: "/encode-decode",
+    name: "encode-decode",
+    component: EncodeDecode,
+    meta: { title: `${appName}: ${pageTitles.encodeDecode}` }
+  },
+  {
+    path: "/cron-explainer",
+    name: "cron-explainer",
+    component: CronExplainer,
+    meta: { title: `${appName}: ${pageTitles.cronExplainer}` }
+  },
+  {
+    path: "/color-converter",
+    name: "color-converter",
+    component: ColorConverter,
+    meta: { title: `${appName}: ${pageTitles.colorConverter}` }
+  },
+  {
+    path: "/text-diff",
+    name: "text-diff",
+    component: TextDiff,
+    meta: { title: `${appName}: ${pageTitles.textDiff}` }
+  },
+  {
+    path: "/data-format-converter",
+    name: "data-format-converter",
+    component: DataFormatConverter,
+    meta: { title: `${appName}: ${pageTitles.dataFormatConverter}` }
   },
 ];
 

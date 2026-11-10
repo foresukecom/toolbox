@@ -54,6 +54,18 @@ export default {
           ],
         },
         {
+          name: '開発者ツール',
+          cssClass: 'cat-dev',
+          tiles: [
+            { title: 'JWTデコーダー', route: 'jwt-decoder' },
+            { title: 'エンコード/デコード', route: 'encode-decode' },
+            { title: 'cron式解説', route: 'cron-explainer' },
+            { title: 'カラー変換', route: 'color-converter' },
+            { title: 'テキスト差分', route: 'text-diff' },
+            { title: 'YAML/JSON/TOML変換', route: 'data-format-converter' },
+          ],
+        },
+        {
           name: '画像操作ツール',
           cssClass: 'cat-image',
           tiles: [
