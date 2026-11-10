@@ -8964,6 +8964,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.12.16"
     "@babel/eslint-parser": "npm:^7.12.16"
+    "@babel/plugin-transform-private-methods": "npm:^7.22.5"
     "@ffmpeg/core": "npm:^0.11.0"
     "@ffmpeg/ffmpeg": "npm:^0.11.6"
     "@mdi/js": "npm:^7.2.96"
