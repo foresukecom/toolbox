@@ -53,6 +53,7 @@ export default {
             { title: '文字装飾', route: 'text-styler' },
             { title: 'Markdownプレビュー', route: 'markdown-preview' },
             { title: '全角半角変換', route: 'zenkaku-hankaku' },
+            { title: 'ダミーテキスト生成', route: 'dummy-text' },
           ],
         },
         {

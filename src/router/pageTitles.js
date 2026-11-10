@@ -61,6 +61,7 @@ const pageTitles = {
   jsonToTypescript: 'JSON→TypeScript型',
   sqlFormatter: 'SQL整形',
   zenkakuHankaku: '全角半角変換',
+  dummyText: 'ダミーテキスト生成',
 };
 
 export default pageTitles;

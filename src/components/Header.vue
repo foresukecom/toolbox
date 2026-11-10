@@ -82,6 +82,7 @@ export default {
       '/json-to-typescript': pageTitles.jsonToTypescript,
       '/sql-formatter': pageTitles.sqlFormatter,
       '/zenkaku-hankaku': pageTitles.zenkakuHankaku,
+      '/dummy-text': pageTitles.dummyText,
     };
 
     const breadcrumbItems = computed(() => {
