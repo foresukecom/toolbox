@@ -83,6 +83,7 @@ export default {
       '/sql-formatter': pageTitles.sqlFormatter,
       '/zenkaku-hankaku': pageTitles.zenkakuHankaku,
       '/dummy-text': pageTitles.dummyText,
+      '/date-calculator': pageTitles.dateCalculator,
     };
 
     const breadcrumbItems = computed(() => {

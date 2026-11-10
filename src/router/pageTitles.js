@@ -62,6 +62,7 @@ const pageTitles = {
   sqlFormatter: 'SQL整形',
   zenkakuHankaku: '全角半角変換',
   dummyText: 'ダミーテキスト生成',
+  dateCalculator: '日付計算',
 };
 
 export default pageTitles;

@@ -62,6 +62,7 @@ import JsonToTypescript from '../views/JsonToTypescript.vue'
 import SqlFormatter from '../views/SqlFormatter.vue'
 import ZenkakuHankaku from '../views/ZenkakuHankaku.vue'
 import DummyText from '../views/DummyText.vue'
+import DateCalculator from '../views/DateCalculator.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -436,6 +437,12 @@ const routes = [
     name: "dummy-text",
     component: DummyText,
     meta: { title: `${appName}: ${pageTitles.dummyText}` }
+  },
+  {
+    path: "/date-calculator",
+    name: "date-calculator",
+    component: DateCalculator,
+    meta: { title: `${appName}: ${pageTitles.dateCalculator}` }
   },
 ];
 
