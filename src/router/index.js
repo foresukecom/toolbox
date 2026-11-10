@@ -50,6 +50,7 @@ import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
 import PiDigits from '../views/PiDigits.vue'
 import MonteCarloPi from '../views/MonteCarloPi.vue'
 import GameOfLife from '../views/GameOfLife.vue'
+import ImageConverter from '../views/ImageConverter.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -352,6 +353,12 @@ const routes = [
     name: "game-of-life",
     component: GameOfLife,
     meta: { title: `${appName}: ${pageTitles.gameOfLife}` }
+  },
+  {
+    path: "/image-converter",
+    name: "image-converter",
+    component: ImageConverter,
+    meta: { title: `${appName}: ${pageTitles.imageConverter}` }
   },
 ];
 
