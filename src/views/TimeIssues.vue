@@ -1,20 +1,16 @@
 <template>
   <div>
-    <div class="container">
-      <div class="row row-cols-1">
-        <div class="col mb-4" v-for="(timeIssue, index) in sortedTimeIssues" :key="index">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{ timeIssue.name }}</h5>
-              <p class="card-text">{{ timeIssue.description }}</p>
-              <p class="card-text">
-                <small class="text-muted">{{ formatDate(timeIssue.deadline) }}</small>
-              </p>
-              <p class="card-text">
-                残り: {{ countdown(timeIssue.deadline) }}
-              </p>
-            </div>
-          </div>
+    <div class="px-3">
+      <div class="mb-6" v-for="(timeIssue, index) in sortedTimeIssues" :key="index">
+        <div class="p-4 bg-white border border-black/[.175] rounded-md">
+          <h5 class="mb-2">{{ timeIssue.name }}</h5>
+          <p>{{ timeIssue.description }}</p>
+          <p>
+            <small class="text-gray-500">{{ formatDate(timeIssue.deadline) }}</small>
+          </p>
+          <p>
+            残り: {{ countdown(timeIssue.deadline) }}
+          </p>
         </div>
       </div>
     </div>
