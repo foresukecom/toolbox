@@ -71,6 +71,7 @@ export default {
       '/pi-digits': pageTitles.piDigits,
       '/monte-carlo-pi': pageTitles.monteCarloPi,
       '/game-of-life': pageTitles.gameOfLife,
+      '/sql-formatter': pageTitles.sqlFormatter,
     };
 
     const breadcrumbItems = computed(() => {
