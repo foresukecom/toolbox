@@ -114,6 +114,7 @@ export default {
           tiles: [
             { title: '素数カウンター', route: 'sosu' },
             { title: '基数変換', route: 'base-converter' },
+            { title: 'フィボナッチと黄金比', route: 'fibonacci-golden-ratio' },
           ],
         },
       ],

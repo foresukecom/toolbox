@@ -63,6 +63,7 @@ export default {
       '/text-styler': pageTitles.textStyler,
       '/image-metadata': pageTitles.imageMetadata,
       '/sosu': pageTitles.sosu,
+      '/fibonacci-golden-ratio': pageTitles.fibonacciGoldenRatio,
     };
 
     const breadcrumbItems = computed(() => {

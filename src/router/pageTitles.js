@@ -42,6 +42,7 @@ const pageTitles = {
   csvFormatter: 'CSV整形',
   rssReader: 'RSSフィード取得',
   pageImageMetadata: 'ページ内画像のメタデータ',
+  fibonacciGoldenRatio: 'フィボナッチと黄金比',
 };
 
 export default pageTitles;
