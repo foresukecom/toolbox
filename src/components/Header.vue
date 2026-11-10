@@ -79,6 +79,7 @@ export default {
       '/markdown-preview': pageTitles.markdownPreview,
       '/subnet-calculator': pageTitles.subnetCalculator,
       '/chmod-calculator': pageTitles.chmodCalculator,
+      '/json-to-typescript': pageTitles.jsonToTypescript,
     };
 
     const breadcrumbItems = computed(() => {

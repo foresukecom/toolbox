@@ -58,6 +58,7 @@ const pageTitles = {
   markdownPreview: 'Markdownプレビュー',
   subnetCalculator: 'サブネット計算',
   chmodCalculator: 'chmod計算',
+  jsonToTypescript: 'JSON→TypeScript型',
 };
 
 export default pageTitles;

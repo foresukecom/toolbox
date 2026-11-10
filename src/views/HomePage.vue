@@ -67,6 +67,7 @@ export default {
             { title: 'CSV整形', route: 'csv-formatter' },
             { title: 'サブネット計算', route: 'subnet-calculator' },
             { title: 'chmod計算', route: 'chmod-calculator' },
+            { title: 'JSON→TypeScript型', route: 'json-to-typescript' },
           ],
         },
         {

@@ -58,6 +58,7 @@ import UrlParser from '../views/UrlParser.vue'
 import MarkdownPreview from '../views/MarkdownPreview.vue'
 import SubnetCalculator from '../views/SubnetCalculator.vue'
 import ChmodCalculator from '../views/ChmodCalculator.vue'
+import JsonToTypescript from '../views/JsonToTypescript.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -408,6 +409,12 @@ const routes = [
     name: "chmod-calculator",
     component: ChmodCalculator,
     meta: { title: `${appName}: ${pageTitles.chmodCalculator}` }
+  },
+  {
+    path: "/json-to-typescript",
+    name: "json-to-typescript",
+    component: JsonToTypescript,
+    meta: { title: `${appName}: ${pageTitles.jsonToTypescript}` }
   },
 ];
 
