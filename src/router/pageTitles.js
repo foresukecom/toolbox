@@ -50,6 +50,7 @@ const pageTitles = {
   piDigits: '円周率を1桁ずつ',
   monteCarloPi: 'モンテカルロ法で円周率',
   gameOfLife: 'ライフゲーム',
+  dateCalculator: '日付計算',
 };
 
 export default pageTitles;
