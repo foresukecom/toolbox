@@ -57,6 +57,7 @@ import OgpPreview from '../views/OgpPreview.vue'
 import UrlParser from '../views/UrlParser.vue'
 import MarkdownPreview from '../views/MarkdownPreview.vue'
 import SubnetCalculator from '../views/SubnetCalculator.vue'
+import ChmodCalculator from '../views/ChmodCalculator.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -401,6 +402,12 @@ const routes = [
     name: "subnet-calculator",
     component: SubnetCalculator,
     meta: { title: `${appName}: ${pageTitles.subnetCalculator}` }
+  },
+  {
+    path: "/chmod-calculator",
+    name: "chmod-calculator",
+    component: ChmodCalculator,
+    meta: { title: `${appName}: ${pageTitles.chmodCalculator}` }
   },
 ];
 

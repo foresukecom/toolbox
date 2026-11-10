@@ -57,6 +57,7 @@ const pageTitles = {
   urlParser: 'URL分解',
   markdownPreview: 'Markdownプレビュー',
   subnetCalculator: 'サブネット計算',
+  chmodCalculator: 'chmod計算',
 };
 
 export default pageTitles;
