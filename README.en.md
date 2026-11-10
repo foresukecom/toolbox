@@ -52,14 +52,24 @@ The specified items are as follows:
 
 ## Setup
 
-This project is developed using Docker containers.  
-Here is how to check its operation locally:
+The development environment is built with [Nix](https://nixos.org/) (flakes) and [direnv](https://direnv.net/).  
+Development tools such as Node.js, Yarn, Go and just are defined in `flake.nix`.
+
+### Prerequisites
+
+- Nix (with flakes enabled)
+- direnv (hooked into your shell; using [nix-direnv](https://github.com/nix-community/nix-direnv) is recommended)
+
+### Steps
 
 1. `git clone` this repository
-2. Open in VSCode (the development container will start)
-3. Rename `.env.sample` to `.env` and add the necessary information
-4. Execute `yarn serve` command inside the container
-5. Access [localhost:8080](http://localhost:8080) from your browser
+2. Run `direnv allow` at the repository root (the first run takes a while to fetch the tools)
+3. Copy `.env.sample` to `.env` and add the necessary information (or run `just env`)
+4. Run `just install` to install dependencies
+5. Run `just serve` to start the development server
+6. Access [localhost:8080](http://localhost:8080) from your browser
+
+Without direnv, you can enter the same shell with `nix develop`.
 
 ## Contribution
 

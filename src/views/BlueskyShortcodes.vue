@@ -62,12 +62,13 @@ export default {
       this.isOpen = !this.isOpen;
     },
     generateShortcode() {
-      // 新しいDOMParserインスタンスを作成
       const parser = new DOMParser();
-      // HTML入力を解析してDOMに変換
       const doc = parser.parseFromString(this.htmlInput, "text/html");
-      // 必要なデータをDOMから抽出
       const blockquote = doc.querySelector('blockquote.bluesky-embed');
+      if (!blockquote) {
+        this.shortcodeOutput = '';
+        return;
+      }
       const p = blockquote.querySelector('p');
       const authorLink = blockquote.querySelector('a[href^="https://bsky.app/profile/"]');
       const postLink = blockquote.querySelector('a[href^="https://bsky.app/profile/"]:last-of-type');

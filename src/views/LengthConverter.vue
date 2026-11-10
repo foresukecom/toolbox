@@ -1,44 +1,31 @@
 <template>
-  <div class="p-8">
-    <div class="max-w-md mx-auto">
-      <div class="flex mb-4">
-        <input v-model.number="inputValue" type="number" placeholder="値を入力"
-          class="p-2 border rounded-tl rounded-bl flex-grow" />
-        <select v-model="inputUnit" class="p-2 border-t border-b border-r rounded-tr rounded-br">
-          <option v-for="unit in units" :key="unit.name" :value="unit.name">
-            {{ unit.name }}
-          </option>
-        </select>
-      </div>
-      <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-              <th scope="col" class="py-3 px-6">値</th>
-              <th scope="col" class="py-3 px-6">単位</th>
-              <th scope="col" class="py-3 px-6">読み方</th>
-              <th scope="col" class="py-3 px-6">備考</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="unit in units" :key="unit.name" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td class="py-4 px-6">
-                {{ convertValue(unit.name) }}
-              </td>
-              <td class="py-4 px-6">
-                {{ unit.name }}
-              </td>
-              <td class="py-4 px-6">
-                {{ unit.reading }}
-              </td>
-              <td class="py-4 px-6">
-                {{ unit.remark }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="unit-converter cat-unit">
+    <div class="uc-input">
+      <input v-model.number="inputValue" type="number" placeholder="値を入力" />
+      <select v-model="inputUnit">
+        <option v-for="unit in units" :key="unit.name" :value="unit.name">
+          {{ unit.name }}
+        </option>
+      </select>
     </div>
+    <table class="uc-table">
+      <thead>
+        <tr>
+          <th>値</th>
+          <th>単位</th>
+          <th>読み方</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="unit in units" :key="unit.name">
+          <td class="uc-value">{{ convertValue(unit.name) }}</td>
+          <td class="uc-unit">{{ unit.name }}</td>
+          <td class="uc-reading">{{ unit.reading }}</td>
+          <td class="uc-remark">{{ unit.remark }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 

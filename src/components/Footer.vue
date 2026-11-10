@@ -1,6 +1,6 @@
 <template>
-  <footer class="w-full bg-gray-50 text-center p-2 mt-auto">
-    <span class="text-black">&copy; 2023 ToolBox</span>
+  <footer class="blog-footer">
+    <span>&copy; ToolBox - 開発の友</span>
   </footer>
 </template>
 

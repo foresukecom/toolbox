@@ -26,3 +26,7 @@ pnpm-debug.log*
 
 # Yarn 4.x
 .yarn/install-state.gz
+
+# direnv / nix
+.direnv
+result

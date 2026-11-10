@@ -23,10 +23,22 @@ import UnixTimeConverter from '../views/UnixTimeConverter.vue';
 import BirthdateInfo from '../views/BirthdateInfo.vue';
 import RubyGenerator from '../views/HtmlRubyGenerator.vue';
 import LengthConverter from '../views/LengthConverter.vue'
+import WeightConverter from '../views/WeightConverter.vue'
+import AreaConverter from '../views/AreaConverter.vue'
+import VolumeConverter from '../views/VolumeConverter.vue'
+import TemperatureConverter from '../views/TemperatureConverter.vue'
+import DataSizeConverter from '../views/DataSizeConverter.vue'
+import DurationConverter from '../views/DurationConverter.vue'
 import TextStyler from '../views/TextStyler.vue';
 import ImageMetadata from '../views/ImageMetadata.vue'
 import SosuCounter from '../views/SosuCounter.vue'
 import BlueskyShortcodes from '../views/BlueskyShortcodes.vue'
+import JwtDecoder from '../views/JwtDecoder.vue'
+import EncodeDecode from '../views/EncodeDecode.vue'
+import CronExplainer from '../views/CronExplainer.vue'
+import ColorConverter from '../views/ColorConverter.vue'
+import TextDiff from '../views/TextDiff.vue'
+import DataFormatConverter from '../views/DataFormatConverter.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -166,7 +178,43 @@ const routes = [
     path: "/length-converter",
     name: "length-converter",
     component: LengthConverter,
-    meta: { title: `${appName}: ${pageTitles.lengthConverter}` } 
+    meta: { title: `${appName}: ${pageTitles.lengthConverter}` }
+  },
+  {
+    path: "/weight-converter",
+    name: "weight-converter",
+    component: WeightConverter,
+    meta: { title: `${appName}: ${pageTitles.weightConverter}` }
+  },
+  {
+    path: "/area-converter",
+    name: "area-converter",
+    component: AreaConverter,
+    meta: { title: `${appName}: ${pageTitles.areaConverter}` }
+  },
+  {
+    path: "/volume-converter",
+    name: "volume-converter",
+    component: VolumeConverter,
+    meta: { title: `${appName}: ${pageTitles.volumeConverter}` }
+  },
+  {
+    path: "/temperature-converter",
+    name: "temperature-converter",
+    component: TemperatureConverter,
+    meta: { title: `${appName}: ${pageTitles.temperatureConverter}` }
+  },
+  {
+    path: "/data-size-converter",
+    name: "data-size-converter",
+    component: DataSizeConverter,
+    meta: { title: `${appName}: ${pageTitles.dataSizeConverter}` }
+  },
+  {
+    path: "/duration-converter",
+    name: "duration-converter",
+    component: DurationConverter,
+    meta: { title: `${appName}: ${pageTitles.durationConverter}` }
   },
   {
     path: "/text-styler",
@@ -192,11 +240,51 @@ const routes = [
     component: BlueskyShortcodes,
     meta: { title: `${appName}: ${pageTitles.blueskyShortcodes}` } 
   },
+  {
+    path: "/jwt-decoder",
+    name: "jwt-decoder",
+    component: JwtDecoder,
+    meta: { title: `${appName}: ${pageTitles.jwtDecoder}` }
+  },
+  {
+    path: "/encode-decode",
+    name: "encode-decode",
+    component: EncodeDecode,
+    meta: { title: `${appName}: ${pageTitles.encodeDecode}` }
+  },
+  {
+    path: "/cron-explainer",
+    name: "cron-explainer",
+    component: CronExplainer,
+    meta: { title: `${appName}: ${pageTitles.cronExplainer}` }
+  },
+  {
+    path: "/color-converter",
+    name: "color-converter",
+    component: ColorConverter,
+    meta: { title: `${appName}: ${pageTitles.colorConverter}` }
+  },
+  {
+    path: "/text-diff",
+    name: "text-diff",
+    component: TextDiff,
+    meta: { title: `${appName}: ${pageTitles.textDiff}` }
+  },
+  {
+    path: "/data-format-converter",
+    name: "data-format-converter",
+    component: DataFormatConverter,
+    meta: { title: `${appName}: ${pageTitles.dataFormatConverter}` }
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition;
+    return { top: 0 };
+  },
 });
 
 router.afterEach((to) => {
