@@ -63,6 +63,7 @@ export default {
       '/text-styler': pageTitles.textStyler,
       '/image-metadata': pageTitles.imageMetadata,
       '/sosu': pageTitles.sosu,
+      '/collatz-watcher': pageTitles.collatzWatcher,
     };
 
     const breadcrumbItems = computed(() => {

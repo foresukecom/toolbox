@@ -42,6 +42,7 @@ import BaseConverter from '../views/BaseConverter.vue'
 import CsvFormatter from '../views/CsvFormatter.vue'
 import RssReader from '../views/RssReader.vue'
 import PageImageMetadata from '../views/PageImageMetadata.vue'
+import CollatzWatcher from '../views/CollatzWatcher.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -296,6 +297,12 @@ const routes = [
     name: "page-image-metadata",
     component: PageImageMetadata,
     meta: { title: `${appName}: ${pageTitles.pageImageMetadata}` }
+  },
+  {
+    path: "/collatz-watcher",
+    name: "collatz-watcher",
+    component: CollatzWatcher,
+    meta: { title: `${appName}: ${pageTitles.collatzWatcher}` }
   },
 ];
 
