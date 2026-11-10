@@ -51,6 +51,9 @@ export default {
             { title: 'テキストカウンター', route: 'text-counter' },
             { title: 'ルビ生成', route: 'ruby-generator' },
             { title: '文字装飾', route: 'text-styler' },
+            { title: 'Markdownプレビュー', route: 'markdown-preview' },
+            { title: '全角半角変換', route: 'zenkaku-hankaku' },
+            { title: 'ダミーテキスト生成', route: 'dummy-text' },
           ],
         },
         {
@@ -64,6 +67,10 @@ export default {
             { title: 'テキスト差分', route: 'text-diff' },
             { title: 'YAML/JSON/TOML変換', route: 'data-format-converter' },
             { title: 'CSV整形', route: 'csv-formatter' },
+            { title: 'サブネット計算', route: 'subnet-calculator' },
+            { title: 'chmod計算', route: 'chmod-calculator' },
+            { title: 'JSON→TypeScript型', route: 'json-to-typescript' },
+            { title: 'SQL整形', route: 'sql-formatter' },
           ],
         },
         {
@@ -72,6 +79,8 @@ export default {
           tiles: [
             { title: 'RSSフィード取得', route: 'rss-reader' },
             { title: 'ページ内画像のメタデータ', route: 'page-image-metadata' },
+            { title: 'OGPプレビュー', route: 'ogp-preview' },
+            { title: 'URL分解', route: 'url-parser' },
           ],
         },
         {
@@ -79,6 +88,9 @@ export default {
           cssClass: 'cat-image',
           tiles: [
             { title: 'EXIF削除', route: 'image-metadata' },
+            { title: '画像変換', route: 'image-converter' },
+            { title: 'QRコード', route: 'qr-code' },
+            { title: '配色抽出', route: 'color-palette' },
           ],
         },
         {
@@ -93,6 +105,8 @@ export default {
             { title: '時間進捗バー', route: 'time-progress' },
             { title: 'UNIXTIME変換', route: 'unix-time-converter' },
             { title: '生年月日情報', route: 'birthdate-info' },
+            { title: '日付計算', route: 'date-calculator' },
+            { title: 'ポモドーロタイマー', route: 'pomodoro' },
           ],
         },
         {
@@ -106,6 +120,10 @@ export default {
             { title: '温度単位変換', route: 'temperature-converter' },
             { title: 'データ量単位変換', route: 'data-size-converter' },
             { title: '期間単位変換', route: 'duration-converter' },
+            { title: '速度単位変換', route: 'speed-converter' },
+            { title: '角度単位変換', route: 'angle-converter' },
+            { title: '圧力単位変換', route: 'pressure-converter' },
+            { title: 'エネルギー単位変換', route: 'energy-converter' },
           ],
         },
         {
@@ -122,6 +140,9 @@ export default {
             { title: '円周率を1桁ずつ', route: 'pi-digits' },
             { title: 'モンテカルロ法で円周率', route: 'monte-carlo-pi' },
             { title: 'ライフゲーム', route: 'game-of-life' },
+            { title: 'マンデルブロ集合', route: 'mandelbrot' },
+            { title: 'ランダムウォーク', route: 'random-walk' },
+            { title: '定数を1桁ずつ', route: 'constant-digits' },
           ],
         },
       ],
