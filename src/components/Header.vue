@@ -84,6 +84,7 @@ export default {
       '/zenkaku-hankaku': pageTitles.zenkakuHankaku,
       '/dummy-text': pageTitles.dummyText,
       '/date-calculator': pageTitles.dateCalculator,
+      '/pomodoro': pageTitles.pomodoroTimer,
     };
 
     const breadcrumbItems = computed(() => {

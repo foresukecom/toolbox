@@ -63,6 +63,7 @@ const pageTitles = {
   zenkakuHankaku: '全角半角変換',
   dummyText: 'ダミーテキスト生成',
   dateCalculator: '日付計算',
+  pomodoroTimer: 'ポモドーロタイマー',
 };
 
 export default pageTitles;

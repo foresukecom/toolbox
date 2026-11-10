@@ -106,6 +106,7 @@ export default {
             { title: 'UNIXTIME変換', route: 'unix-time-converter' },
             { title: '生年月日情報', route: 'birthdate-info' },
             { title: '日付計算', route: 'date-calculator' },
+            { title: 'ポモドーロタイマー', route: 'pomodoro' },
           ],
         },
         {

@@ -63,6 +63,7 @@ import SqlFormatter from '../views/SqlFormatter.vue'
 import ZenkakuHankaku from '../views/ZenkakuHankaku.vue'
 import DummyText from '../views/DummyText.vue'
 import DateCalculator from '../views/DateCalculator.vue'
+import PomodoroTimer from '../views/PomodoroTimer.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -443,6 +444,12 @@ const routes = [
     name: "date-calculator",
     component: DateCalculator,
     meta: { title: `${appName}: ${pageTitles.dateCalculator}` }
+  },
+  {
+    path: "/pomodoro",
+    name: "pomodoro",
+    component: PomodoroTimer,
+    meta: { title: `${appName}: ${pageTitles.pomodoroTimer}` }
   },
 ];
 
