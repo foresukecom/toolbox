@@ -32,6 +32,12 @@ const pageTitles = {
   textStyler: '文字装飾',
   imageMetadata: 'EXIF削除',
   sosu: '素数カウンター',
+  jwtDecoder: 'JWTデコーダー',
+  encodeDecode: 'エンコード/デコード',
+  cronExplainer: 'cron式解説',
+  colorConverter: 'カラー変換',
+  textDiff: 'テキスト差分',
+  dataFormatConverter: 'YAML/JSON/TOML変換',
   blueskyShortcodes: 'Hugo埋め込みコード生成',
 };
 
