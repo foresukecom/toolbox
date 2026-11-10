@@ -40,12 +40,25 @@
         </li>
       </ul>
     </div>
-    <div :style="mapStyle" ref="mapContainer" class="map-container h-64"></div>
+    <div v-if="gpsPosition" class="mt-4">
+      <p class="text-sm">
+        撮影位置: 緯度 {{ gpsPosition.lat.toFixed(6) }} / 経度 {{ gpsPosition.lng.toFixed(6) }}
+      </p>
+      <template v-if="!mapVisible">
+        <button type="button" @click="showMap"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-2">
+          地図を表示する
+        </button>
+        <p class="text-xs text-gray-500 mt-1">
+          ボタンを押すと、撮影位置の周辺の地図を取得するため、位置情報が地図サービス（Mapbox）に送信されます。
+        </p>
+      </template>
+    </div>
+    <div v-show="mapVisible" ref="mapContainer" class="map-container mt-4"></div>
   </div>
 </template>
 
 <script>
-import mapboxgl from 'mapbox-gl';
 import EXIF from 'exif-js';
 
 export default {
@@ -54,18 +67,16 @@ export default {
       selectedImageUrl: null,
       isDragOver: false,
       exifData: null,
-      map: null, // 地図のインスタンスを保持
-      mapStyle: { visibility: 'hidden' },
+      gpsPosition: null, // { lat, lng }。GPS情報がなければ null
+      mapVisible: false,
     };
   },
-  mounted() {
-    mapboxgl.accessToken = process.env.VUE_APP_MAPBOX;
-    this.map = new mapboxgl.Map({
-      container: this.$refs.mapContainer, // コンテナの参照
-      style: 'mapbox://styles/mapbox/streets-v11', // 地図のスタイル
-      center: [0, 0], // 初期の中心点
-      zoom: 15, // 初期のズームレベル
-    });
+  created() {
+    // 地図のインスタンスはリアクティブにしない
+    this.map = null;
+  },
+  beforeUnmount() {
+    this.hideMap();
   },
   methods: {
     handleDragOver() {
@@ -93,19 +104,16 @@ export default {
       }
     },
     processFile(file) {
+      // 別の画像を選んだら地図は閉じ、表示には改めてボタン操作を求める
+      this.hideMap();
+      this.gpsPosition = null;
       EXIF.getData(file, () => {
         this.exifData = EXIF.getAllTags(file);
         if (this.exifData.GPSLatitude && this.exifData.GPSLongitude) {
-          const lat = this.convertGPSInfo(this.exifData.GPSLatitude);
-          const lng = this.convertGPSInfo(this.exifData.GPSLongitude);
-          this.mapVisible = true;
-          // 地図がロードされていることを確認してから、中心を更新
-          if (this.map && this.map.isStyleLoaded()) {
-            this.map.flyTo({ center: [lng, lat] });
-            this.showMap();
-          }
-        } else {
-          this.hideMap();
+          this.gpsPosition = {
+            lat: this.convertGPSInfo(this.exifData.GPSLatitude),
+            lng: this.convertGPSInfo(this.exifData.GPSLongitude),
+          };
         }
       });
     },
@@ -122,11 +130,29 @@ export default {
         return 0; // 不正なデータの場合は0を返す
       }
     },
-    showMap() {
-      this.mapStyle.visibility = 'visible'; // 地図を表示
+    // ボタンが押されたときだけ Mapbox を読み込み、位置情報を送信する
+    async showMap() {
+      const position = this.gpsPosition;
+      if (!position || this.map) return;
+      const { default: mapboxgl } = await import('mapbox-gl');
+      // 読み込み中に別の画像が選ばれた場合は何もしない
+      if (this.gpsPosition !== position || this.map) return;
+      this.mapVisible = true;
+      await this.$nextTick();
+      mapboxgl.accessToken = process.env.VUE_APP_MAPBOX;
+      this.map = new mapboxgl.Map({
+        container: this.$refs.mapContainer,
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [position.lng, position.lat],
+        zoom: 15,
+      });
     },
     hideMap() {
-      this.mapStyle.visibility = 'hidden'; // 地図を非表示
+      if (this.map) {
+        this.map.remove();
+        this.map = null;
+      }
+      this.mapVisible = false;
     },
     loadImage(file) {
       const reader = new FileReader();
