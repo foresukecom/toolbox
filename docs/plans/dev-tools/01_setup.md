@@ -32,11 +32,11 @@ yarn add cronstrue cron-parser diff yaml smol-toml
 
 | パッケージ | 導入バージョン |
 |---|---|
-| `cronstrue` | |
-| `cron-parser` | |
-| `diff` | |
-| `yaml` | |
-| `smol-toml` | |
+| `cronstrue` | 3.39.0 |
+| `cron-parser` | 5.10.4（v5 系: `CronExpressionParser.parse`） |
+| `diff` | 9.0.0 |
+| `yaml` | 2.9.1 |
+| `smol-toml` | 1.9.1 |
 
 ## 2. スタブ View の作成（6本）
 
