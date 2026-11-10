@@ -63,6 +63,14 @@ export default {
       '/text-styler': pageTitles.textStyler,
       '/image-metadata': pageTitles.imageMetadata,
       '/sosu': pageTitles.sosu,
+      '/prime-factor-counter': pageTitles.primeFactorCounter,
+      '/ulam-spiral': pageTitles.ulamSpiral,
+      '/sieve-of-eratosthenes': pageTitles.sieveOfEratosthenes,
+      '/collatz-watcher': pageTitles.collatzWatcher,
+      '/fibonacci-golden-ratio': pageTitles.fibonacciGoldenRatio,
+      '/pi-digits': pageTitles.piDigits,
+      '/monte-carlo-pi': pageTitles.monteCarloPi,
+      '/game-of-life': pageTitles.gameOfLife,
     };
 
     const breadcrumbItems = computed(() => {

@@ -42,6 +42,14 @@ const pageTitles = {
   csvFormatter: 'CSV整形',
   rssReader: 'RSSフィード取得',
   pageImageMetadata: 'ページ内画像のメタデータ',
+  primeFactorCounter: '素因数分解カウンター',
+  ulamSpiral: 'ウラムの螺旋',
+  sieveOfEratosthenes: 'エラトステネスの篩',
+  collatzWatcher: 'コラッツ予想ウォッチャー',
+  fibonacciGoldenRatio: 'フィボナッチと黄金比',
+  piDigits: '円周率を1桁ずつ',
+  monteCarloPi: 'モンテカルロ法で円周率',
+  gameOfLife: 'ライフゲーム',
 };
 
 export default pageTitles;
