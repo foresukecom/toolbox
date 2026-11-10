@@ -63,7 +63,6 @@ export default {
       '/text-styler': pageTitles.textStyler,
       '/image-metadata': pageTitles.imageMetadata,
       '/sosu': pageTitles.sosu,
-      '/bluesky-shortcodes': pageTitles.blueskyShortcodes,
     };
 
     const breadcrumbItems = computed(() => {
