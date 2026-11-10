@@ -54,6 +54,7 @@ import ImageConverter from '../views/ImageConverter.vue'
 import QrCode from '../views/QrCode.vue'
 import ColorPalette from '../views/ColorPalette.vue'
 import OgpPreview from '../views/OgpPreview.vue'
+import UrlParser from '../views/UrlParser.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -380,6 +381,12 @@ const routes = [
     name: "ogp-preview",
     component: OgpPreview,
     meta: { title: `${appName}: ${pageTitles.ogpPreview}` }
+  },
+  {
+    path: "/url-parser",
+    name: "url-parser",
+    component: UrlParser,
+    meta: { title: `${appName}: ${pageTitles.urlParser}` }
   },
 ];
 
