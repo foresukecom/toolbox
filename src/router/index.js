@@ -4,7 +4,6 @@ import HomePage from '../views/HomePage.vue';
 import AboutPage from '../views/About.vue';
 import ClientInfo from '../views/ClientInfo.vue'; 
 import TextHash from '../views/TextHash.vue';
-import VideoToGif from '../views/VideoToGif.vue';
 import JsonFormatter from '../views/JsonFormatter.vue';
 import XmlFormatter from '../views/XmlFormatter.vue';
 import TextCaseConverter from '../views/TextCaseConverter.vue';
@@ -97,12 +96,6 @@ const routes = [
     name: 'text-hash',
     component: TextHash,
     meta: { title: `${appName}: ${pageTitles.textHash}` } 
-  },
-  {
-    path: '/video-to-gif',
-    name: 'video-to-gif',
-    component: VideoToGif,
-    meta: { title: `${appName}: ${pageTitles.videoToGif}` } 
   },
   {
     path: "/json-formatter",

@@ -1687,25 +1687,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffmpeg/core@npm:^0.11.0":
-  version: 0.11.0
-  resolution: "@ffmpeg/core@npm:0.11.0"
-  checksum: 10c0/78d5a5a3fd13ad9340016eb0fd49f0377920e2c7617928d476ece153b773d2338b033aba4e34383382fb0df2e119376cb2741c7d228f9cc35b7bda52fb56f26a
-  languageName: node
-  linkType: hard
-
-"@ffmpeg/ffmpeg@npm:^0.11.6":
-  version: 0.11.6
-  resolution: "@ffmpeg/ffmpeg@npm:0.11.6"
-  dependencies:
-    is-url: "npm:^1.2.4"
-    node-fetch: "npm:^2.6.1"
-    regenerator-runtime: "npm:^0.13.7"
-    resolve-url: "npm:^0.2.1"
-  checksum: 10c0/7692b4b14369f81ff2833e93767a202872991ead75eee0490f55668d3b6d1911495bd08879cbb23b4781e8c492a75316eb3c2fde7066cc093235bef4649096d4
-  languageName: node
-  linkType: hard
-
 "@hapi/hoek@npm:^9.0.0, @hapi/hoek@npm:^9.3.0":
   version: 9.3.0
   resolution: "@hapi/hoek@npm:9.3.0"
@@ -5288,13 +5269,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ffmpeg.js@npm:^4.2.9003":
-  version: 4.2.9003
-  resolution: "ffmpeg.js@npm:4.2.9003"
-  checksum: 10c0/bdd1a68d9f64d2061ca2f50052afa32c433cea5e773c616ccded45b8ffd77a4b0014785d24e122ec4d4149a2803558fa21cc7fd6a62f605afa873bfd51f114a5
-  languageName: node
-  linkType: hard
-
 "figures@npm:^2.0.0":
   version: 2.0.0
   resolution: "figures@npm:2.0.0"
@@ -5576,13 +5550,6 @@ __metadata:
   version: 6.0.1
   resolution: "get-stream@npm:6.0.1"
   checksum: 10c0/49825d57d3fd6964228e6200a58169464b8e8970489b3acdc24906c782fb7f01f9f56f8e6653c4a50713771d6658f7cfe051e5eb8c12e334138c9c918b296341
-  languageName: node
-  linkType: hard
-
-"gif.js@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "gif.js@npm:0.2.0"
-  checksum: 10c0/65ad7a62db2235a85ab84e70b9a8dbb1bad23a3d6090a1f30443a03b2f810e3758ee56737e765769d04d8a0ce81a8d383cbbe731b03145af7f58326249ce75dc
   languageName: node
   linkType: hard
 
@@ -6225,13 +6192,6 @@ __metadata:
   version: 2.0.3
   resolution: "is-unsafe@npm:2.0.3"
   checksum: 10c0/509ee09ccaa2613c95e3625c39be029fc8838cce29e1582a560d7f11291516cfad55178efbb1062ac50267064a08ce8c724757d0b90c6b45d6ee5e4b121d45a6
-  languageName: node
-  linkType: hard
-
-"is-url@npm:^1.2.4":
-  version: 1.2.4
-  resolution: "is-url@npm:1.2.4"
-  checksum: 10c0/0157a79874f8f95fdd63540e3f38c8583c2ef572661cd0693cda80ae3e42dfe8e9a4a972ec1b827f861d9a9acf75b37f7d58a37f94a8a053259642912c252bc3
   languageName: node
   linkType: hard
 
@@ -7160,7 +7120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7":
+"node-fetch@npm:^2.6.7":
   version: 2.6.11
   resolution: "node-fetch@npm:2.6.11"
   dependencies:
@@ -8433,7 +8393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.11, regenerator-runtime@npm:^0.13.7":
+"regenerator-runtime@npm:^0.13.11":
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
   checksum: 10c0/12b069dc774001fbb0014f6a28f11c09ebfe3c0d984d88c9bced77fdb6fedbacbca434d24da9ae9371bfbf23f754869307fb51a4c98a8b8b18e5ef748677ca24
@@ -8542,13 +8502,6 @@ __metadata:
   dependencies:
     protocol-buffers-schema: "npm:^3.3.1"
   checksum: 10c0/8e656b9072b1c001952f851251413bc79d8c771c3015f607b75e1ca3b8bd7c4396068dd19cdbb3019affa03f6457d2c0fd38d981ffd714215cd2e7c2b67221a7
-  languageName: node
-  linkType: hard
-
-"resolve-url@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "resolve-url@npm:0.2.1"
-  checksum: 10c0/c285182cfcddea13a12af92129ce0569be27fb0074ffaefbd3ba3da2eac2acecdfc996d435c4982a9fa2b4708640e52837c9153a5ab9255886a00b0b9e8d2a54
   languageName: node
   linkType: hard
 
@@ -9566,8 +9519,6 @@ __metadata:
     "@babel/core": "npm:^7.29.6"
     "@babel/eslint-parser": "npm:^7.12.16"
     "@babel/plugin-transform-private-methods": "npm:^7.22.5"
-    "@ffmpeg/core": "npm:^0.11.0"
-    "@ffmpeg/ffmpeg": "npm:^0.11.6"
     "@mdi/js": "npm:^7.2.96"
     "@vue-leaflet/vue-leaflet": "npm:^0.9.0"
     "@vue/cli-plugin-babel": "npm:~5.0.0"
@@ -9586,9 +9537,7 @@ __metadata:
     exif-js: "npm:^2.3.0"
     exifr: "npm:^7.1.3"
     fast-xml-parser: "npm:^5.12.0"
-    ffmpeg.js: "npm:^4.2.9003"
     flowbite: "npm:^1.7.0"
-    gif.js: "npm:^0.2.0"
     highlight.js: "npm:^10.7.3"
     jsqr: "npm:^1.4.0"
     leaflet: "npm:^1.9.3"

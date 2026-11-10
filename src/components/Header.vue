@@ -35,7 +35,6 @@ export default {
       '/about': pageTitles.about,
       '/client-info': pageTitles.clientInfo,
       '/text-hash': pageTitles.textHash,
-      '/video-to-gif': pageTitles.videoToGif,
       '/json-formatter': pageTitles.jsonFormatter,
       '/xml-formatter': pageTitles.xmlFormatter,
       '/text-case-converter': pageTitles.textCaseConverter,

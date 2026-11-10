@@ -4,7 +4,6 @@ const pageTitles = {
   about: 'About',
   clientInfo: '閲覧環境',
   textHash: 'テキストハッシュ',
-  videoToGif: 'ビデオからGIFへ',
   jsonFormatter: 'JSON整形',
   xmlFormatter: 'XML整形',
   textCaseConverter: 'テキストケース変換',
