@@ -71,6 +71,7 @@ export default {
       '/pi-digits': pageTitles.piDigits,
       '/monte-carlo-pi': pageTitles.monteCarloPi,
       '/game-of-life': pageTitles.gameOfLife,
+      '/chmod-calculator': pageTitles.chmodCalculator,
     };
 
     const breadcrumbItems = computed(() => {
