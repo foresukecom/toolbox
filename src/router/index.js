@@ -64,6 +64,10 @@ import ZenkakuHankaku from '../views/ZenkakuHankaku.vue'
 import DummyText from '../views/DummyText.vue'
 import DateCalculator from '../views/DateCalculator.vue'
 import PomodoroTimer from '../views/PomodoroTimer.vue'
+import SpeedConverter from '../views/SpeedConverter.vue'
+import AngleConverter from '../views/AngleConverter.vue'
+import PressureConverter from '../views/PressureConverter.vue'
+import EnergyConverter from '../views/EnergyConverter.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -450,6 +454,30 @@ const routes = [
     name: "pomodoro",
     component: PomodoroTimer,
     meta: { title: `${appName}: ${pageTitles.pomodoroTimer}` }
+  },
+  {
+    path: "/speed-converter",
+    name: "speed-converter",
+    component: SpeedConverter,
+    meta: { title: `${appName}: ${pageTitles.speedConverter}` }
+  },
+  {
+    path: "/angle-converter",
+    name: "angle-converter",
+    component: AngleConverter,
+    meta: { title: `${appName}: ${pageTitles.angleConverter}` }
+  },
+  {
+    path: "/pressure-converter",
+    name: "pressure-converter",
+    component: PressureConverter,
+    meta: { title: `${appName}: ${pageTitles.pressureConverter}` }
+  },
+  {
+    path: "/energy-converter",
+    name: "energy-converter",
+    component: EnergyConverter,
+    meta: { title: `${appName}: ${pageTitles.energyConverter}` }
   },
 ];
 

@@ -85,6 +85,10 @@ export default {
       '/dummy-text': pageTitles.dummyText,
       '/date-calculator': pageTitles.dateCalculator,
       '/pomodoro': pageTitles.pomodoroTimer,
+      '/speed-converter': pageTitles.speedConverter,
+      '/angle-converter': pageTitles.angleConverter,
+      '/pressure-converter': pageTitles.pressureConverter,
+      '/energy-converter': pageTitles.energyConverter,
     };
 
     const breadcrumbItems = computed(() => {

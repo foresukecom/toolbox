@@ -64,6 +64,10 @@ const pageTitles = {
   dummyText: 'ダミーテキスト生成',
   dateCalculator: '日付計算',
   pomodoroTimer: 'ポモドーロタイマー',
+  speedConverter: '速度単位変換',
+  angleConverter: '角度単位変換',
+  pressureConverter: '圧力単位変換',
+  energyConverter: 'エネルギー単位変換',
 };
 
 export default pageTitles;

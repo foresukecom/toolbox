@@ -120,6 +120,10 @@ export default {
             { title: '温度単位変換', route: 'temperature-converter' },
             { title: 'データ量単位変換', route: 'data-size-converter' },
             { title: '期間単位変換', route: 'duration-converter' },
+            { title: '速度単位変換', route: 'speed-converter' },
+            { title: '角度単位変換', route: 'angle-converter' },
+            { title: '圧力単位変換', route: 'pressure-converter' },
+            { title: 'エネルギー単位変換', route: 'energy-converter' },
           ],
         },
         {
