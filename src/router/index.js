@@ -46,6 +46,7 @@ import PrimeFactorCounter from '../views/PrimeFactorCounter.vue'
 import UlamSpiral from '../views/UlamSpiral.vue'
 import SieveOfEratosthenes from '../views/SieveOfEratosthenes.vue'
 import CollatzWatcher from '../views/CollatzWatcher.vue'
+import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -318,6 +319,10 @@ const routes = [
     name: "collatz-watcher",
     component: CollatzWatcher,
     meta: { title: `${appName}: ${pageTitles.collatzWatcher}` }
+    path: "/fibonacci-golden-ratio",
+    name: "fibonacci-golden-ratio",
+    component: FibonacciGoldenRatio,
+    meta: { title: `${appName}: ${pageTitles.fibonacciGoldenRatio}` }
   },
 ];
 

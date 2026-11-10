@@ -46,6 +46,7 @@ const pageTitles = {
   ulamSpiral: 'ウラムの螺旋',
   sieveOfEratosthenes: 'エラトステネスの篩',
   collatzWatcher: 'コラッツ予想ウォッチャー',
+  fibonacciGoldenRatio: 'フィボナッチと黄金比',
 };
 
 export default pageTitles;

@@ -118,6 +118,7 @@ export default {
             { title: 'ウラムの螺旋', route: 'ulam-spiral' },
             { title: 'エラトステネスの篩', route: 'sieve-of-eratosthenes' },
             { title: 'コラッツ予想ウォッチャー', route: 'collatz-watcher' },
+            { title: 'フィボナッチと黄金比', route: 'fibonacci-golden-ratio' },
           ],
         },
       ],

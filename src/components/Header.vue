@@ -67,6 +67,7 @@ export default {
       '/ulam-spiral': pageTitles.ulamSpiral,
       '/sieve-of-eratosthenes': pageTitles.sieveOfEratosthenes,
       '/collatz-watcher': pageTitles.collatzWatcher,
+      '/fibonacci-golden-ratio': pageTitles.fibonacciGoldenRatio,
     };
 
     const breadcrumbItems = computed(() => {
