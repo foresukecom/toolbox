@@ -70,6 +70,7 @@ export default {
       '/fibonacci-golden-ratio': pageTitles.fibonacciGoldenRatio,
       '/pi-digits': pageTitles.piDigits,
       '/monte-carlo-pi': pageTitles.monteCarloPi,
+      '/game-of-life': pageTitles.gameOfLife,
     };
 
     const breadcrumbItems = computed(() => {

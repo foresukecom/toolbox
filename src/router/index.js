@@ -49,6 +49,7 @@ import CollatzWatcher from '../views/CollatzWatcher.vue'
 import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
 import PiDigits from '../views/PiDigits.vue'
 import MonteCarloPi from '../views/MonteCarloPi.vue'
+import GameOfLife from '../views/GameOfLife.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -333,6 +334,10 @@ const routes = [
     name: "monte-carlo-pi",
     component: MonteCarloPi,
     meta: { title: `${appName}: ${pageTitles.monteCarloPi}` }
+    path: "/game-of-life",
+    name: "game-of-life",
+    component: GameOfLife,
+    meta: { title: `${appName}: ${pageTitles.gameOfLife}` }
   },
 ];
 

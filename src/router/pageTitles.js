@@ -49,6 +49,7 @@ const pageTitles = {
   fibonacciGoldenRatio: 'フィボナッチと黄金比',
   piDigits: '円周率を1桁ずつ',
   monteCarloPi: 'モンテカルロ法で円周率',
+  gameOfLife: 'ライフゲーム',
 };
 
 export default pageTitles;
