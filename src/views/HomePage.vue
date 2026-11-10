@@ -114,6 +114,7 @@ export default {
           tiles: [
             { title: '素数カウンター', route: 'sosu' },
             { title: '基数変換', route: 'base-converter' },
+            { title: '素因数分解カウンター', route: 'prime-factor-counter' },
           ],
         },
       ],
