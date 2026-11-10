@@ -81,6 +81,7 @@ export default {
             { title: 'EXIF削除', route: 'image-metadata' },
             { title: '画像変換', route: 'image-converter' },
             { title: 'QRコード', route: 'qr-code' },
+            { title: '配色抽出', route: 'color-palette' },
           ],
         },
         {

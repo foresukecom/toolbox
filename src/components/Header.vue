@@ -73,6 +73,7 @@ export default {
       '/game-of-life': pageTitles.gameOfLife,
       '/image-converter': pageTitles.imageConverter,
       '/qr-code': pageTitles.qrCode,
+      '/color-palette': pageTitles.colorPalette,
     };
 
     const breadcrumbItems = computed(() => {

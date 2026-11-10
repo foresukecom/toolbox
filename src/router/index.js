@@ -52,6 +52,7 @@ import MonteCarloPi from '../views/MonteCarloPi.vue'
 import GameOfLife from '../views/GameOfLife.vue'
 import ImageConverter from '../views/ImageConverter.vue'
 import QrCode from '../views/QrCode.vue'
+import ColorPalette from '../views/ColorPalette.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -366,6 +367,12 @@ const routes = [
     name: "qr-code",
     component: QrCode,
     meta: { title: `${appName}: ${pageTitles.qrCode}` }
+  },
+  {
+    path: "/color-palette",
+    name: "color-palette",
+    component: ColorPalette,
+    meta: { title: `${appName}: ${pageTitles.colorPalette}` }
   },
 ];
 
