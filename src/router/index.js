@@ -50,6 +50,7 @@ import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
 import PiDigits from '../views/PiDigits.vue'
 import MonteCarloPi from '../views/MonteCarloPi.vue'
 import GameOfLife from '../views/GameOfLife.vue'
+import QrCode from '../views/QrCode.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -352,6 +353,12 @@ const routes = [
     name: "game-of-life",
     component: GameOfLife,
     meta: { title: `${appName}: ${pageTitles.gameOfLife}` }
+  },
+  {
+    path: "/qr-code",
+    name: "qr-code",
+    component: QrCode,
+    meta: { title: `${appName}: ${pageTitles.qrCode}` }
   },
 ];
 
