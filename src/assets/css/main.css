@@ -2,6 +2,17 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Bootstrap (Reboot) 撤去前の見た目を保つための最小限のベース */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+  }
+
+  th {
+    text-align: inherit;
+  }
+}
+
 /* =========================================================
    開発の友 - ブログ風シェル/ホームのスタイル
    個別ツール画面 (Tailwind 利用) には影響しないよう
@@ -56,6 +67,7 @@
   border: 0;
   border-top: 3px dotted var(--tb-main);
   margin: 1.25em 0;
+  opacity: 0.25;
 }
 
 /* 中央寄せコンテナ */
