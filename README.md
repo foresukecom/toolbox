@@ -52,14 +52,24 @@ CORSエラーを防ぐためにNetlify functions を経由して外部APIを呼�
 
 ## セットアップ
 
-本プロジェクトはDockerコンテナを使用して開発しています。  
-ローカルで動作を確認する方法は以下の通りです。
+開発環境は [Nix](https://nixos.org/) (flakes) と [direnv](https://direnv.net/) で構築します。  
+Node.js / Yarn / Go / just などの開発ツールは `flake.nix` で定義しています。
+
+### 前提
+
+- Nix (flakes を有効化済み)
+- direnv (シェルへのフック設定済み。[nix-direnv](https://github.com/nix-community/nix-direnv) の併用推奨)
+
+### 手順
 
 1. 本リポジトリを`git clone` する
-1. VSCodeで開く(開発コンテナが起動すいます)
-1. `.env.sample` を`.env`にリネームして、必要な情報を追記する
-1. コンテナ内で`yarn serve` コマンドを実施する
+1. リポジトリ直下で `direnv allow` を実行する (初回は開発ツールの取得に時間がかかります)
+1. `.env.sample` を`.env`にコピーして、必要な情報を追記する (`just env` でも可)
+1. `just install` で依存パッケージをインストールする
+1. `just serve` で開発サーバを起動する
 1. [localhost:8080](http://localhost:8080) にブラウザからアクセスする
+
+direnv を使わない場合は `nix develop` で同じ開発シェルに入れます。
 
 ## コントリビューション
 
