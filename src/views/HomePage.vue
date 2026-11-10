@@ -51,6 +51,7 @@ export default {
             { title: 'テキストカウンター', route: 'text-counter' },
             { title: 'ルビ生成', route: 'ruby-generator' },
             { title: '文字装飾', route: 'text-styler' },
+            { title: 'ダミーテキスト生成', route: 'dummy-text' },
           ],
         },
         {
