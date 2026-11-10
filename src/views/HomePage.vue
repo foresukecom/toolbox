@@ -119,6 +119,7 @@ export default {
             { title: 'エラトステネスの篩', route: 'sieve-of-eratosthenes' },
             { title: 'コラッツ予想ウォッチャー', route: 'collatz-watcher' },
             { title: 'フィボナッチと黄金比', route: 'fibonacci-golden-ratio' },
+            { title: '円周率を1桁ずつ', route: 'pi-digits' },
           ],
         },
       ],

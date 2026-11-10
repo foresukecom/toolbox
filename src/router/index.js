@@ -47,6 +47,7 @@ import UlamSpiral from '../views/UlamSpiral.vue'
 import SieveOfEratosthenes from '../views/SieveOfEratosthenes.vue'
 import CollatzWatcher from '../views/CollatzWatcher.vue'
 import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
+import PiDigits from '../views/PiDigits.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -323,6 +324,10 @@ const routes = [
     name: "fibonacci-golden-ratio",
     component: FibonacciGoldenRatio,
     meta: { title: `${appName}: ${pageTitles.fibonacciGoldenRatio}` }
+    path: "/pi-digits",
+    name: "pi-digits",
+    component: PiDigits,
+    meta: { title: `${appName}: ${pageTitles.piDigits}` }
   },
 ];
 

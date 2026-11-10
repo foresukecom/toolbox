@@ -47,6 +47,7 @@ const pageTitles = {
   sieveOfEratosthenes: 'エラトステネスの篩',
   collatzWatcher: 'コラッツ予想ウォッチャー',
   fibonacciGoldenRatio: 'フィボナッチと黄金比',
+  piDigits: '円周率を1桁ずつ',
 };
 
 export default pageTitles;
