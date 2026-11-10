@@ -79,6 +79,7 @@ export default {
           cssClass: 'cat-image',
           tiles: [
             { title: 'EXIF削除', route: 'image-metadata' },
+            { title: '画像変換', route: 'image-converter' },
           ],
         },
         {
