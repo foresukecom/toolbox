@@ -270,6 +270,22 @@
   }
 }
 
+/* 表の下の注記・入力エラー */
+.unit-converter .uc-notes {
+  margin: 1em 0 0;
+  padding-left: 1.2em;
+  list-style: disc;
+  color: var(--tb-muted);
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+.unit-converter .uc-error {
+  margin: -0.75em 0 1em;
+  color: #c0392b;
+  font-size: 0.9em;
+}
+
 /* パンくず */
 .blog-breadcrumb {
   font-size: 0.85em;

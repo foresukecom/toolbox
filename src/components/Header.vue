@@ -71,6 +71,10 @@ export default {
       '/pi-digits': pageTitles.piDigits,
       '/monte-carlo-pi': pageTitles.monteCarloPi,
       '/game-of-life': pageTitles.gameOfLife,
+      '/speed-converter': pageTitles.speedConverter,
+      '/angle-converter': pageTitles.angleConverter,
+      '/pressure-converter': pageTitles.pressureConverter,
+      '/energy-converter': pageTitles.energyConverter,
     };
 
     const breadcrumbItems = computed(() => {

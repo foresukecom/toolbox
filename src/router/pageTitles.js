@@ -50,6 +50,10 @@ const pageTitles = {
   piDigits: '円周率を1桁ずつ',
   monteCarloPi: 'モンテカルロ法で円周率',
   gameOfLife: 'ライフゲーム',
+  speedConverter: '速度単位変換',
+  angleConverter: '角度単位変換',
+  pressureConverter: '圧力単位変換',
+  energyConverter: 'エネルギー単位変換',
 };
 
 export default pageTitles;
