@@ -264,7 +264,8 @@
 }
 
 @media (max-width: 600px) {
-  .unit-converter .uc-table td.uc-remark {
+  .unit-converter .uc-table td.uc-remark,
+  .unit-converter .uc-table th:nth-child(4) {
     display: none;
   }
 }
