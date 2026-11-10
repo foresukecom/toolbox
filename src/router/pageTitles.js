@@ -68,6 +68,7 @@ const pageTitles = {
   angleConverter: '角度単位変換',
   pressureConverter: '圧力単位変換',
   energyConverter: 'エネルギー単位変換',
+  mandelbrot: 'マンデルブロ集合',
 };
 
 export default pageTitles;

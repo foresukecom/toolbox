@@ -140,6 +140,7 @@ export default {
             { title: '円周率を1桁ずつ', route: 'pi-digits' },
             { title: 'モンテカルロ法で円周率', route: 'monte-carlo-pi' },
             { title: 'ライフゲーム', route: 'game-of-life' },
+            { title: 'マンデルブロ集合', route: 'mandelbrot' },
           ],
         },
       ],

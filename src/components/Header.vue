@@ -89,6 +89,7 @@ export default {
       '/angle-converter': pageTitles.angleConverter,
       '/pressure-converter': pageTitles.pressureConverter,
       '/energy-converter': pageTitles.energyConverter,
+      '/mandelbrot': pageTitles.mandelbrot,
     };
 
     const breadcrumbItems = computed(() => {

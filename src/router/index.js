@@ -68,6 +68,7 @@ import SpeedConverter from '../views/SpeedConverter.vue'
 import AngleConverter from '../views/AngleConverter.vue'
 import PressureConverter from '../views/PressureConverter.vue'
 import EnergyConverter from '../views/EnergyConverter.vue'
+import Mandelbrot from '../views/Mandelbrot.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -478,6 +479,12 @@ const routes = [
     name: "energy-converter",
     component: EnergyConverter,
     meta: { title: `${appName}: ${pageTitles.energyConverter}` }
+  },
+  {
+    path: "/mandelbrot",
+    name: "mandelbrot",
+    component: Mandelbrot,
+    meta: { title: `${appName}: ${pageTitles.mandelbrot}` }
   },
 ];
 
