@@ -310,30 +310,44 @@ const routes = [
     name: "prime-factor-counter",
     component: PrimeFactorCounter,
     meta: { title: `${appName}: ${pageTitles.primeFactorCounter}` }
+  },
+  {
     path: "/ulam-spiral",
     name: "ulam-spiral",
     component: UlamSpiral,
     meta: { title: `${appName}: ${pageTitles.ulamSpiral}` }
+  },
+  {
     path: "/sieve-of-eratosthenes",
     name: "sieve-of-eratosthenes",
     component: SieveOfEratosthenes,
     meta: { title: `${appName}: ${pageTitles.sieveOfEratosthenes}` }
+  },
+  {
     path: "/collatz-watcher",
     name: "collatz-watcher",
     component: CollatzWatcher,
     meta: { title: `${appName}: ${pageTitles.collatzWatcher}` }
+  },
+  {
     path: "/fibonacci-golden-ratio",
     name: "fibonacci-golden-ratio",
     component: FibonacciGoldenRatio,
     meta: { title: `${appName}: ${pageTitles.fibonacciGoldenRatio}` }
+  },
+  {
     path: "/pi-digits",
     name: "pi-digits",
     component: PiDigits,
     meta: { title: `${appName}: ${pageTitles.piDigits}` }
+  },
+  {
     path: "/monte-carlo-pi",
     name: "monte-carlo-pi",
     component: MonteCarloPi,
     meta: { title: `${appName}: ${pageTitles.monteCarloPi}` }
+  },
+  {
     path: "/game-of-life",
     name: "game-of-life",
     component: GameOfLife,
