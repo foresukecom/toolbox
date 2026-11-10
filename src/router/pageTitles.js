@@ -42,6 +42,7 @@ const pageTitles = {
   csvFormatter: 'CSV整形',
   rssReader: 'RSSフィード取得',
   pageImageMetadata: 'ページ内画像のメタデータ',
+  ulamSpiral: 'ウラムの螺旋',
 };
 
 export default pageTitles;
