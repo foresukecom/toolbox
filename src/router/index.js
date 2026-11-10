@@ -50,6 +50,7 @@ import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
 import PiDigits from '../views/PiDigits.vue'
 import MonteCarloPi from '../views/MonteCarloPi.vue'
 import GameOfLife from '../views/GameOfLife.vue'
+import JsonToTypescript from '../views/JsonToTypescript.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -352,6 +353,12 @@ const routes = [
     name: "game-of-life",
     component: GameOfLife,
     meta: { title: `${appName}: ${pageTitles.gameOfLife}` }
+  },
+  {
+    path: "/json-to-typescript",
+    name: "json-to-typescript",
+    component: JsonToTypescript,
+    meta: { title: `${appName}: ${pageTitles.jsonToTypescript}` }
   },
 ];
 
