@@ -65,6 +65,7 @@ export default {
       '/sosu': pageTitles.sosu,
       '/prime-factor-counter': pageTitles.primeFactorCounter,
       '/ulam-spiral': pageTitles.ulamSpiral,
+      '/sieve-of-eratosthenes': pageTitles.sieveOfEratosthenes,
     };
 
     const breadcrumbItems = computed(() => {

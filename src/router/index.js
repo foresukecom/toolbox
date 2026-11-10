@@ -44,6 +44,7 @@ import RssReader from '../views/RssReader.vue'
 import PageImageMetadata from '../views/PageImageMetadata.vue'
 import PrimeFactorCounter from '../views/PrimeFactorCounter.vue'
 import UlamSpiral from '../views/UlamSpiral.vue'
+import SieveOfEratosthenes from '../views/SieveOfEratosthenes.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -308,6 +309,10 @@ const routes = [
     name: "ulam-spiral",
     component: UlamSpiral,
     meta: { title: `${appName}: ${pageTitles.ulamSpiral}` }
+    path: "/sieve-of-eratosthenes",
+    name: "sieve-of-eratosthenes",
+    component: SieveOfEratosthenes,
+    meta: { title: `${appName}: ${pageTitles.sieveOfEratosthenes}` }
   },
 ];
 

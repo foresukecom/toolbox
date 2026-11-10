@@ -44,6 +44,7 @@ const pageTitles = {
   pageImageMetadata: 'ページ内画像のメタデータ',
   primeFactorCounter: '素因数分解カウンター',
   ulamSpiral: 'ウラムの螺旋',
+  sieveOfEratosthenes: 'エラトステネスの篩',
 };
 
 export default pageTitles;
