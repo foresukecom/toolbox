@@ -72,6 +72,7 @@ export default {
           tiles: [
             { title: 'RSSフィード取得', route: 'rss-reader' },
             { title: 'ページ内画像のメタデータ', route: 'page-image-metadata' },
+            { title: 'OGPプレビュー', route: 'ogp-preview' },
           ],
         },
         {

@@ -53,6 +53,7 @@ const pageTitles = {
   imageConverter: '画像変換',
   qrCode: 'QRコード',
   colorPalette: '画像の配色抽出',
+  ogpPreview: 'OGPプレビュー',
 };
 
 export default pageTitles;

@@ -74,6 +74,7 @@ export default {
       '/image-converter': pageTitles.imageConverter,
       '/qr-code': pageTitles.qrCode,
       '/color-palette': pageTitles.colorPalette,
+      '/ogp-preview': pageTitles.ogpPreview,
     };
 
     const breadcrumbItems = computed(() => {
