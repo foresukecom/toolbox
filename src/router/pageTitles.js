@@ -42,6 +42,7 @@ const pageTitles = {
   csvFormatter: 'CSV整形',
   rssReader: 'RSSフィード取得',
   pageImageMetadata: 'ページ内画像のメタデータ',
+  sieveOfEratosthenes: 'エラトステネスの篩',
 };
 
 export default pageTitles;

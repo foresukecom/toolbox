@@ -42,6 +42,7 @@ import BaseConverter from '../views/BaseConverter.vue'
 import CsvFormatter from '../views/CsvFormatter.vue'
 import RssReader from '../views/RssReader.vue'
 import PageImageMetadata from '../views/PageImageMetadata.vue'
+import SieveOfEratosthenes from '../views/SieveOfEratosthenes.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -296,6 +297,12 @@ const routes = [
     name: "page-image-metadata",
     component: PageImageMetadata,
     meta: { title: `${appName}: ${pageTitles.pageImageMetadata}` }
+  },
+  {
+    path: "/sieve-of-eratosthenes",
+    name: "sieve-of-eratosthenes",
+    component: SieveOfEratosthenes,
+    meta: { title: `${appName}: ${pageTitles.sieveOfEratosthenes}` }
   },
 ];
 
