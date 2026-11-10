@@ -48,6 +48,7 @@ import SieveOfEratosthenes from '../views/SieveOfEratosthenes.vue'
 import CollatzWatcher from '../views/CollatzWatcher.vue'
 import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
 import PiDigits from '../views/PiDigits.vue'
+import MonteCarloPi from '../views/MonteCarloPi.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -328,6 +329,10 @@ const routes = [
     name: "pi-digits",
     component: PiDigits,
     meta: { title: `${appName}: ${pageTitles.piDigits}` }
+    path: "/monte-carlo-pi",
+    name: "monte-carlo-pi",
+    component: MonteCarloPi,
+    meta: { title: `${appName}: ${pageTitles.monteCarloPi}` }
   },
 ];
 

@@ -120,6 +120,7 @@ export default {
             { title: 'コラッツ予想ウォッチャー', route: 'collatz-watcher' },
             { title: 'フィボナッチと黄金比', route: 'fibonacci-golden-ratio' },
             { title: '円周率を1桁ずつ', route: 'pi-digits' },
+            { title: 'モンテカルロ法で円周率', route: 'monte-carlo-pi' },
           ],
         },
       ],

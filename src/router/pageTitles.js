@@ -48,6 +48,7 @@ const pageTitles = {
   collatzWatcher: 'コラッツ予想ウォッチャー',
   fibonacciGoldenRatio: 'フィボナッチと黄金比',
   piDigits: '円周率を1桁ずつ',
+  monteCarloPi: 'モンテカルロ法で円周率',
 };
 
 export default pageTitles;
