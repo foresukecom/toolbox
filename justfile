@@ -47,3 +47,11 @@ env:
 
 # Lint と build をまとめて実行 (CI 想定)
 check: lint build
+
+# Netlify Functions をローカルで起動 (netlify-cli の代わりの簡易サーバ)
+functions port="9999":
+    node scripts/functions-dev.js {{port}}
+
+# Netlify Functions 用ライブラリのテスト
+test-functions:
+    node --test netlify/lib/*.test.js

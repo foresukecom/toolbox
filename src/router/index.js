@@ -39,6 +39,10 @@ import CronExplainer from '../views/CronExplainer.vue'
 import ColorConverter from '../views/ColorConverter.vue'
 import TextDiff from '../views/TextDiff.vue'
 import DataFormatConverter from '../views/DataFormatConverter.vue'
+import BaseConverter from '../views/BaseConverter.vue'
+import CsvFormatter from '../views/CsvFormatter.vue'
+import RssReader from '../views/RssReader.vue'
+import PageImageMetadata from '../views/PageImageMetadata.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -275,6 +279,30 @@ const routes = [
     name: "data-format-converter",
     component: DataFormatConverter,
     meta: { title: `${appName}: ${pageTitles.dataFormatConverter}` }
+  },
+  {
+    path: "/base-converter",
+    name: "base-converter",
+    component: BaseConverter,
+    meta: { title: `${appName}: ${pageTitles.baseConverter}` }
+  },
+  {
+    path: "/csv-formatter",
+    name: "csv-formatter",
+    component: CsvFormatter,
+    meta: { title: `${appName}: ${pageTitles.csvFormatter}` }
+  },
+  {
+    path: "/rss-reader",
+    name: "rss-reader",
+    component: RssReader,
+    meta: { title: `${appName}: ${pageTitles.rssReader}` }
+  },
+  {
+    path: "/page-image-metadata",
+    name: "page-image-metadata",
+    component: PageImageMetadata,
+    meta: { title: `${appName}: ${pageTitles.pageImageMetadata}` }
   },
 ];
 

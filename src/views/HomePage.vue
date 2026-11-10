@@ -63,6 +63,15 @@ export default {
             { title: 'カラー変換', route: 'color-converter' },
             { title: 'テキスト差分', route: 'text-diff' },
             { title: 'YAML/JSON/TOML変換', route: 'data-format-converter' },
+            { title: 'CSV整形', route: 'csv-formatter' },
+          ],
+        },
+        {
+          name: 'Webツール',
+          cssClass: 'cat-web',
+          tiles: [
+            { title: 'RSSフィード取得', route: 'rss-reader' },
+            { title: 'ページ内画像のメタデータ', route: 'page-image-metadata' },
           ],
         },
         {
@@ -104,6 +113,7 @@ export default {
           cssClass: 'cat-number',
           tiles: [
             { title: '素数カウンター', route: 'sosu' },
+            { title: '基数変換', route: 'base-converter' },
           ],
         },
         {
