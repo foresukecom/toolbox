@@ -80,6 +80,7 @@ export default {
       '/subnet-calculator': pageTitles.subnetCalculator,
       '/chmod-calculator': pageTitles.chmodCalculator,
       '/json-to-typescript': pageTitles.jsonToTypescript,
+      '/sql-formatter': pageTitles.sqlFormatter,
     };
 
     const breadcrumbItems = computed(() => {

@@ -59,6 +59,7 @@ const pageTitles = {
   subnetCalculator: 'サブネット計算',
   chmodCalculator: 'chmod計算',
   jsonToTypescript: 'JSON→TypeScript型',
+  sqlFormatter: 'SQL整形',
 };
 
 export default pageTitles;

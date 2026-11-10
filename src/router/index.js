@@ -59,6 +59,7 @@ import MarkdownPreview from '../views/MarkdownPreview.vue'
 import SubnetCalculator from '../views/SubnetCalculator.vue'
 import ChmodCalculator from '../views/ChmodCalculator.vue'
 import JsonToTypescript from '../views/JsonToTypescript.vue'
+import SqlFormatter from '../views/SqlFormatter.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -415,6 +416,12 @@ const routes = [
     name: "json-to-typescript",
     component: JsonToTypescript,
     meta: { title: `${appName}: ${pageTitles.jsonToTypescript}` }
+  },
+  {
+    path: "/sql-formatter",
+    name: "sql-formatter",
+    component: SqlFormatter,
+    meta: { title: `${appName}: ${pageTitles.sqlFormatter}` }
   },
 ];
 

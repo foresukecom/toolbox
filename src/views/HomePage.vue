@@ -68,6 +68,7 @@ export default {
             { title: 'サブネット計算', route: 'subnet-calculator' },
             { title: 'chmod計算', route: 'chmod-calculator' },
             { title: 'JSON→TypeScript型', route: 'json-to-typescript' },
+            { title: 'SQL整形', route: 'sql-formatter' },
           ],
         },
         {
