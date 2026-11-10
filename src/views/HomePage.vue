@@ -116,13 +116,6 @@ export default {
             { title: '基数変換', route: 'base-converter' },
           ],
         },
-        {
-          name: 'Blueskyツール',
-          cssClass: 'cat-bluesky',
-          tiles: [
-            { title: 'Hugo埋め込みコード生成', route: 'bluesky-shortcodes' },
-          ],
-        },
       ],
     };
   },

@@ -32,7 +32,6 @@ import DurationConverter from '../views/DurationConverter.vue'
 import TextStyler from '../views/TextStyler.vue';
 import ImageMetadata from '../views/ImageMetadata.vue'
 import SosuCounter from '../views/SosuCounter.vue'
-import BlueskyShortcodes from '../views/BlueskyShortcodes.vue'
 import JwtDecoder from '../views/JwtDecoder.vue'
 import EncodeDecode from '../views/EncodeDecode.vue'
 import CronExplainer from '../views/CronExplainer.vue'
@@ -237,12 +236,6 @@ const routes = [
     name: "sosu",
     component: SosuCounter,
     meta: { title: `${appName}: ${pageTitles.sosu}` } 
-  },
-  {
-    path: "/bluesky-shortcodes",
-    name: "bluesky-shortcodes",
-    component: BlueskyShortcodes,
-    meta: { title: `${appName}: ${pageTitles.blueskyShortcodes}` } 
   },
   {
     path: "/jwt-decoder",

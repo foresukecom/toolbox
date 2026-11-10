@@ -39,8 +39,6 @@
   --tb-cat-unit-hover: #6c3483;
   --tb-cat-number: #c0392b;
   --tb-cat-number-hover: #922b21;
-  --tb-cat-bluesky: #0085ff;
-  --tb-cat-bluesky-hover: #0066cc;
   --tb-cat-dev: #16a085;
   --tb-cat-dev-hover: #0e6655;
   --tb-cat-web: #34495e;
@@ -175,7 +173,6 @@
 .cat-date   { --tb-main: var(--tb-cat-date);   --tb-main-hover: var(--tb-cat-date-hover); }
 .cat-unit   { --tb-main: var(--tb-cat-unit);   --tb-main-hover: var(--tb-cat-unit-hover); }
 .cat-number { --tb-main: var(--tb-cat-number); --tb-main-hover: var(--tb-cat-number-hover); }
-.cat-bluesky{ --tb-main: var(--tb-cat-bluesky);--tb-main-hover: var(--tb-cat-bluesky-hover); }
 .cat-dev    { --tb-main: var(--tb-cat-dev);    --tb-main-hover: var(--tb-cat-dev-hover); }
 .cat-web    { --tb-main: var(--tb-cat-web);    --tb-main-hover: var(--tb-cat-web-hover); }
 

@@ -42,7 +42,6 @@ const pageTitles = {
   csvFormatter: 'CSV整形',
   rssReader: 'RSSフィード取得',
   pageImageMetadata: 'ページ内画像のメタデータ',
-  blueskyShortcodes: 'Hugo埋め込みコード生成',
 };
 
 export default pageTitles;
