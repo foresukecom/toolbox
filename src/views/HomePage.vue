@@ -93,6 +93,7 @@ export default {
             { title: '時間進捗バー', route: 'time-progress' },
             { title: 'UNIXTIME変換', route: 'unix-time-converter' },
             { title: '生年月日情報', route: 'birthdate-info' },
+            { title: 'ポモドーロタイマー', route: 'pomodoro' },
           ],
         },
         {
