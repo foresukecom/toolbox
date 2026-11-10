@@ -42,6 +42,14 @@ import BaseConverter from '../views/BaseConverter.vue'
 import CsvFormatter from '../views/CsvFormatter.vue'
 import RssReader from '../views/RssReader.vue'
 import PageImageMetadata from '../views/PageImageMetadata.vue'
+import PrimeFactorCounter from '../views/PrimeFactorCounter.vue'
+import UlamSpiral from '../views/UlamSpiral.vue'
+import SieveOfEratosthenes from '../views/SieveOfEratosthenes.vue'
+import CollatzWatcher from '../views/CollatzWatcher.vue'
+import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
+import PiDigits from '../views/PiDigits.vue'
+import MonteCarloPi from '../views/MonteCarloPi.vue'
+import GameOfLife from '../views/GameOfLife.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -296,6 +304,54 @@ const routes = [
     name: "page-image-metadata",
     component: PageImageMetadata,
     meta: { title: `${appName}: ${pageTitles.pageImageMetadata}` }
+  },
+  {
+    path: "/prime-factor-counter",
+    name: "prime-factor-counter",
+    component: PrimeFactorCounter,
+    meta: { title: `${appName}: ${pageTitles.primeFactorCounter}` }
+  },
+  {
+    path: "/ulam-spiral",
+    name: "ulam-spiral",
+    component: UlamSpiral,
+    meta: { title: `${appName}: ${pageTitles.ulamSpiral}` }
+  },
+  {
+    path: "/sieve-of-eratosthenes",
+    name: "sieve-of-eratosthenes",
+    component: SieveOfEratosthenes,
+    meta: { title: `${appName}: ${pageTitles.sieveOfEratosthenes}` }
+  },
+  {
+    path: "/collatz-watcher",
+    name: "collatz-watcher",
+    component: CollatzWatcher,
+    meta: { title: `${appName}: ${pageTitles.collatzWatcher}` }
+  },
+  {
+    path: "/fibonacci-golden-ratio",
+    name: "fibonacci-golden-ratio",
+    component: FibonacciGoldenRatio,
+    meta: { title: `${appName}: ${pageTitles.fibonacciGoldenRatio}` }
+  },
+  {
+    path: "/pi-digits",
+    name: "pi-digits",
+    component: PiDigits,
+    meta: { title: `${appName}: ${pageTitles.piDigits}` }
+  },
+  {
+    path: "/monte-carlo-pi",
+    name: "monte-carlo-pi",
+    component: MonteCarloPi,
+    meta: { title: `${appName}: ${pageTitles.monteCarloPi}` }
+  },
+  {
+    path: "/game-of-life",
+    name: "game-of-life",
+    component: GameOfLife,
+    meta: { title: `${appName}: ${pageTitles.gameOfLife}` }
   },
 ];
 
