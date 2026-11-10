@@ -12,7 +12,7 @@
     "@ffmpeg/ffmpeg": "^0.11.6",
     "@mdi/js": "^7.2.96",
     "@vue-leaflet/vue-leaflet": "^0.9.0",
-    "axios": "^1.15.0",
+    "axios": "^1.20.0",
     "core-js": "^3.8.3",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.7",
@@ -26,7 +26,7 @@
     "moment-timezone": "^0.5.43",
     "roboto-fontface": "*",
     "tailwindcss": "^3.3.2",
-    "uuid": "^14.0.0",
+    "uuid": "^14.0.3",
     "vue": "^3.2.13",
     "vue-gtag": "^2.0.1",
     "vue-leaflet": "^0.1.0",
@@ -35,7 +35,7 @@
     "xml-formatter": "^3.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
+    "@babel/core": "^8.1.0",
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
