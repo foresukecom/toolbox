@@ -76,6 +76,7 @@ export default {
       '/color-palette': pageTitles.colorPalette,
       '/ogp-preview': pageTitles.ogpPreview,
       '/url-parser': pageTitles.urlParser,
+      '/markdown-preview': pageTitles.markdownPreview,
     };
 
     const breadcrumbItems = computed(() => {

@@ -55,6 +55,7 @@ import QrCode from '../views/QrCode.vue'
 import ColorPalette from '../views/ColorPalette.vue'
 import OgpPreview from '../views/OgpPreview.vue'
 import UrlParser from '../views/UrlParser.vue'
+import MarkdownPreview from '../views/MarkdownPreview.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -387,6 +388,12 @@ const routes = [
     name: "url-parser",
     component: UrlParser,
     meta: { title: `${appName}: ${pageTitles.urlParser}` }
+  },
+  {
+    path: "/markdown-preview",
+    name: "markdown-preview",
+    component: MarkdownPreview,
+    meta: { title: `${appName}: ${pageTitles.markdownPreview}` }
   },
 ];
 

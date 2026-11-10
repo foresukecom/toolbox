@@ -55,6 +55,7 @@ const pageTitles = {
   colorPalette: '画像の配色抽出',
   ogpPreview: 'OGPプレビュー',
   urlParser: 'URL分解',
+  markdownPreview: 'Markdownプレビュー',
 };
 
 export default pageTitles;
