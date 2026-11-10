@@ -69,6 +69,7 @@ const pageTitles = {
   pressureConverter: '圧力単位変換',
   energyConverter: 'エネルギー単位変換',
   mandelbrot: 'マンデルブロ集合',
+  randomWalk: 'ランダムウォーク',
 };
 
 export default pageTitles;

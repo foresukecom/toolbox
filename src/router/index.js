@@ -69,6 +69,7 @@ import AngleConverter from '../views/AngleConverter.vue'
 import PressureConverter from '../views/PressureConverter.vue'
 import EnergyConverter from '../views/EnergyConverter.vue'
 import Mandelbrot from '../views/Mandelbrot.vue'
+import RandomWalk from '../views/RandomWalk.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -485,6 +486,12 @@ const routes = [
     name: "mandelbrot",
     component: Mandelbrot,
     meta: { title: `${appName}: ${pageTitles.mandelbrot}` }
+  },
+  {
+    path: "/random-walk",
+    name: "random-walk",
+    component: RandomWalk,
+    meta: { title: `${appName}: ${pageTitles.randomWalk}` }
   },
 ];
 

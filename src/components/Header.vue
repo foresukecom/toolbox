@@ -90,6 +90,7 @@ export default {
       '/pressure-converter': pageTitles.pressureConverter,
       '/energy-converter': pageTitles.energyConverter,
       '/mandelbrot': pageTitles.mandelbrot,
+      '/random-walk': pageTitles.randomWalk,
     };
 
     const breadcrumbItems = computed(() => {
