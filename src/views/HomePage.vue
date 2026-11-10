@@ -142,6 +142,7 @@ export default {
             { title: 'ライフゲーム', route: 'game-of-life' },
             { title: 'マンデルブロ集合', route: 'mandelbrot' },
             { title: 'ランダムウォーク', route: 'random-walk' },
+            { title: '定数を1桁ずつ', route: 'constant-digits' },
           ],
         },
       ],

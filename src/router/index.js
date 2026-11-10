@@ -70,6 +70,7 @@ import PressureConverter from '../views/PressureConverter.vue'
 import EnergyConverter from '../views/EnergyConverter.vue'
 import Mandelbrot from '../views/Mandelbrot.vue'
 import RandomWalk from '../views/RandomWalk.vue'
+import ConstantDigits from '../views/ConstantDigits.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -492,6 +493,12 @@ const routes = [
     name: "random-walk",
     component: RandomWalk,
     meta: { title: `${appName}: ${pageTitles.randomWalk}` }
+  },
+  {
+    path: "/constant-digits",
+    name: "constant-digits",
+    component: ConstantDigits,
+    meta: { title: `${appName}: ${pageTitles.constantDigits}` }
   },
 ];
 

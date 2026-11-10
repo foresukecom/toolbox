@@ -70,6 +70,7 @@ const pageTitles = {
   energyConverter: 'エネルギー単位変換',
   mandelbrot: 'マンデルブロ集合',
   randomWalk: 'ランダムウォーク',
+  constantDigits: '定数を1桁ずつ',
 };
 
 export default pageTitles;

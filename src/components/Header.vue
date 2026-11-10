@@ -91,6 +91,7 @@ export default {
       '/energy-converter': pageTitles.energyConverter,
       '/mandelbrot': pageTitles.mandelbrot,
       '/random-walk': pageTitles.randomWalk,
+      '/constant-digits': pageTitles.constantDigits,
     };
 
     const breadcrumbItems = computed(() => {
