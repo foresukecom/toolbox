@@ -43,6 +43,7 @@ import CsvFormatter from '../views/CsvFormatter.vue'
 import RssReader from '../views/RssReader.vue'
 import PageImageMetadata from '../views/PageImageMetadata.vue'
 import PrimeFactorCounter from '../views/PrimeFactorCounter.vue'
+import UlamSpiral from '../views/UlamSpiral.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -303,6 +304,10 @@ const routes = [
     name: "prime-factor-counter",
     component: PrimeFactorCounter,
     meta: { title: `${appName}: ${pageTitles.primeFactorCounter}` }
+    path: "/ulam-spiral",
+    name: "ulam-spiral",
+    component: UlamSpiral,
+    meta: { title: `${appName}: ${pageTitles.ulamSpiral}` }
   },
 ];
 

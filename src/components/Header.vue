@@ -64,6 +64,7 @@ export default {
       '/image-metadata': pageTitles.imageMetadata,
       '/sosu': pageTitles.sosu,
       '/prime-factor-counter': pageTitles.primeFactorCounter,
+      '/ulam-spiral': pageTitles.ulamSpiral,
     };
 
     const breadcrumbItems = computed(() => {

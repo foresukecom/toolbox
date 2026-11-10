@@ -43,6 +43,7 @@ const pageTitles = {
   rssReader: 'RSSフィード取得',
   pageImageMetadata: 'ページ内画像のメタデータ',
   primeFactorCounter: '素因数分解カウンター',
+  ulamSpiral: 'ウラムの螺旋',
 };
 
 export default pageTitles;
