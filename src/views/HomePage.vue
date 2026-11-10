@@ -52,6 +52,7 @@ export default {
             { title: 'ルビ生成', route: 'ruby-generator' },
             { title: '文字装飾', route: 'text-styler' },
             { title: 'Markdownプレビュー', route: 'markdown-preview' },
+            { title: '全角半角変換', route: 'zenkaku-hankaku' },
           ],
         },
         {

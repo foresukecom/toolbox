@@ -60,6 +60,7 @@ import SubnetCalculator from '../views/SubnetCalculator.vue'
 import ChmodCalculator from '../views/ChmodCalculator.vue'
 import JsonToTypescript from '../views/JsonToTypescript.vue'
 import SqlFormatter from '../views/SqlFormatter.vue'
+import ZenkakuHankaku from '../views/ZenkakuHankaku.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -422,6 +423,12 @@ const routes = [
     name: "sql-formatter",
     component: SqlFormatter,
     meta: { title: `${appName}: ${pageTitles.sqlFormatter}` }
+  },
+  {
+    path: "/zenkaku-hankaku",
+    name: "zenkaku-hankaku",
+    component: ZenkakuHankaku,
+    meta: { title: `${appName}: ${pageTitles.zenkakuHankaku}` }
   },
 ];
 

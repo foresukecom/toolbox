@@ -81,6 +81,7 @@ export default {
       '/chmod-calculator': pageTitles.chmodCalculator,
       '/json-to-typescript': pageTitles.jsonToTypescript,
       '/sql-formatter': pageTitles.sqlFormatter,
+      '/zenkaku-hankaku': pageTitles.zenkakuHankaku,
     };
 
     const breadcrumbItems = computed(() => {

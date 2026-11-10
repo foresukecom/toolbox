@@ -60,6 +60,7 @@ const pageTitles = {
   chmodCalculator: 'chmod計算',
   jsonToTypescript: 'JSON→TypeScript型',
   sqlFormatter: 'SQL整形',
+  zenkakuHankaku: '全角半角変換',
 };
 
 export default pageTitles;
