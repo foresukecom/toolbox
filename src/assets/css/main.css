@@ -32,6 +32,8 @@
   --tb-cat-bluesky-hover: #0066cc;
   --tb-cat-dev: #16a085;
   --tb-cat-dev-hover: #0e6655;
+  --tb-cat-web: #34495e;
+  --tb-cat-web-hover: #1c2833;
 
   --tb-main: var(--tb-cat-client);
   --tb-main-hover: var(--tb-cat-client-hover);
@@ -163,6 +165,7 @@
 .cat-number { --tb-main: var(--tb-cat-number); --tb-main-hover: var(--tb-cat-number-hover); }
 .cat-bluesky{ --tb-main: var(--tb-cat-bluesky);--tb-main-hover: var(--tb-cat-bluesky-hover); }
 .cat-dev    { --tb-main: var(--tb-cat-dev);    --tb-main-hover: var(--tb-cat-dev-hover); }
+.cat-web    { --tb-main: var(--tb-cat-web);    --tb-main-hover: var(--tb-cat-web-hover); }
 
 /* =========================================================
    単位変換ツール共通スタイル

@@ -38,6 +38,10 @@ const pageTitles = {
   colorConverter: 'カラー変換',
   textDiff: 'テキスト差分',
   dataFormatConverter: 'YAML/JSON/TOML変換',
+  baseConverter: '基数変換',
+  csvFormatter: 'CSV整形',
+  rssReader: 'RSSフィード取得',
+  pageImageMetadata: 'ページ内画像のメタデータ',
   blueskyShortcodes: 'Hugo埋め込みコード生成',
 };
 
