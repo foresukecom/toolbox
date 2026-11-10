@@ -50,6 +50,7 @@ const pageTitles = {
   piDigits: '円周率を1桁ずつ',
   monteCarloPi: 'モンテカルロ法で円周率',
   gameOfLife: 'ライフゲーム',
+  randomWalk: 'ランダムウォーク',
 };
 
 export default pageTitles;
