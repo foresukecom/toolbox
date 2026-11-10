@@ -18,12 +18,12 @@ Web 開発者向けに追加したいツールの一覧。既存33ツールと�
 
 | # | ツール | 概要 | 追加依存 | 状態 |
 |---|---|---|---|---|
-| 1 | JWT デコーダー | header / payload を表示、`exp` / `iat` を JST 表示、期限切れ判定、HS 系署名検証 | なし | 📝 |
-| 2 | エンコード/デコード | Base64（UTF-8 / URL-safe）・URL・HTML エンティティ、画像→Data URI | なし | 📝 |
-| 3 | cron 式解説 | 日本語の説明と次回実行日時一覧（JST / UTC 切替） | `cronstrue`, `cron-parser` | 📝 |
-| 4 | カラー変換 | HEX / RGB / HSL / OKLCH 相互変換、WCAG コントラスト比チェック | なし | 📝 |
-| 5 | テキスト差分 | 行 / 単語 / 文字単位の差分表示、空白・大文字小文字無視 | `diff` | 📝 |
-| 6 | YAML / JSON / TOML 変換 | 3形式の相互変換、パースエラー位置表示 | `yaml`, `smol-toml` | 📝 |
+| 1 | JWT デコーダー | header / payload を表示、`exp` / `iat` を JST 表示、期限切れ判定、HS 系署名検証 | なし | ✅ |
+| 2 | エンコード/デコード | Base64（UTF-8 / URL-safe）・URL・HTML エンティティ、画像→Data URI | なし | ✅ |
+| 3 | cron 式解説 | 日本語の説明と次回実行日時一覧（JST / UTC 切替） | `cronstrue`, `cron-parser` | ✅ |
+| 4 | カラー変換 | HEX / RGB / HSL / OKLCH 相互変換、WCAG コントラスト比チェック | なし | ✅ |
+| 5 | テキスト差分 | 行 / 単語 / 文字単位の差分表示、空白・大文字小文字無視 | `diff` | ✅ |
+| 6 | YAML / JSON / TOML 変換 | 3形式の相互変換、パースエラー位置表示 | `yaml`, `smol-toml` | ✅ |
 
 ## 優先度：中（Wave 2 候補）
 
