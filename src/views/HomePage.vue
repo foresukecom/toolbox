@@ -80,6 +80,7 @@ export default {
           tiles: [
             { title: 'EXIF削除', route: 'image-metadata' },
             { title: '画像変換', route: 'image-converter' },
+            { title: 'QRコード', route: 'qr-code' },
           ],
         },
         {

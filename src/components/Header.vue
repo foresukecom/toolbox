@@ -72,6 +72,7 @@ export default {
       '/monte-carlo-pi': pageTitles.monteCarloPi,
       '/game-of-life': pageTitles.gameOfLife,
       '/image-converter': pageTitles.imageConverter,
+      '/qr-code': pageTitles.qrCode,
     };
 
     const breadcrumbItems = computed(() => {

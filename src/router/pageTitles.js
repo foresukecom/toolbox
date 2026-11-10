@@ -51,6 +51,7 @@ const pageTitles = {
   monteCarloPi: 'モンテカルロ法で円周率',
   gameOfLife: 'ライフゲーム',
   imageConverter: '画像変換',
+  qrCode: 'QRコード',
 };
 
 export default pageTitles;

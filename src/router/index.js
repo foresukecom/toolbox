@@ -51,6 +51,7 @@ import PiDigits from '../views/PiDigits.vue'
 import MonteCarloPi from '../views/MonteCarloPi.vue'
 import GameOfLife from '../views/GameOfLife.vue'
 import ImageConverter from '../views/ImageConverter.vue'
+import QrCode from '../views/QrCode.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -359,6 +360,12 @@ const routes = [
     name: "image-converter",
     component: ImageConverter,
     meta: { title: `${appName}: ${pageTitles.imageConverter}` }
+  },
+  {
+    path: "/qr-code",
+    name: "qr-code",
+    component: QrCode,
+    meta: { title: `${appName}: ${pageTitles.qrCode}` }
   },
 ];
 
