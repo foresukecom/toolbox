@@ -45,6 +45,7 @@ const pageTitles = {
   primeFactorCounter: '素因数分解カウンター',
   ulamSpiral: 'ウラムの螺旋',
   sieveOfEratosthenes: 'エラトステネスの篩',
+  collatzWatcher: 'コラッツ予想ウォッチャー',
 };
 
 export default pageTitles;

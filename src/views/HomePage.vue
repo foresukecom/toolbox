@@ -117,6 +117,7 @@ export default {
             { title: '素因数分解カウンター', route: 'prime-factor-counter' },
             { title: 'ウラムの螺旋', route: 'ulam-spiral' },
             { title: 'エラトステネスの篩', route: 'sieve-of-eratosthenes' },
+            { title: 'コラッツ予想ウォッチャー', route: 'collatz-watcher' },
           ],
         },
       ],

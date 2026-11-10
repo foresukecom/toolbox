@@ -66,6 +66,7 @@ export default {
       '/prime-factor-counter': pageTitles.primeFactorCounter,
       '/ulam-spiral': pageTitles.ulamSpiral,
       '/sieve-of-eratosthenes': pageTitles.sieveOfEratosthenes,
+      '/collatz-watcher': pageTitles.collatzWatcher,
     };
 
     const breadcrumbItems = computed(() => {

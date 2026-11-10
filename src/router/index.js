@@ -45,6 +45,7 @@ import PageImageMetadata from '../views/PageImageMetadata.vue'
 import PrimeFactorCounter from '../views/PrimeFactorCounter.vue'
 import UlamSpiral from '../views/UlamSpiral.vue'
 import SieveOfEratosthenes from '../views/SieveOfEratosthenes.vue'
+import CollatzWatcher from '../views/CollatzWatcher.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -313,6 +314,10 @@ const routes = [
     name: "sieve-of-eratosthenes",
     component: SieveOfEratosthenes,
     meta: { title: `${appName}: ${pageTitles.sieveOfEratosthenes}` }
+    path: "/collatz-watcher",
+    name: "collatz-watcher",
+    component: CollatzWatcher,
+    meta: { title: `${appName}: ${pageTitles.collatzWatcher}` }
   },
 ];
 
