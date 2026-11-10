@@ -65,6 +65,7 @@ export default {
             { title: 'テキスト差分', route: 'text-diff' },
             { title: 'YAML/JSON/TOML変換', route: 'data-format-converter' },
             { title: 'CSV整形', route: 'csv-formatter' },
+            { title: 'サブネット計算', route: 'subnet-calculator' },
           ],
         },
         {

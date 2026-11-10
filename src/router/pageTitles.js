@@ -56,6 +56,7 @@ const pageTitles = {
   ogpPreview: 'OGPプレビュー',
   urlParser: 'URL分解',
   markdownPreview: 'Markdownプレビュー',
+  subnetCalculator: 'サブネット計算',
 };
 
 export default pageTitles;

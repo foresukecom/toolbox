@@ -56,6 +56,7 @@ import ColorPalette from '../views/ColorPalette.vue'
 import OgpPreview from '../views/OgpPreview.vue'
 import UrlParser from '../views/UrlParser.vue'
 import MarkdownPreview from '../views/MarkdownPreview.vue'
+import SubnetCalculator from '../views/SubnetCalculator.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -394,6 +395,12 @@ const routes = [
     name: "markdown-preview",
     component: MarkdownPreview,
     meta: { title: `${appName}: ${pageTitles.markdownPreview}` }
+  },
+  {
+    path: "/subnet-calculator",
+    name: "subnet-calculator",
+    component: SubnetCalculator,
+    meta: { title: `${appName}: ${pageTitles.subnetCalculator}` }
   },
 ];
 
