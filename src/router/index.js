@@ -4,7 +4,6 @@ import HomePage from '../views/HomePage.vue';
 import AboutPage from '../views/About.vue';
 import ClientInfo from '../views/ClientInfo.vue'; 
 import TextHash from '../views/TextHash.vue';
-import VideoToGif from '../views/VideoToGif.vue';
 import JsonFormatter from '../views/JsonFormatter.vue';
 import XmlFormatter from '../views/XmlFormatter.vue';
 import TextCaseConverter from '../views/TextCaseConverter.vue';
@@ -50,6 +49,27 @@ import FibonacciGoldenRatio from '../views/FibonacciGoldenRatio.vue'
 import PiDigits from '../views/PiDigits.vue'
 import MonteCarloPi from '../views/MonteCarloPi.vue'
 import GameOfLife from '../views/GameOfLife.vue'
+import ImageConverter from '../views/ImageConverter.vue'
+import QrCode from '../views/QrCode.vue'
+import ColorPalette from '../views/ColorPalette.vue'
+import OgpPreview from '../views/OgpPreview.vue'
+import UrlParser from '../views/UrlParser.vue'
+import MarkdownPreview from '../views/MarkdownPreview.vue'
+import SubnetCalculator from '../views/SubnetCalculator.vue'
+import ChmodCalculator from '../views/ChmodCalculator.vue'
+import JsonToTypescript from '../views/JsonToTypescript.vue'
+import SqlFormatter from '../views/SqlFormatter.vue'
+import ZenkakuHankaku from '../views/ZenkakuHankaku.vue'
+import DummyText from '../views/DummyText.vue'
+import DateCalculator from '../views/DateCalculator.vue'
+import PomodoroTimer from '../views/PomodoroTimer.vue'
+import SpeedConverter from '../views/SpeedConverter.vue'
+import AngleConverter from '../views/AngleConverter.vue'
+import PressureConverter from '../views/PressureConverter.vue'
+import EnergyConverter from '../views/EnergyConverter.vue'
+import Mandelbrot from '../views/Mandelbrot.vue'
+import RandomWalk from '../views/RandomWalk.vue'
+import ConstantDigits from '../views/ConstantDigits.vue'
 
 const appName = "開発の友"
 const routes = [
@@ -76,12 +96,6 @@ const routes = [
     name: 'text-hash',
     component: TextHash,
     meta: { title: `${appName}: ${pageTitles.textHash}` } 
-  },
-  {
-    path: '/video-to-gif',
-    name: 'video-to-gif',
-    component: VideoToGif,
-    meta: { title: `${appName}: ${pageTitles.videoToGif}` } 
   },
   {
     path: "/json-formatter",
@@ -352,6 +366,132 @@ const routes = [
     name: "game-of-life",
     component: GameOfLife,
     meta: { title: `${appName}: ${pageTitles.gameOfLife}` }
+  },
+  {
+    path: "/image-converter",
+    name: "image-converter",
+    component: ImageConverter,
+    meta: { title: `${appName}: ${pageTitles.imageConverter}` }
+  },
+  {
+    path: "/qr-code",
+    name: "qr-code",
+    component: QrCode,
+    meta: { title: `${appName}: ${pageTitles.qrCode}` }
+  },
+  {
+    path: "/color-palette",
+    name: "color-palette",
+    component: ColorPalette,
+    meta: { title: `${appName}: ${pageTitles.colorPalette}` }
+  },
+  {
+    path: "/ogp-preview",
+    name: "ogp-preview",
+    component: OgpPreview,
+    meta: { title: `${appName}: ${pageTitles.ogpPreview}` }
+  },
+  {
+    path: "/url-parser",
+    name: "url-parser",
+    component: UrlParser,
+    meta: { title: `${appName}: ${pageTitles.urlParser}` }
+  },
+  {
+    path: "/markdown-preview",
+    name: "markdown-preview",
+    component: MarkdownPreview,
+    meta: { title: `${appName}: ${pageTitles.markdownPreview}` }
+  },
+  {
+    path: "/subnet-calculator",
+    name: "subnet-calculator",
+    component: SubnetCalculator,
+    meta: { title: `${appName}: ${pageTitles.subnetCalculator}` }
+  },
+  {
+    path: "/chmod-calculator",
+    name: "chmod-calculator",
+    component: ChmodCalculator,
+    meta: { title: `${appName}: ${pageTitles.chmodCalculator}` }
+  },
+  {
+    path: "/json-to-typescript",
+    name: "json-to-typescript",
+    component: JsonToTypescript,
+    meta: { title: `${appName}: ${pageTitles.jsonToTypescript}` }
+  },
+  {
+    path: "/sql-formatter",
+    name: "sql-formatter",
+    component: SqlFormatter,
+    meta: { title: `${appName}: ${pageTitles.sqlFormatter}` }
+  },
+  {
+    path: "/zenkaku-hankaku",
+    name: "zenkaku-hankaku",
+    component: ZenkakuHankaku,
+    meta: { title: `${appName}: ${pageTitles.zenkakuHankaku}` }
+  },
+  {
+    path: "/dummy-text",
+    name: "dummy-text",
+    component: DummyText,
+    meta: { title: `${appName}: ${pageTitles.dummyText}` }
+  },
+  {
+    path: "/date-calculator",
+    name: "date-calculator",
+    component: DateCalculator,
+    meta: { title: `${appName}: ${pageTitles.dateCalculator}` }
+  },
+  {
+    path: "/pomodoro",
+    name: "pomodoro",
+    component: PomodoroTimer,
+    meta: { title: `${appName}: ${pageTitles.pomodoroTimer}` }
+  },
+  {
+    path: "/speed-converter",
+    name: "speed-converter",
+    component: SpeedConverter,
+    meta: { title: `${appName}: ${pageTitles.speedConverter}` }
+  },
+  {
+    path: "/angle-converter",
+    name: "angle-converter",
+    component: AngleConverter,
+    meta: { title: `${appName}: ${pageTitles.angleConverter}` }
+  },
+  {
+    path: "/pressure-converter",
+    name: "pressure-converter",
+    component: PressureConverter,
+    meta: { title: `${appName}: ${pageTitles.pressureConverter}` }
+  },
+  {
+    path: "/energy-converter",
+    name: "energy-converter",
+    component: EnergyConverter,
+    meta: { title: `${appName}: ${pageTitles.energyConverter}` }
+  },
+  {
+    path: "/mandelbrot",
+    name: "mandelbrot",
+    component: Mandelbrot,
+    meta: { title: `${appName}: ${pageTitles.mandelbrot}` }
+  },
+  {
+    path: "/random-walk",
+    name: "random-walk",
+    component: RandomWalk,
+    meta: { title: `${appName}: ${pageTitles.randomWalk}` }
+  },
+  {
+    path: "/constant-digits",
+    name: "constant-digits",
+    component: ConstantDigits,
+    meta: { title: `${appName}: ${pageTitles.constantDigits}` }
   },
 ];
 
